@@ -12,7 +12,7 @@
     <meta name="keywords"
         content="gestión bares, gestión restaurantes, optimización hostelería, inteligencia artificial hostelería, software restaurantes, BarAI, TPV inteligente, rentabilidad bar, control de comandas">
     <meta name="author" content="BarAI Technologies">
-    <meta name="version" content="1.0.1">
+    <meta name="version" content="1.0.2">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Spanish">
     <meta name="theme-color" content="#0b0f19">
@@ -87,6 +87,20 @@
                     "publisher": {
                         "@id": "https://www.barai.es/#organization"
                     },
+                    "inLanguage": "es"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.barai.es/#webpage",
+                    "url": "https://www.barai.es/",
+                    "name": "BarAI - Gestión y Optimización para Bares y Restaurantes con IA",
+                    "isPartOf": {
+                        "@id": "https://www.barai.es/#website"
+                    },
+                    "about": {
+                        "@id": "https://www.barai.es/#software"
+                    },
+                    "dateModified": "2026-09-08",
                     "inLanguage": "es"
                 }
             ]
@@ -181,7 +195,7 @@
                 <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span
                         class="gradient-text">AI</span></span>
             </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+            <nav aria-label="Navegación principal" class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
                 <a href="#features" class="hover:text-neonGreen transition-colors">Características</a>
                 <a href="#dashboard-preview" class="hover:text-neonGreen transition-colors">Paneles Gerenciales</a>
                 <a href="#customer-story" class="hover:text-neonGreen transition-colors">Experiencia Cliente</a>
@@ -204,7 +218,7 @@
                     Solicitar Demo
                 </a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-gray-300 focus:outline-none">
+            <button id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-gray-300 focus:outline-none">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
@@ -228,6 +242,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <div
             class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neonGreen/10 rounded-full blur-[120px] pointer-events-none">
@@ -276,7 +291,7 @@
                     class="relative rounded-2xl bg-cardBg border border-gray-800 p-2 sm:p-4 shadow-2xl overflow-hidden">
                     <div
                         class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-lg">
-                        <iframe class="absolute top-0 left-0 w-full h-full"
+                        <iframe loading="lazy" class="absolute top-0 left-0 w-full h-full"
                             src="https://www.youtube.com/embed/63guiTrKues?si=tOZihOq9iY346osJ"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -347,7 +362,7 @@
                         <span>Control detallado de mesas activas, importes totales y cobros</span>
                         <span class="text-neonCyan font-mono">Actualización Instantánea</span>
                     </div>
-                    <img src="https://i.imgur.com/kcQaMzX.png" alt="Gestión de Mesas Dashboard"
+                    <img loading="lazy" decoding="async" src="https://i.imgur.com/kcQaMzX.png" alt="Gestión de Mesas Dashboard"
                         class="w-full rounded-xl border border-gray-800 shadow-xl">
                 </div>
 
@@ -356,7 +371,7 @@
                         <span>Métricas de velocidad de servicio, pedidos totales y eficiencia del staff</span>
                         <span class="text-neonGreen font-mono">Algoritmo Predictivo IA</span>
                     </div>
-                    <img src="https://i.imgur.com/Gk54cNM.png" alt="Performance Metrics Dashboard"
+                    <img loading="lazy" decoding="async" src="https://i.imgur.com/Gk54cNM.png" alt="Performance Metrics Dashboard"
                         class="w-full rounded-xl border border-gray-800 shadow-xl">
                 </div>
 
@@ -367,14 +382,14 @@
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div>
-                            <img src="https://i.imgur.com/TamTUpR.png"
+                            <img loading="lazy" decoding="async" src="https://i.imgur.com/TamTUpR.png"
                                 alt="Panel general de empleados conectados y desconectados"
                                 class="w-full rounded-xl border border-gray-800 shadow-xl">
                             <p class="text-xs text-gray-400 mt-2 text-center">Panel general de empleados conectados y
                                 desconectados</p>
                         </div>
                         <div>
-                            <img src="https://i.imgur.com/jfNVM7S.png" alt="Línea de tiempo de actividad por usuario"
+                            <img loading="lazy" decoding="async" src="https://i.imgur.com/jfNVM7S.png" alt="Línea de tiempo de actividad por usuario"
                                 class="w-full rounded-xl border border-gray-800 shadow-xl">
                             <p class="text-xs text-gray-400 mt-2 text-center">Línea de tiempo de actividad por usuario
                             </p>
@@ -387,7 +402,7 @@
                         <span>Historial de tickets cobrados por fecha, empleado y desglose de caja</span>
                         <span class="text-neonGreen font-mono">Caja Registradora Inteligente</span>
                     </div>
-                    <img src="https://i.imgur.com/bfMaLPV.png" alt="Historial de Cobros Dashboard"
+                    <img loading="lazy" decoding="async" src="https://i.imgur.com/bfMaLPV.png" alt="Historial de Cobros Dashboard"
                         class="w-full rounded-xl border border-gray-800 shadow-xl">
                 </div>
             </div>
@@ -413,7 +428,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
                 <div class="bg-cardBg p-6 rounded-3xl border border-gray-800">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl mb-6">
-                        <img src="https://i.imgur.com/68XhFdL.png" alt="Storyboard Experiencia Cliente"
+                        <img loading="lazy" decoding="async" src="https://i.imgur.com/68XhFdL.png" alt="Storyboard Experiencia Cliente"
                             class="w-full h-auto object-cover rounded-xl border border-gray-800">
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Secuencia Completa en Mesa</h3>
@@ -468,7 +483,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 <div class="bg-cardBg p-4 rounded-2xl border border-gray-800">
-                    <img src="https://i.imgur.com/Vvry0GI.png" alt="Mateo Customer Journey"
+                    <img loading="lazy" decoding="async" src="https://i.imgur.com/Vvry0GI.png" alt="Mateo Customer Journey"
                         class="w-full rounded-xl border border-gray-800">
                     <p class="text-xs text-gray-400 mt-2 text-center">Secuencia detallada de interacción del cliente</p>
                 </div>
@@ -782,6 +797,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="bg-darkBg border-t border-gray-800 py-12">
         <div
@@ -801,7 +817,7 @@
                     class="hover:text-neonGreen transition-colors font-medium">info@barai.es</a>
             </div>
             <p class="text-xs text-gray-500 text-center">
-                © 2026 BarAI Technologies. Todos los derechos reservados. <span class="text-gray-600">v1.0.1</span>
+                © 2026 BarAI Technologies. Todos los derechos reservados. <span class="text-gray-600">v1.0.2</span>
             </p>
             <div class="flex space-x-4 text-gray-400">
                 <a href="#" class="hover:text-neonGreen"><i class="fa-brands fa-twitter text-lg"></i></a>
@@ -818,6 +834,7 @@
 
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
         });
 
         function switchTab(tabId) {
