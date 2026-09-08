@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>BarAI - Gestión y Optimización para Bares y Restaurantes con IA</title>
+    <meta name="description"
+        content="BarAI es la plataforma de gestión impulsada por Inteligencia Artificial diseñada para optimizar los procesos, reducir costes y mejorar la rentabilidad de tu bar o restaurante.">
+    <meta name="keywords"
+        content="gestión bares, gestión restaurantes, optimización hostelería, inteligencia artificial hostelería, software restaurantes, BarAI, TPV inteligente, rentabilidad bar, control de comandas">
+    <meta name="author" content="BarAI Technologies">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <link rel="canonical" href="https://www.barai.es/" />
+
+    <!-- Open Graph / Facebook (Para cuando compartan tu web en WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.barai.es/">
+    <meta property="og:title" content="BarAI - Gestión y Optimización para Bares y Restaurantes con IA">
+    <meta property="og:description"
+        content="Descubre cómo nuestra plataforma con Inteligencia Artificial puede transformar la rentabilidad y el control de tu bar o restaurante.">
+    <!-- Nota: La siguiente imagen es la miniatura que aparecerá al compartir el enlace. Sube una imagen bonita a esa ruta -->
+    <meta property="og:image" content="https://www.barai.es/banner-seo.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.barai.es/">
+    <meta property="twitter:title" content="BarAI - IA para Hostelería">
+    <meta property="twitter:description"
+        content="Descubre cómo nuestra plataforma con Inteligencia Artificial puede transformar la rentabilidad y el control de tu bar o restaurante.">
+    <meta property="twitter:image" content="https://www.barai.es/banner-seo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        neonGreen: '#10b981',
+                        neonCyan: '#06b6d4',
+                        darkGreen: '#022c22'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+
+        .glow-green {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+        }
+
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.35);
+        }
+
+        .bg-glass {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-darkBg text-gray-100 overflow-x-hidden selection:bg-neonGreen selection:text-darkBg">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-12 h-12 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1">
+                    <img src="https://lh3.googleusercontent.com/d/1Qp7yp64UNdDlolajCc1Km4y4jLo0NRhZ" alt="BarAI Logo"
+                        class="w-full h-full object-cover rounded-lg">
+                </div>
+                <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span
+                        class="gradient-text">AI</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#features" class="hover:text-neonGreen transition-colors">Características</a>
+                <a href="#dashboard-preview" class="hover:text-neonGreen transition-colors">Paneles Gerenciales</a>
+                <a href="#customer-story" class="hover:text-neonGreen transition-colors">Experiencia Cliente</a>
+                <a href="#calculator" class="hover:text-neonGreen transition-colors">Calculadora</a>
+                <a href="#pricing" class="hover:text-neonGreen transition-colors">Planes</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="mailto:info@barai.es"
+                    class="text-xs text-gray-400 hover:text-neonGreen transition-colors flex items-center space-x-1.5 font-medium">
+                    <i class="fa-solid fa-envelope text-neonGreen"></i>
+                    <span>info@barai.es</span>
+                </a>
+                <a href="https://app.barai.es" target="_blank"
+                    class="px-4 py-2.5 rounded-xl bg-gray-900 border border-neonCyan/50 text-neonCyan font-semibold text-sm hover:bg-neonCyan/10 transition-all glow-cyan flex items-center space-x-2">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Iniciar Sesión</span>
+                </a>
+                <a href="#contact"
+                    class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold hover:opacity-90 transition-all glow-green">
+                    Solicitar Demo
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-6 py-4 space-y-4">
+            <a href="#features" class="block text-gray-300 hover:text-neonGreen">Características</a>
+            <a href="#dashboard-preview" class="block text-gray-300 hover:text-neonGreen">Paneles Gerenciales</a>
+            <a href="#customer-story" class="block text-gray-300 hover:text-neonGreen">Experiencia Cliente</a>
+            <a href="#calculator" class="block text-gray-300 hover:text-neonGreen">Calculadora</a>
+            <a href="#pricing" class="block text-gray-300 hover:text-neonGreen">Planes</a>
+            <div class="pt-2 flex flex-col space-y-3">
+                <a href="mailto:info@barai.es" class="text-center text-xs text-gray-400"><i
+                        class="fa-solid fa-envelope mr-1 text-neonGreen"></i> info@barai.es</a>
+                <a href="https://app.barai.es" target="_blank"
+                    class="text-center py-2.5 rounded-xl bg-gray-900 border border-neonCyan text-neonCyan font-bold flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Iniciar Sesión</span>
+                </a>
+                <a href="#contact" class="text-center py-2.5 rounded-xl bg-neonGreen text-darkBg font-bold">Solicitar
+                    Acceso</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neonGreen/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-neonCyan/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div
+                class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-cardBg border border-neonGreen/30 mb-8 glow-green">
+                <span class="flex h-2 w-2 rounded-full bg-neonGreen animate-ping"></span>
+                <span class="text-xs sm:text-sm font-semibold text-neonGreen tracking-wide uppercase">Plataforma
+                    Inteligente de Hostelería 2026</span>
+            </div>
+
+            <h1
+                class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight">
+                ¡Revoluciona tu Bar con <span class="gradient-text">Inteligencia Artificial</span>! 🚀
+            </h1>
+
+            <p class="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-light">
+                BarAI | Plataforma Integral de Gestión y Optimización. Integración total en tiempo real: inventario
+                predictivo, comandas en cocina, control de personal, ventas y menús digitales QR.
+            </p>
+
+            <div
+                class="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-5">
+                <a href="#contact"
+                    class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-lg hover:scale-105 transition-transform glow-green flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Solicitar Demo en info@barai.es</span>
+                </a>
+                <a href="#dashboard-preview"
+                    class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cardBg border border-gray-700 text-white font-semibold text-lg hover:border-neonCyan transition-all flex items-center justify-center space-x-3 glow-cyan">
+                    <i class="fa-solid fa-desktop text-neonCyan"></i>
+                    <span>Ver Paneles en Acción</span>
+                </a>
+            </div>
+
+            <div class="mt-16 relative max-w-4xl mx-auto floating">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-neonGreen to-neonCyan rounded-2xl blur-lg opacity-30">
+                </div>
+                <div
+                    class="relative rounded-2xl bg-cardBg border border-gray-800 p-2 sm:p-4 shadow-2xl overflow-hidden">
+                    <div
+                        class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-lg">
+                        <iframe class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/63guiTrKues?si=tOZihOq9iY346osJ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard-preview" class="py-24 bg-cardBg/30 relative border-t border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div
+                    class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
+                    <span>Sistema Operativo Integral para Gerentes</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                    Explora los <span class="gradient-text">Módulos del Sistema</span>
+                </h2>
+                <p class="mt-4 text-gray-400 text-lg">
+                    Control absoluto desde el panel de gerencia, comandas en tiempo real, control de personal, cobros y
+                    analíticas de rendimiento impulsadas por IA.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="switchTab('grid')" id="btn-grid"
+                    class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg shadow-lg">
+                    <i class="fa-solid fa-bolt mr-2"></i> Live Grid (Comandas)
+                </button>
+                <button onclick="switchTab('mesas')" id="btn-mesas"
+                    class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-chair mr-2"></i> Gestión de Mesas
+                </button>
+                <button onclick="switchTab('performance')" id="btn-performance"
+                    class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-chart-line mr-2"></i> Performance & IA
+                </button>
+                <button onclick="switchTab('personal')" id="btn-personal"
+                    class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-users mr-2"></i> Control de Personal
+                </button>
+                <button onclick="switchTab('cobros')" id="btn-cobros"
+                    class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-cash-register mr-2"></i> Historial de Cobros
+                </button>
+            </div>
+
+            <div class="relative rounded-2xl bg-cardBg border border-gray-800 p-3 sm:p-6 shadow-2xl">
+                <div id="tab-grid" class="tab-content active space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
+                        <span>Vista en vivo de cocina y barra (Compatible con tablets y móviles)</span>
+                        <span class="text-neonGreen font-mono">Bar AI - Sincronizado</span>
+                    </div>
+                    <div
+                        class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-xl">
+                        <iframe class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/vRHhjdZk7KU?si=p9MJbg5GJ_h5zMkH"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div id="tab-mesas" class="tab-content space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
+                        <span>Control detallado de mesas activas, importes totales y cobros</span>
+                        <span class="text-neonCyan font-mono">Actualización Instantánea</span>
+                    </div>
+                    <img src="https://i.imgur.com/kcQaMzX.png" alt="Gestión de Mesas Dashboard"
+                        class="w-full rounded-xl border border-gray-800 shadow-xl">
+                </div>
+
+                <div id="tab-performance" class="tab-content space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
+                        <span>Métricas de velocidad de servicio, pedidos totales y eficiencia del staff</span>
+                        <span class="text-neonGreen font-mono">Algoritmo Predictivo IA</span>
+                    </div>
+                    <img src="https://i.imgur.com/Gk54cNM.png" alt="Performance Metrics Dashboard"
+                        class="w-full rounded-xl border border-gray-800 shadow-xl">
+                </div>
+
+                <div id="tab-personal" class="tab-content space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
+                        <span>Monitoreo de camareros, cocineros y línea de tiempo de conexiones en tiempo real</span>
+                        <span class="text-neonCyan font-mono">Control de Sesiones</span>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div>
+                            <img src="https://i.imgur.com/TamTUpR.png"
+                                alt="Panel general de empleados conectados y desconectados"
+                                class="w-full rounded-xl border border-gray-800 shadow-xl">
+                            <p class="text-xs text-gray-400 mt-2 text-center">Panel general de empleados conectados y
+                                desconectados</p>
+                        </div>
+                        <div>
+                            <img src="https://i.imgur.com/jfNVM7S.png" alt="Línea de tiempo de actividad por usuario"
+                                class="w-full rounded-xl border border-gray-800 shadow-xl">
+                            <p class="text-xs text-gray-400 mt-2 text-center">Línea de tiempo de actividad por usuario
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-cobros" class="tab-content space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
+                        <span>Historial de tickets cobrados por fecha, empleado y desglose de caja</span>
+                        <span class="text-neonGreen font-mono">Caja Registradora Inteligente</span>
+                    </div>
+                    <img src="https://i.imgur.com/bfMaLPV.png" alt="Historial de Cobros Dashboard"
+                        class="w-full rounded-xl border border-gray-800 shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="customer-story" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div
+                    class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
+                    <span>Recorrido del Cliente en Terraza</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                    La Experiencia <span class="gradient-text">BarAI</span> Paso a Paso
+                </h2>
+                <p class="mt-4 text-gray-400 text-lg">
+                    Desde que Mateo se sienta en la terraza hasta que escanea el QR, pide y disfruta de su bebida
+                    favorita con confirmación instantánea.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+                <div class="bg-cardBg p-6 rounded-3xl border border-gray-800">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl mb-6">
+                        <img src="https://i.imgur.com/68XhFdL.png" alt="Storyboard Experiencia Cliente"
+                            class="w-full h-auto object-cover rounded-xl border border-gray-800">
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Secuencia Completa en Mesa</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        1. Mateo toma asiento en el bar.<br>
+                        2. Escanea el código QR de madera de la mesa.<br>
+                        3. Visualiza la carta digital multidioma en su smartphone.<br>
+                        4. Añade productos al carrito de forma instantánea.<br>
+                        5. Recibe la confirmación inmediata del pedido.<br>
+                        6. Disfruta de una atención excelente y sin esperas.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div
+                        class="bg-cardBg p-6 rounded-2xl border border-gray-800 hover:border-neonGreen/40 transition-all">
+                        <div class="flex items-center space-x-4 mb-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-neonGreen/10 flex items-center justify-center text-neonGreen font-bold">
+                                1</div>
+                            <h4 class="text-lg font-bold text-white">Escaneo sin Descargas</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">El cliente accede de inmediato vía web móvil con menús
+                            adaptados (ES, CAT, EN, CN).</p>
+                    </div>
+
+                    <div
+                        class="bg-cardBg p-6 rounded-2xl border border-gray-800 hover:border-neonCyan/40 transition-all">
+                        <div class="flex items-center space-x-4 mb-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-neonCyan/10 flex items-center justify-center text-neonCyan font-bold">
+                                2</div>
+                            <h4 class="text-lg font-bold text-white">Sincronización con Barra</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">El pedido entra al instante en el grid de cocina y barra,
+                            reduciendo los tiempos de servicio a la mitad.</p>
+                    </div>
+
+                    <div
+                        class="bg-cardBg p-6 rounded-2xl border border-gray-800 hover:border-neonGreen/40 transition-all">
+                        <div class="flex items-center space-x-4 mb-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-neonGreen/10 flex items-center justify-center text-neonGreen font-bold">
+                                3</div>
+                            <h4 class="text-lg font-bold text-white">Felicidad y Fidelización</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Clientes más satisfechos, mayor rotación de mesas y aumento del
+                            ticket medio por noche.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <div class="bg-cardBg p-4 rounded-2xl border border-gray-800">
+                    <img src="https://i.imgur.com/Vvry0GI.png" alt="Mateo Customer Journey"
+                        class="w-full rounded-xl border border-gray-800">
+                    <p class="text-xs text-gray-400 mt-2 text-center">Secuencia detallada de interacción del cliente</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-2xl border border-gray-800 flex items-center justify-center">
+                    <div class="text-center p-6">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center mx-auto mb-4 glow-green">
+                            <i class="fa-solid fa-martini-glass-citrus text-darkBg text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Diseñado para la Hostelería del Futuro</h4>
+                        <p class="text-gray-400 text-sm">Optimiza cada proceso de tu local desde un único panel
+                            inteligente respaldado por inteligencia artificial.</p>
+                        <a href="#contact"
+                            class="mt-6 inline-block px-6 py-3 rounded-xl bg-neonGreen text-darkBg font-bold text-sm">Solicitar
+                            Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 bg-cardBg/30 relative border-t border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                    Características Principales de <span class="gradient-text">BarAI</span>
+                </h2>
+                <p class="mt-4 text-gray-400 text-lg">Tecnología punta diseñada específicamente para la hostelería
+                    moderna.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-neonGreen/50 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-neonGreen/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-boxes-stacked text-neonGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Inventario Predictivo</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Control en tiempo real de mermas, bebidas y
+                        alimentos con alertas automáticas antes de agotar existencias.</p>
+                </div>
+
+                <div
+                    class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-neonCyan/50 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-neonCyan/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-users-gear text-neonCyan text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Gestión de Personal IA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Control de conexiones, turnos y rendimiento de
+                        camareros y cocineros con líneas de tiempo detalladas.</p>
+                </div>
+
+                <div
+                    class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-neonGreen/50 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-neonGreen/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cash-register text-neonGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">POS & Cobros Inteligentes</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Historial de cobros unificado por fechas, cierre de
+                        caja automático y gestión fluida de mesas activas y cobradas.</p>
+                </div>
+
+                <div
+                    class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-neonCyan/50 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-neonCyan/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-language text-neonCyan text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Soporte Multidioma</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Cartas digitales adaptadas automáticamente para
+                        turistas en Español, Catalán, Inglés y Chino.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-24 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cardBg p-8 sm:p-12 rounded-3xl border border-gray-800 shadow-2xl relative">
+                <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+                    <i class="fa-solid fa-calculator text-9xl text-neonGreen"></i>
+                </div>
+
+                <div class="max-w-2xl mb-10">
+                    <div
+                        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
+                        <span>Calculadora de Rentabilidad</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">¿Cuánto puedes ahorrar con BarAI?</h2>
+                    <p class="text-gray-400 text-sm mt-2">Mueve el selector según la facturación mensual estimada de tu
+                        local.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-semibold text-gray-300">Facturación Mensual Estimada:</span>
+                            <span id="volume-label" class="text-2xl font-black text-neonGreen">€30,000 / mes</span>
+                        </div>
+                        <input type="range" id="volume-range" min="10000" max="150000" step="5000" value="30000"
+                            class="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-neonGreen"
+                            oninput="calculateSavings()">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-gray-800">
+                        <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800">
+                            <div class="text-xs text-gray-400">Ahorro Estimado en Mermas y Stock</div>
+                            <div id="saved-money" class="text-3xl font-black text-white mt-1">€4,500 <span
+                                    class="text-xs text-neonGreen font-normal">/ mes</span></div>
+                        </div>
+                        <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800">
+                            <div class="text-xs text-gray-400">Tiempo Administrativo Recuperado</div>
+                            <div id="saved-time" class="text-3xl font-black text-white mt-1">32 hrs <span
+                                    class="text-xs text-neonCyan font-normal">/ mes</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-cardBg/30 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                    Planes Adaptados a tu <span class="gradient-text">Negocio</span>
+                </h2>
+                <p class="mt-4 text-gray-400 text-lg">Sin costes ocultos. Escala desde un bar de barrio hasta grandes
+                    cadenas de restauración.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-cardBg p-8 rounded-3xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-neonGreen uppercase tracking-wider mb-2">Básico Bar</div>
+                        <div class="text-4xl font-extrabold text-white mb-2">0€ <span
+                                class="text-sm font-normal text-gray-400">2 primeros meses</span></div>
+                        <div class="text-sm text-gray-400 mb-2">€79 /mes</div>
+                        <p class="text-gray-400 text-sm mb-6">Ideal para locales pequeños o cafeterías con barra única.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Control de inventario
+                                    básico</span></li>
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Alertas de stock bajo</span></li>
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Soporte vía info@barai.es</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact"
+                            class="block text-center py-3 rounded-xl border border-neonGreen text-neonGreen font-bold hover:bg-neonGreen/10 transition-colors">Elegir
+                            Básico</a>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-b from-cardBg to-gray-900 p-8 rounded-3xl border-2 border-neonGreen flex flex-col justify-between relative glow-green">
+                    <div
+                        class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neonGreen text-darkBg text-xs font-extrabold px-3 py-1 rounded-full">
+                        MÁS POPULAR
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-neonCyan uppercase tracking-wider mb-2">Pro Hostelería</div>
+                        <div class="text-4xl font-extrabold text-white mb-4">€159<span
+                                class="text-sm font-normal text-gray-400">/mes</span></div>
+                        <p class="text-gray-400 text-sm mb-6">Para bares medianos y terrazas con alta rotación.</p>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Menú digital QR
+                                    interactivo</span></li>
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Predicción de demanda por
+                                    IA</span></li>
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Optimización de personal y
+                                    turnos</span></li>
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Soporte prioritario
+                                    info@barai.es</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact"
+                            class="block text-center py-3 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold hover:opacity-95 transition-all">Elegir
+                            Pro</a>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg p-8 rounded-3xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-neonCyan uppercase tracking-wider mb-2">Enterprise / Cadenas
+                        </div>
+                        <div class="text-4xl font-extrabold text-white mb-4">Personalizado</div>
+                        <p class="text-gray-400 text-sm mb-6">Para franquicias y grupos de restauración con múltiples
+                            locales.</p>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Multi-local sincronizado</span>
+                            </li>
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Integración con TPVs
+                                    avanzados</span></li>
+                            <li class="flex items-center space-x-3"><i
+                                    class="fa-solid fa-check text-neonGreen"></i><span>Gerente de cuenta dedicado</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact"
+                            class="block text-center py-3 rounded-xl border border-neonCyan text-neonCyan font-bold hover:bg-neonCyan/10 transition-colors">Contactar
+                            Ventas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto optimizada sin el div absoluto que causaba el espacio blanco -->
+    <section id="contact" class="py-16 relative bg-cardBg/30 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-cardBg rounded-3xl border border-gray-800 p-8 sm:p-12 shadow-2xl">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                        Empieza con <span class="gradient-text">BarAI</span>
+                    </h2>
+                    <p class="mt-3 text-gray-400 text-sm">
+                        Rellena el formulario y envíalo directamente a nuestro equipo en <strong
+                            class="text-white">info@barai.es</strong>.
+                    </p>
+                </div>
+
+                <form id="waitlist-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div
+                        class="bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-center p-4 rounded-xl mb-4">
+                        🎉 ¡Los 2 primeros meses del Pack Básico son GRATIS! 🎉
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label
+                                class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nombre y
+                                Apellido</label>
+                            <input type="text" id="name" required
+                                class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
+                                placeholder="Ej. Ana Martínez">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Correo
+                                Electrónico</label>
+                            <input type="email" id="email" required
+                                class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
+                                placeholder="ana@tubar.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label
+                                class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nombre
+                                del Bar / Restaurante</label>
+                            <input type="text" id="business" required
+                                class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
+                                placeholder="Ej. Bar AI">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Teléfono
+                                / WhatsApp</label>
+                            <input type="tel" id="phone" required
+                                class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
+                                placeholder="+34 600 000 000">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label
+                                class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">CIF</label>
+                            <input type="text" id="cif" required
+                                class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
+                                placeholder="Ej. B12345678">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Dirección,
+                                CP, Ciudad</label>
+                            <input type="text" id="address" required
+                                class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
+                                placeholder="Ej. Gran Vía 1, 28013, Madrid">
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-lg hover:opacity-95 transition-opacity glow-green shadow-lg flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Enviar Solicitud a info@barai.es</span>
+                    </button>
+                </form>
+
+                <div id="success-msg"
+                    class="hidden mt-6 p-4 rounded-xl bg-darkGreen border border-neonGreen text-neonGreen text-center font-medium">
+                    <i class="fa-solid fa-circle-check mr-2"></i> ¡Solicitud preparada con éxito! Abriendo gestor de
+                    correo para enviar a <a href="mailto:info@barai.es" class="underline font-bold">info@barai.es</a>...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darkBg border-t border-gray-800 py-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-8 h-8 rounded-lg bg-cardBg border border-neonGreen/40 flex items-center justify-center overflow-hidden p-0.5">
+                    <img src="https://lh3.googleusercontent.com/d/1Qp7yp64UNdDlolajCc1Km4y4jLo0NRhZ" alt="BarAI Logo"
+                        class="w-full h-full object-cover rounded">
+                </div>
+                <span class="text-xl font-extrabold tracking-wider text-white">Bar<span
+                        class="gradient-text">AI</span></span>
+            </div>
+            <div class="text-xs text-gray-400 flex items-center space-x-2">
+                <i class="fa-solid fa-envelope text-neonGreen"></i>
+                <a href="mailto:info@barai.es"
+                    class="hover:text-neonGreen transition-colors font-medium">info@barai.es</a>
+            </div>
+            <p class="text-xs text-gray-500 text-center">
+                © 2026 BarAI Technologies. Todos los derechos reservados.
+            </p>
+            <div class="flex space-x-4 text-gray-400">
+                <a href="#" class="hover:text-neonGreen"><i class="fa-brands fa-twitter text-lg"></i></a>
+                <a href="#" class="hover:text-neonGreen"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="https://www.instagram.com/barai.es/" target="_blank" class="hover:text-neonGreen"><i
+                        class="fa-brands fa-instagram text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('[id^="btn-"]');
+            buttons.forEach(btn => {
+                btn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white";
+            });
+
+            document.getElementById('tab-' + tabId).classList.add('active');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg shadow-lg";
+        }
+
+        function calculateSavings() {
+            const range = document.getElementById('volume-range').value;
+            const volumeLabel = document.getElementById('volume-label');
+            const savedMoney = document.getElementById('saved-money');
+            const savedTime = document.getElementById('saved-time');
+
+            volumeLabel.textContent = '€' + parseInt(range).toLocaleString() + ' / mes';
+
+            const money = Math.round(range * 0.085);
+            const time = Math.round(range / 1000);
+
+            savedMoney.innerHTML = '€' + money.toLocaleString() + ' <span class="text-xs text-neonGreen font-normal">/ mes</span>';
+            savedTime.innerHTML = time + ' hrs <span class="text-xs text-neonCyan font-normal">/ mes</span>';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const business = document.getElementById('business').value;
+            const phone = document.getElementById('phone').value;
+            const cif = document.getElementById('cif').value;
+            const address = document.getElementById('address').value;
+            const successMsg = document.getElementById('success-msg');
+            const form = document.getElementById('waitlist-form');
+            const btn = form.querySelector('button[type="submit"]');
+
+            btn.disabled = true;
+            const originalBtnHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>';
+
+            const formData = new FormData();
+            formData.append('nombre', business + " (" + name + ")");
+            formData.append('telefono', phone);
+            formData.append('email', email);
+            formData.append('cif', cif);
+            formData.append('direccion', address);
+            formData.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
+
+            // Aseguramos que la URL esté definida (si está definida abajo, la subimos o la referenciamos)
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwIW4Q8JOTup-4fh778_kflrFCDxdCzn3BVh0RsMpuAu68ca-fQc6xvp6NEnb_rODjR/exec';
+
+            fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+                .then(() => {
+                    successMsg.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> ¡Solicitud enviada con éxito! Revisa tu correo.';
+                    successMsg.classList.remove('hidden');
+                    form.reset();
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalBtnHtml;
+                    setTimeout(() => {
+                        successMsg.classList.add('hidden');
+                    }, 8000);
+                });
+        }
+
+        // Corrección para los anclajes de navegación dentro de iframes
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://whatsapp.com/channel/0029VbCgQBcCMY0FQk26uU3x" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)] hover:bg-green-400 hover:scale-110 transition-all z-50 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span
+            class="absolute right-16 bg-gray-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-700">Únete
+            al Canal</span>
+    </a>
+</body>
+
+</html>
