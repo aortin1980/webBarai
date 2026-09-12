@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarAI - Guía de Uso (Helpdesk)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        neonGreen: '#10b981',
+                        neonCyan: '#06b6d4',
+                        darkGreen: '#022c22'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .glow-green { box-shadow: 0 0 25px rgba(16, 185, 129, 0.35); }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-glass {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        /* Acordeón Styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .accordion-active .accordion-content {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .accordion-active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-darkBg text-gray-100 selection:bg-neonGreen selection:text-darkBg min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1">
+                    <img src="https://lh3.googleusercontent.com/d/1Qp7yp64UNdDlolajCc1Km4y4jLo0NRhZ" alt="BarAI Logo" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span class="gradient-text">AI</span></span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-neonGreen transition-colors flex items-center space-x-2">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Volver a Inicio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neonCyan/10 rounded-full blur-[150px] pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
+                    <span>Manual Oficial de Operativa</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
+                    Guía de Uso <span class="gradient-text">Helpdesk</span>
+                </h1>
+                <p class="text-gray-400 text-lg">
+                    Aprende cómo funciona el motor de BarAI: desde que un cliente se sienta hasta el cobro y cierre automático de la mesa.
+                </p>
+            </div>
+
+            <!-- Acordeones -->
+            <div class="space-y-4">
+                
+                <!-- Sección 1 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-900/30 text-blue-400 flex items-center justify-center">
+                                <i class="fa-solid fa-qrcode text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">1. Escaneo de QR y Sesiones</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
+                        <p>Cuando un cliente escanea el código QR de su mesa, el sistema verifica automáticamente el local y la mesa. Se genera una <strong>sesión única vinculada a su dispositivo</strong> (mediante cookies seguras). Inmediatamente, la mesa aparece como "Ocupada" en el panel de los camareros gracias a la sincronización en tiempo real.</p>
+                    </div>
+                </div>
+
+                <!-- Sección 2 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-neonGreen/20 text-neonGreen flex items-center justify-center">
+                                <i class="fa-solid fa-bell-concierge text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">2. Pedidos a Cocina / Barra</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
+                        <p>Al pulsar "Pedir", el sistema calcula el precio verificándolo con la base de datos interna para máxima seguridad (evitando fraudes de precios modificados en el móvil). El pedido se registra con estado <em>"recibido"</em> e inmediatamente aparece una tarjeta visual en la pantalla de cocina, acompañada de una notificación sonora.</p>
+                    </div>
+                </div>
+
+                <!-- Sección 3 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-orange-900/30 text-orange-400 flex items-center justify-center">
+                                <i class="fa-solid fa-hand text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">3. "Llamar al Camarero"</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
+                        <p>Si el cliente requiere atención en mesa, puede pulsar "Llamar camarero". Esto genera un pedido especial que <strong>solo visualizan los camareros</strong>; los cocineros ignoran esta alerta en su pantalla para no interrumpir la preparación de comida.</p>
+                    </div>
+                </div>
+
+                <!-- Sección 4 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-purple-900/30 text-purple-400 flex items-center justify-center">
+                                <i class="fa-solid fa-spinner text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">4. Transición: Oído, Preparando y Completado</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed space-y-2">
+                        <p>El personal controla el pedido mediante botones:</p>
+                        <ul class="list-disc list-inside ml-2">
+                            <li><strong>Oído</strong>: El personal acepta el pedido. Tras unos segundos, BarAI lo pasará automáticamente a <strong>Preparando</strong> para ahorrarle clics al personal.</li>
+                            <li><strong>Completado</strong>: Una vez se sirve en mesa, el camarero lo marca como completado. Esto dispara un aviso al móvil del cliente preguntándole si desea recibir un ticket digital.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sección 5 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-red-900/30 text-red-400 flex items-center justify-center">
+                                <i class="fa-solid fa-trash-can text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">5. Cancelaciones y Seguridad (PIN)</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
+                        <p><strong>Por parte del cliente:</strong> Solo puede cancelar un pedido si nadie en barra o cocina lo ha tocado (estado "Recibido").<br>
+                        <strong>Por parte del personal:</strong> Si un pedido ya está en preparación o servido, anularlo requerirá introducir un <strong>PIN de seguridad</strong> configurado por el gerente, evitando cancelaciones fraudulentas.</p>
+                    </div>
+                </div>
+
+                <!-- Sección 6 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-900/30 text-emerald-400 flex items-center justify-center">
+                                <i class="fa-solid fa-cash-register text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">6. Cobrar la Mesa (Checkout)</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
+                        <p>Al pulsar "Cobrar", BarAI calcula el importe total basándose <strong>únicamente en los pedidos que han sido Completados</strong> (entregados al cliente). Lo que no se haya servido, se descarta para no cobrarlo por error. Tras el pago, la mesa se libera y la sesión del cliente se cierra.</p>
+                    </div>
+                </div>
+
+                <!-- Sección 7 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-neonCyan/20 text-neonCyan flex items-center justify-center">
+                                <i class="fa-solid fa-file-pdf text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">7. Envío de Tickets Digitales PDF</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
+                        <p>Si el cliente solicitó el ticket por correo, este no se envía de inmediato para no saturar el sistema (envío asíncrono). Se pondrá en cola y <strong>justo en el momento en el que el camarero cobre la mesa</strong>, el servidor unirá todos los pedidos, generará un único PDF y lo enviará automáticamente al email del cliente.</p>
+                    </div>
+                </div>
+
+                <!-- Sección 8 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
+                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-yellow-900/30 text-yellow-400 flex items-center justify-center">
+                                <i class="fa-solid fa-robot text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">8. Monitor de Inactividad (IA)</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
+                        <p>BarAI dispone de un demonio en segundo plano que vigila el comportamiento de los locales de manera aislada. Si una mesa se escanea, pero tras <strong>10 minutos</strong> el cliente no ha realizado ningún pedido, el sistema genera una alerta automática avisando a los camareros de que "Esa mesa lleva 10 minutos sin atención". ¡Mejora las ventas pasivas!</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="ticket.html" class="inline-flex items-center space-x-2 text-neonCyan hover:text-neonGreen transition-colors font-medium">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>¿Tienes más dudas? Abre un ticket de soporte</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-cardBg py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-xs text-gray-500">© 2026 BarAI Technologies. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            
+            // Cerrar todos los demás
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                if(el !== item) {
+                    el.classList.remove('accordion-active');
+                }
+            });
+
+            // Alternar el actual
+            item.classList.toggle('accordion-active');
+        }
+    </script>
+</body>
+</html>
