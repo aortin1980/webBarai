@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarAI - Abrir Ticket de Soporte</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -32,12 +33,17 @@
             background-color: #0b0f19;
             color: #f3f4f6;
         }
-        .glow-green { box-shadow: 0 0 25px rgba(16, 185, 129, 0.35); }
+
+        .glow-green {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+        }
+
         .gradient-text {
             background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .bg-glass {
             background: rgba(17, 24, 39, 0.85);
             backdrop-filter: blur(12px);
@@ -52,13 +58,17 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-3">
-                <div class="w-12 h-12 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1">
-                    <img src="https://lh3.googleusercontent.com/d/1Qp7yp64UNdDlolajCc1Km4y4jLo0NRhZ" alt="BarAI Logo" class="w-full h-full object-cover rounded-lg">
+                <div
+                    class="w-12 h-12 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1">
+                    <img src="https://lh3.googleusercontent.com/d/1Qp7yp64UNdDlolajCc1Km4y4jLo0NRhZ" alt="BarAI Logo"
+                        class="w-full h-full object-cover rounded-lg">
                 </div>
-                <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span class="gradient-text">AI</span></span>
+                <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span
+                        class="gradient-text">AI</span></span>
             </a>
             <div class="flex items-center space-x-4">
-                <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-neonGreen transition-colors flex items-center space-x-2">
+                <a href="index.html"
+                    class="text-sm font-medium text-gray-300 hover:text-neonGreen transition-colors flex items-center space-x-2">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span>Volver a Inicio</span>
                 </a>
@@ -68,8 +78,10 @@
 
     <!-- Contenido Principal -->
     <main class="flex-grow flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neonGreen/10 rounded-full blur-[120px] pointer-events-none"></div>
-        
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neonGreen/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
         <div class="w-full max-w-2xl bg-cardBg rounded-3xl border border-gray-800 p-8 sm:p-12 shadow-2xl relative z-10">
             <div class="text-center mb-10">
                 <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
@@ -82,28 +94,32 @@
 
             <form id="ticket-form" onsubmit="handleTicketSubmit(event)" class="space-y-6">
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nombre del Bar</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nombre del
+                        Bar</label>
                     <input type="text" id="bar_name" required
                         class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
                         placeholder="Ej. Bar Central">
                 </div>
-                
+
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Tu Usuario / Nombre</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Tu Usuario /
+                        Nombre</label>
                     <input type="text" id="user_name" required
                         class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
                         placeholder="Ej. Juan Pérez">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Email de Contacto (Opcional)</label>
-                    <input type="email" id="email" 
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Email de
+                        Contacto (Opcional)</label>
+                    <input type="email" id="email"
                         class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
                         placeholder="juan@ejemplo.com">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">¿Cuál es el problema?</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">¿Cuál es el
+                        problema?</label>
                     <textarea id="problem" required rows="5"
                         class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors resize-none"
                         placeholder="Describe el problema que estás experimentando..."></textarea>
@@ -116,11 +132,14 @@
                 </button>
             </form>
 
-            <div id="ticket-success" class="hidden mt-6 p-4 rounded-xl bg-darkGreen border border-neonGreen text-neonGreen text-center font-medium">
+            <div id="ticket-success"
+                class="hidden mt-6 p-4 rounded-xl bg-darkGreen border border-neonGreen text-neonGreen text-center font-medium">
                 <i class="fa-solid fa-circle-check mr-2"></i> ¡Ticket enviado! Nuestro equipo lo revisará pronto.
             </div>
-            <div id="ticket-error" class="hidden mt-6 p-4 rounded-xl bg-red-900/30 border border-red-500 text-red-400 text-center font-medium">
-                <i class="fa-solid fa-circle-xmark mr-2"></i> Hubo un error al enviar el ticket. Por favor, intenta de nuevo o escríbenos a info@barai.es.
+            <div id="ticket-error"
+                class="hidden mt-6 p-4 rounded-xl bg-red-900/30 border border-red-500 text-red-400 text-center font-medium">
+                <i class="fa-solid fa-circle-xmark mr-2"></i> Hubo un error al enviar el ticket. Por favor, intenta de
+                nuevo o escríbenos a info@barai.es.
             </div>
         </div>
     </main>
@@ -139,7 +158,7 @@
             const userName = document.getElementById('user_name').value;
             const email = document.getElementById('email').value;
             const problem = document.getElementById('problem').value;
-            
+
             const successMsg = document.getElementById('ticket-success');
             const errorMsg = document.getElementById('ticket-error');
             const form = document.getElementById('ticket-form');
@@ -158,32 +177,33 @@
             formData.append('direccion', "App BarAI");
             formData.append('mensaje', "TICKET DE SOPORTE:\n" + problem);
 
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwIW4Q8JOTup-4fh778_kflrFCDxdCzn3BVh0RsMpuAu68ca-fQc6xvp6NEnb_rODjR/exec';
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbzWGwPL_pFKPDaQ02D4lGTKCa4O83FRONwuE8ZnrUAIgUrNurhTjyEnjY9mwOr2skvK/exec';
 
             fetch(scriptUrl, {
                 method: 'POST',
                 mode: 'no-cors', // Evita problemas de CORS al enviar a Google Apps Script
                 body: formData
             })
-            .then(() => {
-                successMsg.classList.remove('hidden');
-                errorMsg.classList.add('hidden');
-                form.reset();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                errorMsg.classList.remove('hidden');
-                successMsg.classList.add('hidden');
-            })
-            .finally(() => {
-                btn.disabled = false;
-                btn.innerHTML = originalBtnHtml;
-                setTimeout(() => {
-                    successMsg.classList.add('hidden');
+                .then(() => {
+                    successMsg.classList.remove('hidden');
                     errorMsg.classList.add('hidden');
-                }, 8000);
-            });
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    errorMsg.classList.remove('hidden');
+                    successMsg.classList.add('hidden');
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalBtnHtml;
+                    setTimeout(() => {
+                        successMsg.classList.add('hidden');
+                        errorMsg.classList.add('hidden');
+                    }, 8000);
+                });
         }
     </script>
 </body>
+
 </html>
