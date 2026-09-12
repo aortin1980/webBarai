@@ -142,7 +142,7 @@
                             </ul>
                         </div>
                         <div class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-gray-800">
-                            <img src="assets/client_view_mockup.jpg" alt="Vista Cliente" class="rounded-xl shadow-2xl max-h-[360px] object-cover border border-gray-700">
+                            <img src="assets/cliente_vista_pedidos.png" alt="Vista Móvil de Pedidos BarAI" class="rounded-xl shadow-2xl max-h-[380px] w-auto object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                 <div class="help-card bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-800 order-2 md:order-1">
-                            <img src="assets/kitchen_panel_mockup.jpg" alt="Panel de Cocina" class="rounded-xl shadow-2xl w-full object-cover border border-gray-700">
+                            <img src="assets/cocina_panel_kds.png" alt="Panel KDS de Cocina y Barra" class="rounded-xl shadow-2xl w-full object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
                         </div>
                         <div class="p-8 md:p-10 flex flex-col justify-center order-1 md:order-2">
                             <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-orange-900/30 text-orange-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-orange-800/50">
@@ -187,34 +187,33 @@
                 <div class="help-card bg-cardBg border border-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl transition-all duration-300">
                     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-900/30 text-red-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-red-800/50">
                         <i class="fa-solid fa-shield-halved"></i>
-                        <span>Control Antifraude</span>
+                        <span>Control Antifraude y Administración</span>
                     </div>
-                    <h2 class="text-2xl font-bold text-white mb-4">3. Reglas de Cancelación y PIN de Seguridad</h2>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Reglas de Cancelación y Configuración del Negocio</h2>
                     <p class="text-gray-400 mb-6 leading-relaxed text-sm">
-                        Para evitar pérdidas de comida y mermas económicas, el sistema aplica dos barreras de seguridad:
+                        Para evitar pérdidas de comida y mermas económicas, el sistema aplica dos barreras de seguridad y un panel centralizado de ajustes:
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800">
-                            <div class="text-neonCyan text-lg font-bold mb-2 flex items-center">
-                                <i class="fa-solid fa-user-xmark mr-2"></i> Cancelación por el Cliente
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="space-y-4 md:col-span-2">
+                            <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
+                                <div class="text-neonCyan text-base font-bold mb-1.5 flex items-center">
+                                    <i class="fa-solid fa-user-xmark mr-2"></i> Cancelación por el Cliente
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    El cliente <strong>solo puede anular</strong> su pedido si este aún se encuentra en estado <code>Recibido</code>. En cuanto cocina o barra pulsa "Oído" o "Preparar", el botón desaparece de su móvil.
+                                </p>
                             </div>
-                            <p class="text-gray-400 text-xs leading-relaxed mb-3">
-                                El cliente <strong>solo puede anular</strong> su pedido si este aún se encuentra en estado <code>Recibido</code>. 
-                            </p>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                En el instante en que cocina o barra pulsa "Oído" o "Preparar", el botón de cancelación desaparece del teléfono del cliente.
-                            </p>
+                            <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
+                                <div class="text-red-400 text-base font-bold mb-1.5 flex items-center">
+                                    <i class="fa-solid fa-key mr-2"></i> Cancelación del Personal (PIN Maestro)
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    Si un plato en preparación se cancela, el personal debe introducir el <strong>PIN de 4 dígitos</strong> del Administrador. Esto previene mermas descontroladas.
+                                </p>
+                            </div>
                         </div>
-                        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800">
-                            <div class="text-red-400 text-lg font-bold mb-2 flex items-center">
-                                <i class="fa-solid fa-key mr-2"></i> Cancelación del Personal (PIN)
-                            </div>
-                            <p class="text-gray-400 text-xs leading-relaxed mb-3">
-                                Si un plato ya está en marcha y se necesita anular, el sistema solicita un <strong>código PIN maestro de 4 dígitos</strong> del Administrador/Gerente.
-                            </p>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Esto evita anulaciones accidentales o descuadres en inventario sin autorización previa.
-                            </p>
+                        <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 flex items-center justify-center">
+                            <img src="assets/administracion_ajustes.png" alt="Panel de Administración y Ajustes" class="rounded-xl shadow-xl w-full max-h-[220px] object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
                         </div>
                     </div>
                 </div>
@@ -247,7 +246,7 @@
                             </ul>
                         </div>
                         <div class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-gray-800">
-                            <img src="assets/table_map_mockup.jpg" alt="Plano de Mesas" class="rounded-xl shadow-2xl w-full object-cover border border-gray-700">
+                            <img src="assets/sala_croquis_mesas.png" alt="Plano de Mesas y Sala" class="rounded-xl shadow-2xl w-full object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
                         </div>
                     </div>
                 </div>
