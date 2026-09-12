@@ -168,21 +168,23 @@
             const originalBtnHtml = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>';
 
-            const formData = new FormData();
-            // Mapeo los campos al formato que acepta contacto.gs
-            formData.append('nombre', barName + " (Usuario: " + userName + ")");
-            formData.append('telefono', "N/A");
-            formData.append('email', email || "info@barai.es"); // email genérico si no pone
-            formData.append('cif', "Ticket de Soporte");
-            formData.append('direccion', "App BarAI");
-            formData.append('mensaje', "TICKET DE SOPORTE:\n" + problem);
+            const payload = new URLSearchParams();
+            payload.append('nombre', barName + " (Usuario: " + userName + ")");
+            payload.append('telefono', "N/A");
+            payload.append('email', email || "info@barai.es");
+            payload.append('cif', "Ticket de Soporte");
+            payload.append('direccion', "App BarAI");
+            payload.append('mensaje', "TICKET DE SOPORTE:\n" + problem);
 
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbzmEbIcw9JnEYTA9TPgqnl5qpzbs1ei4Zx2PTkfeCM-BhSlEPNhIWLBQ_Z7t07kvPQ4/exec';
 
             fetch(scriptUrl, {
                 method: 'POST',
-                mode: 'no-cors', // Evita problemas de CORS al enviar a Google Apps Script
-                body: formData
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: payload
             })
                 .then(() => {
                     successMsg.classList.remove('hidden');

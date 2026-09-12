@@ -924,13 +924,13 @@
             const originalBtnHtml = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>';
 
-            const formData = new FormData();
-            formData.append('nombre', business + " (" + name + ")");
-            formData.append('telefono', phone);
-            formData.append('email', email);
-            formData.append('cif', cif);
-            formData.append('direccion', address);
-            formData.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
+            const payload = new URLSearchParams();
+            payload.append('nombre', business + " (" + name + ")");
+            payload.append('telefono', phone);
+            payload.append('email', email);
+            payload.append('cif', cif);
+            payload.append('direccion', address);
+            payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
 
             // Aseguramos que la URL esté definida (si está definida abajo, la subimos o la referenciamos)
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbzmEbIcw9JnEYTA9TPgqnl5qpzbs1ei4Zx2PTkfeCM-BhSlEPNhIWLBQ_Z7t07kvPQ4/exec';
@@ -938,7 +938,10 @@
             fetch(scriptUrl, {
                 method: 'POST',
                 mode: 'no-cors',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: payload
             })
                 .then(() => {
                     successMsg.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> ¡Solicitud enviada con éxito! Revisa tu correo.';
