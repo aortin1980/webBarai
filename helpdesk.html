@@ -4,7 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarAI - Guía de Uso Oficial y Helpdesk</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Guía de Uso Oficial y Helpdesk | BarAI Hostelería</title>
+    <meta name="description"
+        content="Manual y guía de uso oficial de BarAI. Aprende a gestionar pedidos por QR, KDS de cocina, seguridad con PIN, tickets digitales en PDF y cobro de mesas.">
+    <meta name="keywords"
+        content="helpdesk barai, manual barai, guia uso restaurante, kds cocina, comandas qr, tpv bar, cobrar mesa, ticket digital pdf, cancelacion pin">
+    <meta name="author" content="BarAI Technologies">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="theme-color" content="#0b0f19">
+    <link rel="canonical" href="https://www.barai.es/helpdesk.html" />
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="shortcut icon" href="assets/logo.ico">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.barai.es/helpdesk.html">
+    <meta property="og:title" content="Guía de Uso Oficial y Helpdesk | BarAI Hostelería">
+    <meta property="og:description"
+        content="Manual operativo y reglas de negocio de BarAI: pedidos en mesa, sincronización en cocina, seguridad y facturación.">
+    <meta property="og:image" content="https://www.barai.es/assets/logo.png">
+    <meta property="og:site_name" content="BarAI">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.barai.es/helpdesk.html">
+    <meta name="twitter:title" content="Guía de Uso Oficial y Helpdesk | BarAI">
+    <meta name="twitter:description"
+        content="Manual operativo y reglas de negocio de BarAI: pedidos en mesa, sincronización en cocina, seguridad y facturación.">
+    <meta name="twitter:image" content="https://www.barai.es/assets/logo.png">
+
+    <!-- Structured Data (Schema.org FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué ocurre si un cliente se sienta y no pide nada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El sistema detecta automáticamente la sesión abierta. Si transcurren 10 minutos sin registrar ningún pedido, el monitor de inactividad de BarAI envía una alerta acústica y visual al panel de los camareros indicando Atender Mesa X (Lleva 10m sin pedir)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo cobrar una mesa si hay platos pendientes en cocina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Al presionar Cobrar Mesa, el sistema suma únicamente los productos completados y servidos. Cualquier comanda que haya quedado en estado Recibido o Preparando se cancela automáticamente para no cobrar productos no consumidos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué se solicita un PIN de cancelación al personal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cuando una comanda ya ha sido aceptada por cocina y está en preparación, se requiere el PIN de 4 dígitos del Administrador o Gerente para asegurar que las mermas o anulaciones de comida queden registradas con autorización responsable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Los cocineros reciben las notificaciones de Llamar Camarero?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La vista de rol cocinero tiene un filtro estricto que ignora las llamadas de servicio de sala para no distraer la producción en fogones."
+          }
+        }
+      ]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -486,7 +561,13 @@
 
     <!-- Footer -->
     <footer class="border-t border-gray-800 bg-cardBg py-8 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-400">
+                <a href="/aviso-legal/" class="hover:text-neonGreen transition-colors">Aviso legal</a>
+                <a href="/politica-de-privacidad/" class="hover:text-neonGreen transition-colors">Política de privacidad</a>
+                <a href="/politica-de-cookies/" class="hover:text-neonGreen transition-colors">Política de cookies</a>
+                <a href="/ticket.html" class="hover:text-neonGreen transition-colors">Soporte</a>
+            </div>
             <p class="text-xs text-gray-500">© 2026 BarAI Technologies. Todos los derechos reservados.</p>
         </div>
     </footer>
