@@ -98,139 +98,167 @@
                 </p>
             </div>
 
-            <!-- Acordeones -->
-            <div class="space-y-4">
+            <!-- Contenido Oficial de Guía de Uso -->
+            <div class="space-y-12">
                 
                 <!-- Sección 1 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-blue-900/30 text-blue-400 flex items-center justify-center">
-                                <i class="fa-solid fa-qrcode text-lg"></i>
+                <div class="bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-blue-800/50">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>Vista Móvil</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white">1. Escaneo de QR y Sesiones</h3>
+                            <h2 class="text-2xl font-bold text-white mb-4">1. Experiencia del Cliente</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed">
+                                El cliente es el centro del sistema. Para iniciar su experiencia, solo debe <strong class="text-gray-200">escanear el código QR</strong> situado en su mesa.
+                            </p>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start">
+                                    <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
+                                    <p class="text-gray-400 text-sm"><strong class="text-gray-200">Apertura Automática:</strong> Al escanear el QR, el sistema identifica la mesa (ej. Mesa 5) y abre una sesión virtual segura, vinculada a ese dispositivo móvil.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
+                                    <p class="text-gray-400 text-sm"><strong class="text-gray-200">Libertad de Pedido:</strong> El cliente navega por el menú, añade platos al carrito y confirma. La comanda viaja instantáneamente a cocina.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
+                                    <p class="text-gray-400 text-sm"><strong class="text-gray-200">Cancelaciones Seguras:</strong> Si se equivoca, puede anularlo desde su móvil SOLO si el pedido sigue en estado <em>Recibido</em>. Si cocina lo acepta, el botón desaparece.</p>
+                                </li>
+                            </ul>
+                            <div class="bg-blue-900/10 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fa-solid fa-lightbulb text-blue-400"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-blue-200">Si el cliente pulsa "Llamar Camarero", esto no interfiere con la vista de los cocineros, ya que el sistema filtra estas notificaciones automáticamente.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
-                        <p>Cuando un cliente escanea el código QR de su mesa, el sistema verifica automáticamente el local y la mesa. Se genera una <strong>sesión única vinculada a su dispositivo</strong> (mediante cookies seguras). Inmediatamente, la mesa aparece como "Ocupada" en el panel de los camareros gracias a la sincronización en tiempo real.</p>
+                        <div class="bg-gray-900 min-h-[300px] flex items-center justify-center p-6 border-l border-gray-800">
+                            <img src="assets/client_view_mockup.jpg" alt="Vista Cliente" class="rounded-xl shadow-2xl max-h-[400px] object-cover border border-gray-700">
+                        </div>
                     </div>
                 </div>
 
                 <!-- Sección 2 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-neonGreen/20 text-neonGreen flex items-center justify-center">
-                                <i class="fa-solid fa-bell-concierge text-lg"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">2. Pedidos a Cocina / Barra</h3>
+                <div class="bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="bg-gray-900 min-h-[300px] flex items-center justify-center p-6 border-r border-gray-800 order-2 md:order-1">
+                            <img src="assets/kitchen_panel_mockup.jpg" alt="Panel de Cocina" class="rounded-xl shadow-2xl w-full object-cover border border-gray-700">
                         </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
-                        <p>Al pulsar "Pedir", el sistema calcula el precio verificándolo con la base de datos interna para máxima seguridad (evitando fraudes de precios modificados en el móvil). El pedido se registra con estado <em>"recibido"</em> e inmediatamente aparece una tarjeta visual en la pantalla de cocina, acompañada de una notificación sonora.</p>
+                        <div class="p-8 md:p-10 flex flex-col justify-center order-1 md:order-2">
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-orange-900/30 text-orange-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-orange-800/50">
+                                <i class="fa-solid fa-fire-burner"></i>
+                                <span>Panel de Control</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white mb-4">2. Gestión de Cocina y Barra</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed">
+                                Este es el cerebro operativo. Todo el personal (Camareros y Cocineros) interactúa con este panel en tiempo real (sincronización por WebSockets).
+                            </p>
+                            <h3 class="text-lg font-semibold text-white mb-3">Ciclo de vida de la Comanda</h3>
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <span class="w-3 h-3 rounded-full bg-cyan-400 mr-3"></span>
+                                    <p class="text-sm text-gray-300"><strong class="text-white">Recibido (Azul/Cian):</strong> El pedido acaba de entrar. Suena una notificación acústica.</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-3 h-3 rounded-full bg-orange-400 mr-3"></span>
+                                    <p class="text-sm text-gray-300"><strong class="text-white">Preparando (Naranja):</strong> El personal ha pulsado "Preparar". Ya no se puede cancelar sin un PIN de 4 dígitos del Administrador.</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-3 h-3 rounded-full bg-green-500 mr-3"></span>
+                                    <p class="text-sm text-gray-300"><strong class="text-white">Completado (Verde):</strong> Plato terminado y llevado a mesa. Solo los completados suman a la cuenta final.</p>
+                                </div>
+                            </div>
+                            <div class="bg-red-900/10 border-l-4 border-red-500 p-4 rounded-r-lg">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-red-200">Los cocineros tienen una vista filtrada: no ven notificaciones de "Llamar camarero", solo ven tickets reales de comida o bebida, evitando distracciones.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Sección 3 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-orange-900/30 text-orange-400 flex items-center justify-center">
-                                <i class="fa-solid fa-hand text-lg"></i>
+                <div class="bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-900/30 text-purple-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-purple-800/50">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <span>Mapa en vivo</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white">3. "Llamar al Camarero"</h3>
+                            <h2 class="text-2xl font-bold text-white mb-4">3. El Croquis Inteligente</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed">
+                                Mapa visual del restaurante que refleja el estado real de cada grupo de clientes.
+                            </p>
+                            
+                            <h3 class="text-lg font-semibold text-white mb-3">Colores y Estados</h3>
+                            <div class="grid grid-cols-3 gap-2 mb-8">
+                                <div class="bg-gray-800/50 p-3 rounded-lg text-center border border-green-500/30">
+                                    <div class="w-4 h-4 rounded-full bg-green-500 mx-auto mb-2"></div>
+                                    <span class="text-xs text-gray-300">Verde (Libre)</span>
+                                </div>
+                                <div class="bg-gray-800/50 p-3 rounded-lg text-center border border-orange-500/30">
+                                    <div class="w-4 h-4 rounded-full bg-orange-500 mx-auto mb-2"></div>
+                                    <span class="text-xs text-gray-300">Naranja (Ocupada)</span>
+                                </div>
+                                <div class="bg-gray-800/50 p-3 rounded-lg text-center border border-red-500/30">
+                                    <div class="w-4 h-4 rounded-full bg-red-500 mx-auto mb-2 animate-pulse"></div>
+                                    <span class="text-xs text-gray-300">Rojo (Esperando/10m)</span>
+                                </div>
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-white mb-3">Facturación y Cobro</h3>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li><i class="fa-solid fa-angle-right text-neonCyan mr-2"></i>Al pulsar "Cobrar Mesa", el importe es el sumatorio <strong>exclusivo</strong> de pedidos <em>Completados</em>.</li>
+                                <li><i class="fa-solid fa-angle-right text-neonCyan mr-2"></i>No se puede cobrar algo no recibido. Lo que está "Preparando" se ignora.</li>
+                                <li><i class="fa-solid fa-angle-right text-neonCyan mr-2"></i>Tras cobrar, los pedidos huerfanos se cancelan y la mesa se pone verde.</li>
+                            </ul>
                         </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
-                        <p>Si el cliente requiere atención en mesa, puede pulsar "Llamar camarero". Esto genera un pedido especial que <strong>solo visualizan los camareros</strong>; los cocineros ignoran esta alerta en su pantalla para no interrumpir la preparación de comida.</p>
+                        <div class="bg-gray-900 min-h-[300px] flex items-center justify-center p-6 border-l border-gray-800">
+                            <img src="assets/table_map_mockup.jpg" alt="Plano de Mesas" class="rounded-xl shadow-2xl w-full object-cover border border-gray-700">
+                        </div>
                     </div>
                 </div>
 
                 <!-- Sección 4 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-purple-900/30 text-purple-400 flex items-center justify-center">
-                                <i class="fa-solid fa-spinner text-lg"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">4. Transición: Oído, Preparando y Completado</h3>
+                <div class="bg-gradient-to-br from-cardBg to-gray-900 border border-neonGreen/30 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-neonGreen/5 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neonGreen/20 text-neonGreen text-xs font-bold uppercase tracking-wider mb-6 w-max border border-neonGreen/30">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Sostenibilidad</span>
                         </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed space-y-2">
-                        <p>El personal controla el pedido mediante botones:</p>
-                        <ul class="list-disc list-inside ml-2">
-                            <li><strong>Oído</strong>: El personal acepta el pedido. Tras unos segundos, BarAI lo pasará automáticamente a <strong>Preparando</strong> para ahorrarle clics al personal.</li>
-                            <li><strong>Completado</strong>: Una vez se sirve en mesa, el camarero lo marca como completado. Esto dispara un aviso al móvil del cliente preguntándole si desea recibir un ticket digital.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Sección 5 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-red-900/30 text-red-400 flex items-center justify-center">
-                                <i class="fa-solid fa-trash-can text-lg"></i>
+                        <h2 class="text-2xl font-bold text-white mb-4">4. Tickets Ecológicos (Email)</h2>
+                        <p class="text-gray-400 mb-6 leading-relaxed max-w-3xl">
+                            Para reducir el uso de papel, BarAI incorpora un sistema inteligente de tickets digitales.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-gray-800/40 p-5 rounded-2xl border border-gray-700/50">
+                                <div class="text-neonCyan mb-3"><i class="fa-solid fa-at text-2xl"></i></div>
+                                <h4 class="text-white font-semibold mb-2">Consumo</h4>
+                                <p class="text-xs text-gray-400">El cliente puede introducir su correo electrónico en cualquier momento tras pedir algo.</p>
                             </div>
-                            <h3 class="text-xl font-bold text-white">5. Cancelaciones y Seguridad (PIN)</h3>
-                        </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
-                        <p><strong>Por parte del cliente:</strong> Solo puede cancelar un pedido si nadie en barra o cocina lo ha tocado (estado "Recibido").<br>
-                        <strong>Por parte del personal:</strong> Si un pedido ya está en preparación o servido, anularlo requerirá introducir un <strong>PIN de seguridad</strong> configurado por el gerente, evitando cancelaciones fraudulentas.</p>
-                    </div>
-                </div>
-
-                <!-- Sección 6 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-900/30 text-emerald-400 flex items-center justify-center">
-                                <i class="fa-solid fa-cash-register text-lg"></i>
+                            <div class="bg-gray-800/40 p-5 rounded-2xl border border-gray-700/50">
+                                <div class="text-neonCyan mb-3"><i class="fa-solid fa-hourglass-half text-2xl"></i></div>
+                                <h4 class="text-white font-semibold mb-2">Modo Espera</h4>
+                                <p class="text-xs text-gray-400">El sistema no envía un correo por cada cerveza; encola el email inteligentemente.</p>
                             </div>
-                            <h3 class="text-xl font-bold text-white">6. Cobrar la Mesa (Checkout)</h3>
-                        </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
-                        <p>Al pulsar "Cobrar", BarAI calcula el importe total basándose <strong>únicamente en los pedidos que han sido Completados</strong> (entregados al cliente). Lo que no se haya servido, se descarta para no cobrarlo por error. Tras el pago, la mesa se libera y la sesión del cliente se cierra.</p>
-                    </div>
-                </div>
-
-                <!-- Sección 7 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-neonCyan/20 text-neonCyan flex items-center justify-center">
-                                <i class="fa-solid fa-file-pdf text-lg"></i>
+                            <div class="bg-gray-800/40 p-5 rounded-2xl border border-neonGreen/30 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                                <div class="text-neonGreen mb-3"><i class="fa-solid fa-paper-plane text-2xl"></i></div>
+                                <h4 class="text-white font-semibold mb-2">Disparo Final</h4>
+                                <p class="text-xs text-gray-400">Al pulsar "Cobrar Mesa", se unen todos los consumos en un PDF con datos fiscales y se envía automáticamente.</p>
                             </div>
-                            <h3 class="text-xl font-bold text-white">7. Envío de Tickets Digitales PDF</h3>
                         </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
-                        <p>Si el cliente solicitó el ticket por correo, este no se envía de inmediato para no saturar el sistema (envío asíncrono). Se pondrá en cola y <strong>justo en el momento en el que el camarero cobre la mesa</strong>, el servidor unirá todos los pedidos, generará un único PDF y lo enviará automáticamente al email del cliente.</p>
-                    </div>
-                </div>
-
-                <!-- Sección 8 -->
-                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden accordion-item">
-                    <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-800/50 transition-colors focus:outline-none" onclick="toggleAccordion(this)">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-lg bg-yellow-900/30 text-yellow-400 flex items-center justify-center">
-                                <i class="fa-solid fa-robot text-lg"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white">8. Monitor de Inactividad (IA)</h3>
-                        </div>
-                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 accordion-icon"></i>
-                    </button>
-                    <div class="accordion-content px-6 bg-gray-900/30 text-gray-400 text-sm leading-relaxed">
-                        <p>BarAI dispone de un demonio en segundo plano que vigila el comportamiento de los locales de manera aislada. Si una mesa se escanea, pero tras <strong>10 minutos</strong> el cliente no ha realizado ningún pedido, el sistema genera una alerta automática avisando a los camareros de que "Esa mesa lleva 10 minutos sin atención". ¡Mejora las ventas pasivas!</p>
                     </div>
                 </div>
 
