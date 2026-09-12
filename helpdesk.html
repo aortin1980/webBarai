@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarAI - Guía de Uso (Helpdesk)</title>
+    <title>BarAI - Guía de Uso Oficial y Helpdesk</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -48,12 +48,12 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            transition: max-height 0.35s ease-out, padding 0.3s ease;
         }
         .accordion-active .accordion-content {
-            max-height: 500px;
+            max-height: 800px;
             padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-bottom: 1.25rem;
         }
         .accordion-active .accordion-icon {
             transform: rotate(180deg);
@@ -73,9 +73,13 @@
                 <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span class="gradient-text">AI</span></span>
             </a>
             <div class="flex items-center space-x-4">
+                <a href="ticket.html" class="px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-neonGreen/20 hover:bg-neonGreen hover:text-black border border-neonGreen/50 rounded-xl transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Abrir Ticket</span>
+                </a>
                 <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-neonGreen transition-colors flex items-center space-x-2">
                     <i class="fa-solid fa-arrow-left"></i>
-                    <span>Volver a Inicio</span>
+                    <span class="hidden sm:inline">Inicio</span>
                 </a>
             </div>
         </div>
@@ -85,191 +89,298 @@
     <main class="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neonCyan/10 rounded-full blur-[150px] pointer-events-none"></div>
         
-        <div class="max-w-4xl mx-auto relative z-10">
+        <div class="max-w-5xl mx-auto relative z-10">
+            
+            <!-- Hero Helpdesk -->
             <div class="text-center mb-12">
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
-                    <span>Manual Oficial de Operativa</span>
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Manual Oficial y Reglas de Negocio</span>
                 </div>
-                <h1 class="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
-                    Guía de Uso <span class="gradient-text">Helpdesk</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+                    Centro de Ayuda y <span class="gradient-text">Guía de Uso</span>
                 </h1>
-                <p class="text-gray-400 text-lg">
-                    Aprende cómo funciona el motor de BarAI: desde que un cliente se sienta hasta el cobro y cierre automático de la mesa.
+                <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+                    Todo lo que necesitas saber sobre la operativa de BarAI: pedidos en mesa, sincronización en cocina, seguridad con PIN, tickets digitales y facturación.
                 </p>
+
+                <!-- Buscador Rápido -->
+                <div class="max-w-xl mx-auto relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" id="helpSearch" onkeyup="filterHelpdesk()" placeholder="Buscar por tema: QR, cocina, cancelar, cobrar, PIN, ticket..." class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-cardBg/90 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen focus:ring-2 focus:ring-neonGreen/30 transition-all text-sm shadow-xl">
+                </div>
             </div>
 
-            <!-- Contenido Oficial de Guía de Uso -->
-            <div class="space-y-12">
+            <!-- Contenedor de Módulos Visuales -->
+            <div class="space-y-12" id="helpSections">
                 
-                <!-- Sección 1 -->
-                <div class="bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+                <!-- Sección 1: Cliente & QR -->
+                <div class="help-card bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-8 md:p-10 flex flex-col justify-center">
                             <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-blue-800/50">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Vista Móvil</span>
+                                <i class="fa-solid fa-qrcode"></i>
+                                <span>Punto de Entrada</span>
                             </div>
-                            <h2 class="text-2xl font-bold text-white mb-4">1. Experiencia del Cliente</h2>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                El cliente es el centro del sistema. Para iniciar su experiencia, solo debe <strong class="text-gray-200">escanear el código QR</strong> situado en su mesa.
+                            <h2 class="text-2xl font-bold text-white mb-4">1. Acceso y Apertura de Sesión</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                El cliente escanea el código QR único situado en su mesa. El sistema valida la empresa y la mesa en tiempo real sin requerir descarga de apps.
                             </p>
-                            <ul class="space-y-4 mb-8">
+                            <ul class="space-y-3 mb-6 text-sm">
                                 <li class="flex items-start">
                                     <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
-                                    <p class="text-gray-400 text-sm"><strong class="text-gray-200">Apertura Automática:</strong> Al escanear el QR, el sistema identifica la mesa (ej. Mesa 5) y abre una sesión virtual segura, vinculada a ese dispositivo móvil.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Sesión Única Cifrada:</strong> Se asigna un identificador seguro al navegador del cliente para registrar únicamente sus comandas.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
-                                    <p class="text-gray-400 text-sm"><strong class="text-gray-200">Libertad de Pedido:</strong> El cliente navega por el menú, añade platos al carrito y confirma. La comanda viaja instantáneamente a cocina.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Ocupación Inmediata:</strong> Al instante del escaneo, el panel de camareros recibe un evento WebSocket y la mesa cambia a color ocupada.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
-                                    <p class="text-gray-400 text-sm"><strong class="text-gray-200">Cancelaciones Seguras:</strong> Si se equivoca, puede anularlo desde su móvil SOLO si el pedido sigue en estado <em>Recibido</em>. Si cocina lo acepta, el botón desaparece.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Seguridad de Carta:</strong> Los precios son validados por el servidor para evitar cualquier manipulación externa.</p>
                                 </li>
                             </ul>
-                            <div class="bg-blue-900/10 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                                <div class="flex">
-                                    <div class="flex-shrink-0">
-                                        <i class="fa-solid fa-lightbulb text-blue-400"></i>
-                                    </div>
-                                    <div class="ml-3">
-                                        <p class="text-sm text-blue-200">Si el cliente pulsa "Llamar Camarero", esto no interfiere con la vista de los cocineros, ya que el sistema filtra estas notificaciones automáticamente.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="bg-gray-900 min-h-[300px] flex items-center justify-center p-6 border-l border-gray-800">
-                            <img src="assets/client_view_mockup.jpg" alt="Vista Cliente" class="rounded-xl shadow-2xl max-h-[400px] object-cover border border-gray-700">
+                        <div class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-gray-800">
+                            <img src="assets/client_view_mockup.jpg" alt="Vista Cliente" class="rounded-xl shadow-2xl max-h-[360px] object-cover border border-gray-700">
                         </div>
                     </div>
                 </div>
 
-                <!-- Sección 2 -->
-                <div class="bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+                <!-- Sección 2: Cocina & Estados de Comanda -->
+                <div class="help-card bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
                     <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="bg-gray-900 min-h-[300px] flex items-center justify-center p-6 border-r border-gray-800 order-2 md:order-1">
+                        <div class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-800 order-2 md:order-1">
                             <img src="assets/kitchen_panel_mockup.jpg" alt="Panel de Cocina" class="rounded-xl shadow-2xl w-full object-cover border border-gray-700">
                         </div>
                         <div class="p-8 md:p-10 flex flex-col justify-center order-1 md:order-2">
                             <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-orange-900/30 text-orange-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-orange-800/50">
                                 <i class="fa-solid fa-fire-burner"></i>
-                                <span>Panel de Control</span>
+                                <span>Flujo Operativo</span>
                             </div>
-                            <h2 class="text-2xl font-bold text-white mb-4">2. Gestión de Cocina y Barra</h2>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                Este es el cerebro operativo. Todo el personal (Camareros y Cocineros) interactúa con este panel en tiempo real (sincronización por WebSockets).
+                            <h2 class="text-2xl font-bold text-white mb-4">2. Cocina y Ciclo de Comandas</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Recepción instantánea de comandas con aviso sonoro y transición de estados para no saturar al equipo.
                             </p>
-                            <h3 class="text-lg font-semibold text-white mb-3">Ciclo de vida de la Comanda</h3>
-                            <div class="space-y-4 mb-8">
-                                <div class="flex items-center">
-                                    <span class="w-3 h-3 rounded-full bg-cyan-400 mr-3"></span>
-                                    <p class="text-sm text-gray-300"><strong class="text-white">Recibido (Azul/Cian):</strong> El pedido acaba de entrar. Suena una notificación acústica.</p>
+                            <div class="space-y-3 mb-6 text-sm">
+                                <div class="flex items-start">
+                                    <span class="w-3 h-3 rounded-full bg-cyan-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                                    <p class="text-gray-300"><strong class="text-white">Recibido (Cian):</strong> Comanda recién entrada. Notificación acústica para todo el personal.</p>
                                 </div>
-                                <div class="flex items-center">
-                                    <span class="w-3 h-3 rounded-full bg-orange-400 mr-3"></span>
-                                    <p class="text-sm text-gray-300"><strong class="text-white">Preparando (Naranja):</strong> El personal ha pulsado "Preparar". Ya no se puede cancelar sin un PIN de 4 dígitos del Administrador.</p>
+                                <div class="flex items-start">
+                                    <span class="w-3 h-3 rounded-full bg-orange-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                                    <p class="text-gray-300"><strong class="text-white">Oído / Preparando (Naranja):</strong> El personal confirma recepción. Pasa automáticamente a preparación.</p>
                                 </div>
-                                <div class="flex items-center">
-                                    <span class="w-3 h-3 rounded-full bg-green-500 mr-3"></span>
-                                    <p class="text-sm text-gray-300"><strong class="text-white">Completado (Verde):</strong> Plato terminado y llevado a mesa. Solo los completados suman a la cuenta final.</p>
+                                <div class="flex items-start">
+                                    <span class="w-3 h-3 rounded-full bg-green-500 mt-1.5 mr-3 flex-shrink-0"></span>
+                                    <p class="text-gray-300"><strong class="text-white">Completado (Verde):</strong> Servido en mesa. El cliente recibe aviso de entrega en su móvil.</p>
                                 </div>
                             </div>
-                            <div class="bg-red-900/10 border-l-4 border-red-500 p-4 rounded-r-lg">
-                                <div class="flex">
-                                    <div class="flex-shrink-0">
-                                        <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
-                                    </div>
-                                    <div class="ml-3">
-                                        <p class="text-sm text-red-200">Los cocineros tienen una vista filtrada: no ven notificaciones de "Llamar camarero", solo ven tickets reales de comida o bebida, evitando distracciones.</p>
-                                    </div>
-                                </div>
+                            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-3 rounded-r-lg text-xs text-blue-200">
+                                <i class="fa-solid fa-filter mr-1.5"></i> <strong>Filtro inteligente de Cocina:</strong> Las llamadas de camarero ("Llamar a mesa") no saturan la pantalla de cocina; se enrutan exclusivamente al personal de sala.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sección 3 -->
-                <div class="bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+                <!-- Sección 3: Seguridad y Cancelaciones -->
+                <div class="help-card bg-cardBg border border-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl transition-all duration-300">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-900/30 text-red-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-red-800/50">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Control Antifraude</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Reglas de Cancelación y PIN de Seguridad</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                        Para evitar pérdidas de comida y mermas económicas, el sistema aplica dos barreras de seguridad:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800">
+                            <div class="text-neonCyan text-lg font-bold mb-2 flex items-center">
+                                <i class="fa-solid fa-user-xmark mr-2"></i> Cancelación por el Cliente
+                            </div>
+                            <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                                El cliente <strong>solo puede anular</strong> su pedido si este aún se encuentra en estado <code>Recibido</code>. 
+                            </p>
+                            <p class="text-gray-400 text-xs leading-relaxed">
+                                En el instante en que cocina o barra pulsa "Oído" o "Preparar", el botón de cancelación desaparece del teléfono del cliente.
+                            </p>
+                        </div>
+                        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800">
+                            <div class="text-red-400 text-lg font-bold mb-2 flex items-center">
+                                <i class="fa-solid fa-key mr-2"></i> Cancelación del Personal (PIN)
+                            </div>
+                            <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                                Si un plato ya está en marcha y se necesita anular, el sistema solicita un <strong>código PIN maestro de 4 dígitos</strong> del Administrador/Gerente.
+                            </p>
+                            <p class="text-gray-400 text-xs leading-relaxed">
+                                Esto evita anulaciones accidentales o descuadres en inventario sin autorización previa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 4: Croquis & Facturación -->
+                <div class="help-card bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-8 md:p-10 flex flex-col justify-center">
                             <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-900/30 text-purple-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-purple-800/50">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                                <span>Mapa en vivo</span>
+                                <i class="fa-solid fa-cash-register"></i>
+                                <span>Facturación</span>
                             </div>
-                            <h2 class="text-2xl font-bold text-white mb-4">3. El Croquis Inteligente</h2>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                Mapa visual del restaurante que refleja el estado real de cada grupo de clientes.
+                            <h2 class="text-2xl font-bold text-white mb-4">4. Croquis en Vivo y Cobro de Mesas</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Visualización en tiempo real del plano de mesas y liquidación limpia de cuentas.
                             </p>
-                            
-                            <h3 class="text-lg font-semibold text-white mb-3">Colores y Estados</h3>
-                            <div class="grid grid-cols-3 gap-2 mb-8">
-                                <div class="bg-gray-800/50 p-3 rounded-lg text-center border border-green-500/30">
-                                    <div class="w-4 h-4 rounded-full bg-green-500 mx-auto mb-2"></div>
-                                    <span class="text-xs text-gray-300">Verde (Libre)</span>
-                                </div>
-                                <div class="bg-gray-800/50 p-3 rounded-lg text-center border border-orange-500/30">
-                                    <div class="w-4 h-4 rounded-full bg-orange-500 mx-auto mb-2"></div>
-                                    <span class="text-xs text-gray-300">Naranja (Ocupada)</span>
-                                </div>
-                                <div class="bg-gray-800/50 p-3 rounded-lg text-center border border-red-500/30">
-                                    <div class="w-4 h-4 rounded-full bg-red-500 mx-auto mb-2 animate-pulse"></div>
-                                    <span class="text-xs text-gray-300">Rojo (Esperando/10m)</span>
-                                </div>
-                            </div>
-
-                            <h3 class="text-lg font-semibold text-white mb-3">Facturación y Cobro</h3>
-                            <ul class="space-y-2 text-sm text-gray-400">
-                                <li><i class="fa-solid fa-angle-right text-neonCyan mr-2"></i>Al pulsar "Cobrar Mesa", el importe es el sumatorio <strong>exclusivo</strong> de pedidos <em>Completados</em>.</li>
-                                <li><i class="fa-solid fa-angle-right text-neonCyan mr-2"></i>No se puede cobrar algo no recibido. Lo que está "Preparando" se ignora.</li>
-                                <li><i class="fa-solid fa-angle-right text-neonCyan mr-2"></i>Tras cobrar, los pedidos huerfanos se cancelan y la mesa se pone verde.</li>
+                            <ul class="space-y-3 mb-6 text-sm text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-circle-dot text-neonGreen mt-1 mr-3 flex-shrink-0"></i>
+                                    <span><strong>Regla de Cobro Exclusivo:</strong> Al pulsar "Cobrar Mesa", el total se calcula <em>únicamente</em> sobre platos con estado <code>Completado</code> (servidos).</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-circle-dot text-orange-400 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span><strong>Protección de Pedidos Huérfanos:</strong> Lo que no se haya terminado de servir se cancela automáticamente para no cobrar al cliente servicios no prestados.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-circle-dot text-purple-400 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span><strong>Liberación de Mesa:</strong> La sesión se cierra, la mesa vuelve al color verde (Libre) y se genera el recibo contable.</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="bg-gray-900 min-h-[300px] flex items-center justify-center p-6 border-l border-gray-800">
+                        <div class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-gray-800">
                             <img src="assets/table_map_mockup.jpg" alt="Plano de Mesas" class="rounded-xl shadow-2xl w-full object-cover border border-gray-700">
                         </div>
                     </div>
                 </div>
 
-                <!-- Sección 4 -->
-                <div class="bg-gradient-to-br from-cardBg to-gray-900 border border-neonGreen/30 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+                <!-- Sección 5: Tickets Digitales & Monitor de Inactividad -->
+                <div class="help-card bg-gradient-to-br from-cardBg to-gray-900 border border-neonGreen/30 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden transition-all duration-300">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-neonGreen/5 rounded-full blur-3xl"></div>
                     <div class="relative z-10">
                         <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neonGreen/20 text-neonGreen text-xs font-bold uppercase tracking-wider mb-6 w-max border border-neonGreen/30">
-                            <i class="fa-solid fa-leaf"></i>
-                            <span>Sostenibilidad</span>
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Automatizaciones Proactivas</span>
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-4">4. Tickets Ecológicos (Email)</h2>
-                        <p class="text-gray-400 mb-6 leading-relaxed max-w-3xl">
-                            Para reducir el uso de papel, BarAI incorpora un sistema inteligente de tickets digitales.
-                        </p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div class="bg-gray-800/40 p-5 rounded-2xl border border-gray-700/50">
-                                <div class="text-neonCyan mb-3"><i class="fa-solid fa-at text-2xl"></i></div>
-                                <h4 class="text-white font-semibold mb-2">Consumo</h4>
-                                <p class="text-xs text-gray-400">El cliente puede introducir su correo electrónico en cualquier momento tras pedir algo.</p>
+                        <h2 class="text-2xl font-bold text-white mb-4">5. Tickets Ecológicos y Detección de Inactividad</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                            <!-- Ticket Digital -->
+                            <div class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700/50">
+                                <h3 class="text-lg font-bold text-white mb-3 flex items-center">
+                                    <i class="fa-solid fa-envelope-open-text text-neonCyan mr-2.5"></i> Ticket Consolidado en PDF
+                                </h3>
+                                <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                                    Si el cliente solicita su ticket digital desde su teléfono, el sistema encola la petición sin enviar correos sueltos por cada consumición.
+                                </p>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    En el momento exacto del cobro de la mesa, un hilo en segundo plano genera un único PDF fiscal con el desglose total y lo envía por correo electrónico.
+                                </p>
                             </div>
-                            <div class="bg-gray-800/40 p-5 rounded-2xl border border-gray-700/50">
-                                <div class="text-neonCyan mb-3"><i class="fa-solid fa-hourglass-half text-2xl"></i></div>
-                                <h4 class="text-white font-semibold mb-2">Modo Espera</h4>
-                                <p class="text-xs text-gray-400">El sistema no envía un correo por cada cerveza; encola el email inteligentemente.</p>
-                            </div>
-                            <div class="bg-gray-800/40 p-5 rounded-2xl border border-neonGreen/30 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
-                                <div class="text-neonGreen mb-3"><i class="fa-solid fa-paper-plane text-2xl"></i></div>
-                                <h4 class="text-white font-semibold mb-2">Disparo Final</h4>
-                                <p class="text-xs text-gray-400">Al pulsar "Cobrar Mesa", se unen todos los consumos en un PDF con datos fiscales y se envía automáticamente.</p>
+
+                            <!-- Inactividad -->
+                            <div class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700/50">
+                                <h3 class="text-lg font-bold text-white mb-3 flex items-center">
+                                    <i class="fa-solid fa-clock-rotate-left text-neonGreen mr-2.5"></i> Alerta de 10 min sin pedir
+                                </h3>
+                                <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                                    Un monitor en segundo plano evalúa las mesas sentadas cada 30 segundos.
+                                </p>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    Si unos clientes han escaneado el QR pero llevan más de 10 minutos sin realizar ninguna comanda, se genera una alerta visual y acústica para que el camarero se acerque a ofrecer ayuda.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Sección de Preguntas Frecuentes Interactivas (Acordeón) -->
+            <div class="mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Preguntas Frecuentes y Respuestas Rápidas</h2>
+                    <p class="text-gray-400 text-sm">Haz clic en cualquier pregunta para ver el detalle de la regla operativa.</p>
+                </div>
+
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    
+                    <div class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Qué ocurre si un cliente se sienta y no pide nada?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            El sistema detecta automáticamente la sesión abierta. Si transcurren 10 minutos sin registrar ningún pedido, el monitor de inactividad de BarAI envía una alerta acústica y visual al panel de los camareros indicando <em>"Atender Mesa X (Lleva 10m sin pedir)"</em>.
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Puedo cobrar una mesa si hay platos pendientes en cocina?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            Al presionar "Cobrar Mesa", el sistema suma <strong>únicamente los productos completados y servidos</strong>. Cualquier comanda que haya quedado en estado "Recibido" o "Preparando" se cancela automáticamente para proteger al cliente y no cobrar productos no consumidos.
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Por qué se solicita un PIN de cancelación al personal?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            Cuando una comanda ya ha sido aceptada por cocina y está en preparación, se requiere el PIN de 4 dígitos del Administrador o Gerente para asegurar que las mermas o anulaciones de comida queden registradas con autorización responsable.
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Los cocineros reciben las notificaciones de "Llamar Camarero"?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            No. La vista de rol <code>cocinero</code> tiene un filtro estricto que ignora las llamadas de servicio de sala. Solo los camareros y administradores reciben la alerta para no distraer la producción en fogones.
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Cómo funciona el aislamiento de datos entre restaurantes?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            BarAI es una plataforma multi-empresa con aislamiento estricto. Toda petición y conexión WebSocket está suscrita a una sala privada (<code>company_id</code>), asegurando que ningún establecimiento tenga acceso a las comandas, mesas o datos de otro.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             
-            <div class="mt-12 text-center">
-                <a href="ticket.html" class="inline-flex items-center space-x-2 text-neonCyan hover:text-neonGreen transition-colors font-medium">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <span>¿Tienes más dudas? Abre un ticket de soporte</span>
+            <!-- Call to Action Soporte -->
+            <div class="mt-16 bg-gradient-to-r from-cardBg via-gray-900 to-cardBg border border-gray-800 rounded-3xl p-8 text-center shadow-xl">
+                <div class="w-12 h-12 rounded-full bg-neonGreen/20 text-neonGreen flex items-center justify-center mx-auto mb-4 text-xl">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">¿Necesitas asistencia técnica personalizada?</h3>
+                <p class="text-gray-400 text-sm max-w-md mx-auto mb-6">
+                    Si experimentas alguna incidencia operativa o deseas configurar un nuevo terminal, nuestro equipo de soporte está disponible.
+                </p>
+                <a href="ticket.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-neonGreen text-darkBg font-bold rounded-xl hover:bg-neonCyan transition-all shadow-lg hover:shadow-neonCyan/30 text-sm">
+                    <span>Crear Ticket de Soporte</span>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
+
         </div>
     </main>
 
@@ -282,17 +393,42 @@
 
     <script>
         function toggleAccordion(button) {
-            const item = button.parentElement;
+            const item = button.closest('.accordion-item');
+            const isActive = item.classList.contains('accordion-active');
             
-            // Cerrar todos los demás
+            // Cerrar todos
             document.querySelectorAll('.accordion-item').forEach(el => {
-                if(el !== item) {
-                    el.classList.remove('accordion-active');
+                el.classList.remove('accordion-active');
+            });
+
+            // Si no estaba activo, abrirlo
+            if (!isActive) {
+                item.classList.add('accordion-active');
+            }
+        }
+
+        function filterHelpdesk() {
+            const input = document.getElementById('helpSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.help-card');
+            const accordions = document.querySelectorAll('.accordion-item');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
                 }
             });
 
-            // Alternar el actual
-            item.classList.toggle('accordion-active');
+            accordions.forEach(acc => {
+                const text = acc.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    acc.style.display = 'block';
+                } else {
+                    acc.style.display = 'none';
+                }
+            });
         }
     </script>
 </body>
