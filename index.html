@@ -944,6 +944,150 @@
             class="absolute right-16 bg-gray-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-700">Únete
             al Canal</span>
     </a>
+    <!-- Chatbot Helpdesk -->
+    <div id="chatbot-container" class="fixed bottom-24 right-6 w-80 sm:w-96 bg-cardBg border border-neonCyan/30 rounded-2xl shadow-2xl flex flex-col hidden z-50 overflow-hidden" style="height: 500px; max-height: 70vh;">
+        <!-- Header -->
+        <div class="bg-gray-900 border-b border-gray-800 p-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-neonCyan/20 flex items-center justify-center text-neonCyan">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-sm">Asistente BarAI</h3>
+                    <p class="text-xs text-neonGreen flex items-center"><span class="w-2 h-2 rounded-full bg-neonGreen inline-block mr-1"></span> En línea</p>
+                </div>
+            </div>
+            <button onclick="toggleChatbot()" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Messages -->
+        <div id="chatbot-messages" class="flex-grow p-4 overflow-y-auto space-y-4 bg-darkBg text-sm scroll-smooth">
+            <!-- Bot Message -->
+            <div class="flex items-start space-x-2">
+                <div class="w-8 h-8 rounded-full bg-neonCyan/20 flex-shrink-0 flex items-center justify-center text-neonCyan">
+                    <i class="fa-solid fa-robot text-xs"></i>
+                </div>
+                <div class="bg-gray-800 text-gray-200 p-3 rounded-2xl rounded-tl-none border border-gray-700">
+                    ¡Hola! Soy el asistente virtual de BarAI. ¿En qué puedo ayudarte sobre el funcionamiento de nuestro sistema?
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <button onclick="sendQuickReply('¿Cómo cobro una mesa?')" class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2 py-1 rounded-full transition-colors">Cobrar mesa</button>
+                        <button onclick="sendQuickReply('¿Cómo cancelo un pedido?')" class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2 py-1 rounded-full transition-colors">Cancelar pedido</button>
+                        <button onclick="sendQuickReply('¿Cómo funcionan los tickets?')" class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2 py-1 rounded-full transition-colors">Tickets y Correos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input -->
+        <div class="p-3 bg-gray-900 border-t border-gray-800">
+            <form onsubmit="handleChatSubmit(event)" class="flex items-center space-x-2">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu duda..." class="flex-grow bg-darkBg border border-gray-700 rounded-full px-4 py-2 text-white text-sm focus:outline-none focus:border-neonCyan transition-colors" autocomplete="off">
+                <button type="submit" class="w-10 h-10 rounded-full bg-neonCyan text-darkBg flex items-center justify-center hover:bg-cyan-400 transition-colors">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button onclick="toggleChatbot()" id="chatbot-toggle" class="fixed bottom-24 right-6 bg-neonCyan text-darkBg rounded-full w-14 h-14 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:bg-cyan-400 hover:scale-110 transition-all z-40 group">
+        <i class="fa-solid fa-robot text-2xl"></i>
+        <span class="absolute right-16 bg-gray-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-700">Asistente BarAI</span>
+    </button>
+
+    <script>
+        const chatContainer = document.getElementById('chatbot-container');
+        const chatToggle = document.getElementById('chatbot-toggle');
+        const chatMessages = document.getElementById('chatbot-messages');
+        const chatInput = document.getElementById('chatbot-input');
+
+        function toggleChatbot() {
+            chatContainer.classList.toggle('hidden');
+            if (!chatContainer.classList.contains('hidden')) {
+                chatInput.focus();
+                chatToggle.style.display = 'none';
+            } else {
+                chatToggle.style.display = 'flex';
+            }
+        }
+
+        function appendMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = `flex items-start space-x-2 ${isUser ? 'justify-end' : ''}`;
+            
+            let html = '';
+            if (isUser) {
+                html = `
+                    <div class="bg-neonCyan text-darkBg font-medium p-3 rounded-2xl rounded-tr-none shadow-md max-w-[85%]">
+                        ${text}
+                    </div>
+                `;
+            } else {
+                html = `
+                    <div class="w-8 h-8 rounded-full bg-neonCyan/20 flex-shrink-0 flex items-center justify-center text-neonCyan">
+                        <i class="fa-solid fa-robot text-xs"></i>
+                    </div>
+                    <div class="bg-gray-800 text-gray-200 p-3 rounded-2xl rounded-tl-none border border-gray-700 max-w-[85%]">
+                        ${text}
+                    </div>
+                `;
+            }
+            div.innerHTML = html;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            const text = input.toLowerCase();
+            
+            if (text.includes('qr') || text.includes('sesion') || text.includes('sesión') || text.includes('escanear')) {
+                return 'Al escanear el QR, se crea una sesión única para el móvil del cliente. La mesa pasa a estar "Ocupada" automáticamente en el panel de los camareros. Si la mesa lleva 10 minutos sin pedir, os avisaremos con una alerta automática.';
+            }
+            if (text.includes('cobrar') || text.includes('pagar') || text.includes('checkout') || text.includes('cuenta')) {
+                return 'Al pulsar "Cobrar", el sistema calcula el precio sumando SOLO los pedidos que están en estado "Completado". Lo que no se haya servido (huérfanos) se cancela automáticamente. Tras pagar, la sesión de la mesa se cierra y vuelve a estar Libre.';
+            }
+            if (text.includes('cancelar') || text.includes('pin') || text.includes('anular')) {
+                return 'Los clientes solo pueden anular un pedido si está recién pedido ("Recibido"). Si un camarero o cocinero quiere anular un pedido que ya está en marcha, se le pedirá un PIN de seguridad configurado por el gerente para evitar fraudes.';
+            }
+            if (text.includes('ticket') || text.includes('factura') || text.includes('pdf') || text.includes('correo') || text.includes('mail')) {
+                return 'El ticket digital PDF no se envía al momento para no colapsar la app. El sistema lo deja en cola, y justo en el momento en que el camarero cobra la mesa, se unen todos los pedidos en un solo PDF y se envía automáticamente al correo del cliente.';
+            }
+            if (text.includes('camarero') || text.includes('llamar') || text.includes('mesa') || text.includes('atencion')) {
+                return 'Cuando el cliente pulsa "Llamar camarero", se genera una comanda especial que solo aparece en la pantalla de los camareros. Los cocineros la ignoran en su panel para no distraerse de los fogones.';
+            }
+            if (text.includes('pedido') || text.includes('comanda') || text.includes('cocina')) {
+                return 'Los pedidos pasan por tres estados: 1. "Recibido" (llega a cocina y pita), 2. "Oído" (lo acepta el personal y luego pasa solo a Preparando) y 3. "Completado" (entregado en mesa).';
+            }
+            if (text.includes('inactividad') || text.includes('ia') || text.includes('monitor') || text.includes('tiempo')) {
+                return '¡BarAI trabaja por ti! Tenemos un monitor en segundo plano. Si una mesa se escanea pero a los 10 minutos no han pedido nada, generará un ticket automático fantasma para avisar a los camareros de que pasen por la mesa.';
+            }
+            
+            return 'No he encontrado una respuesta directa a eso en nuestra guía de operaciones. Prueba a preguntarme sobre: <strong>cobrar mesa</strong>, <strong>cancelar pedidos</strong>, <strong>tickets pdf</strong>, <strong>escanear qr</strong>, o <strong>llamar al camarero</strong>. Si es un problema técnico, por favor <a href="ticket.html" class="text-neonCyan hover:underline">abre un ticket de soporte</a>.';
+        }
+
+        function sendQuickReply(text) {
+            appendMessage(text, true);
+            setTimeout(() => {
+                appendMessage(getBotResponse(text), false);
+            }, 400);
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const text = chatInput.value.trim();
+            if (!text) return;
+            
+            appendMessage(text, true);
+            chatInput.value = '';
+            
+            setTimeout(() => {
+                const response = getBotResponse(text);
+                appendMessage(response, false);
+            }, 600);
+        }
+    </script>
 </body>
 
 </html>
