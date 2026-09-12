@@ -880,111 +880,6 @@
         </div>
     </footer>
 
-    <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
-        });
-
-        function switchTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            const buttons = document.querySelectorAll('[id^="btn-"]');
-            buttons.forEach(btn => {
-                btn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white";
-            });
-
-            document.getElementById('tab-' + tabId).classList.add('active');
-            const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg shadow-lg";
-        }
-
-        function calculateSavings() {
-            const range = document.getElementById('volume-range').value;
-            const volumeLabel = document.getElementById('volume-label');
-            const savedMoney = document.getElementById('saved-money');
-            const savedTime = document.getElementById('saved-time');
-
-            volumeLabel.textContent = '€' + parseInt(range).toLocaleString() + ' / mes';
-
-            const money = Math.round(range * 0.085);
-            const time = Math.round(range / 1000);
-
-            savedMoney.innerHTML = '€' + money.toLocaleString() + ' <span class="text-xs text-neonGreen font-normal">/ mes</span>';
-            savedTime.innerHTML = time + ' hrs <span class="text-xs text-neonCyan font-normal">/ mes</span>';
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const business = document.getElementById('business').value;
-            const phone = document.getElementById('phone').value;
-            const cif = document.getElementById('cif').value;
-            const address = document.getElementById('address').value;
-            const successMsg = document.getElementById('success-msg');
-            const form = document.getElementById('waitlist-form');
-            const btn = form.querySelector('button[type="submit"]');
-
-            btn.disabled = true;
-            const originalBtnHtml = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>';
-
-            const payload = new URLSearchParams();
-            payload.append('nombre', business + " (" + name + ")");
-            payload.append('telefono', phone);
-            payload.append('email', email);
-            payload.append('cif', cif);
-            payload.append('direccion', address);
-            payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
-
-            // Aseguramos que la URL esté definida (si está definida abajo, la subimos o la referenciamos)
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbzmEbIcw9JnEYTA9TPgqnl5qpzbs1ei4Zx2PTkfeCM-BhSlEPNhIWLBQ_Z7t07kvPQ4/exec';
-
-            fetch(scriptUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: payload
-            })
-                .then(() => {
-                    successMsg.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> ¡Solicitud enviada con éxito! Revisa tu correo.';
-                    successMsg.classList.remove('hidden');
-                    form.reset();
-                })
-                .finally(() => {
-                    btn.disabled = false;
-                    btn.innerHTML = originalBtnHtml;
-                    setTimeout(() => {
-                        successMsg.classList.add('hidden');
-                    }, 8000);
-                });
-        }
-
-        // Corrección para los anclajes de navegación dentro de iframes
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-    </script>
-    <br><br><br><br><br><br><br><br><br><br><br>
     <!-- Botón flotante de WhatsApp -->
     <a href="https://whatsapp.com/channel/0029VbCgQBcCMY0FQk26uU3x" target="_blank"
         class="fixed bottom-6 right-6 bg-green-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)] hover:bg-green-400 hover:scale-110 transition-all z-50 group">
@@ -993,6 +888,7 @@
             class="absolute right-16 bg-gray-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-700">Únete
             al Canal</span>
     </a>
+
     <!-- Chatbot Helpdesk -->
     <div id="chatbot-container"
         class="fixed bottom-24 right-6 w-80 sm:w-96 bg-cardBg border border-neonCyan/30 rounded-2xl shadow-2xl flex flex-col hidden z-50 overflow-hidden"
@@ -1066,16 +962,138 @@
             BarAI</span>
     </button>
 
+    <!-- JavaScript Unificado -->
     <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
+            });
+        }
+
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('[id^="btn-"]');
+            buttons.forEach(btn => {
+                btn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white";
+            });
+
+            const currentTab = document.getElementById('tab-' + tabId);
+            if (currentTab) currentTab.classList.add('active');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) activeBtn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg shadow-lg";
+        }
+
+        function calculateSavings() {
+            const volumeInput = document.getElementById('volume-range');
+            if (!volumeInput) return;
+            const range = volumeInput.value;
+            const volumeLabel = document.getElementById('volume-label');
+            const savedMoney = document.getElementById('saved-money');
+            const savedTime = document.getElementById('saved-time');
+
+            if (volumeLabel) volumeLabel.textContent = '€' + parseInt(range).toLocaleString() + ' / mes';
+
+            const money = Math.round(range * 0.085);
+            const time = Math.round(range / 1000);
+
+            if (savedMoney) savedMoney.innerHTML = '€' + money.toLocaleString() + ' <span class="text-xs text-neonGreen font-normal">/ mes</span>';
+            if (savedTime) savedTime.innerHTML = time + ' hrs <span class="text-xs text-neonCyan font-normal">/ mes</span>';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const nameEl = document.getElementById('name');
+            const emailEl = document.getElementById('email');
+            const businessEl = document.getElementById('business');
+            const phoneEl = document.getElementById('phone');
+            const cifEl = document.getElementById('cif');
+            const addressEl = document.getElementById('address');
+            const successMsg = document.getElementById('success-msg');
+            const form = document.getElementById('waitlist-form');
+            if (!form) return;
+            const btn = form.querySelector('button[type="submit"]');
+
+            const name = nameEl ? nameEl.value : '';
+            const email = emailEl ? emailEl.value : '';
+            const business = businessEl ? businessEl.value : '';
+            const phone = phoneEl ? phoneEl.value : '';
+            const cif = cifEl ? cifEl.value : '';
+            const address = addressEl ? addressEl.value : '';
+
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>';
+            }
+
+            const payload = new URLSearchParams();
+            payload.append('nombre', business + " (" + name + ")");
+            payload.append('telefono', phone);
+            payload.append('email', email);
+            payload.append('cif', cif);
+            payload.append('direccion', address);
+            payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
+
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbzmEbIcw9JnEYTA9TPgqnl5qpzbs1ei4Zx2PTkfeCM-BhSlEPNhIWLBQ_Z7t07kvPQ4/exec';
+
+            fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: payload
+            })
+                .then(() => {
+                    if (successMsg) {
+                        successMsg.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> ¡Solicitud enviada con éxito! Revisa tu correo.';
+                        successMsg.classList.remove('hidden');
+                    }
+                    form.reset();
+                })
+                .finally(() => {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.innerHTML = '<span>Solicitar Acceso Anticipado</span><i class="fa-solid fa-arrow-right"></i>';
+                    }
+                    setTimeout(() => {
+                        if (successMsg) successMsg.classList.add('hidden');
+                    }, 8000);
+                });
+        }
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Chatbot Logic
         const chatContainer = document.getElementById('chatbot-container');
         const chatToggle = document.getElementById('chatbot-toggle');
         const chatMessages = document.getElementById('chatbot-messages');
         const chatInput = document.getElementById('chatbot-input');
 
         function toggleChatbot() {
+            if (!chatContainer || !chatToggle) return;
             chatContainer.classList.toggle('hidden');
             if (!chatContainer.classList.contains('hidden')) {
-                chatInput.focus();
+                if (chatInput) chatInput.focus();
                 chatToggle.style.display = 'none';
             } else {
                 chatToggle.style.display = 'flex';
@@ -1083,6 +1101,7 @@
         }
 
         function appendMessage(text, isUser) {
+            if (!chatMessages) return;
             const div = document.createElement('div');
             div.className = `flex items-start space-x-2 ${isUser ? 'justify-end' : ''}`;
 
@@ -1111,7 +1130,6 @@
         function getBotResponse(input) {
             const text = input.toLowerCase().trim();
 
-            // Saludos y Cortesía
             if (text.match(/^(hola|buenas|buenos d[ií]as|buenas tardes|buenas noches|hey|qu[eé] tal|saludos)/)) {
                 return '¡Hola! 👋 Soy el asistente inteligente de BarAI. Puedo resolver cualquier duda sobre el funcionamiento del sistema, comandas, KDS de cocina, cobros o seguridad. ¿Qué te gustaría consultar?';
             }
@@ -1122,82 +1140,66 @@
                 return '¡Hasta pronto! Recuerda que puedes abrir el chat en cualquier momento o consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso</a>.';
             }
 
-            // 1. QR y Acceso a Mesa
             if (text.includes('qr') || text.includes('sesion') || text.includes('sesión') || text.includes('escanear') || text.includes('mesa ocupada') || text.includes('sentarse')) {
                 return '📲 <strong>Acceso por QR:</strong> Cada mesa dispone de un código QR único. Al escanearlo desde el móvil del cliente:<br>• Se genera una sesión segura sin necesidad de descargar ninguna app.<br>• El plano de mesas pasa automáticamente a estado <em>Ocupada</em>.<br>• Si pasan 10 minutos sin pedir nada, el sistema avisará a los camareros con una alerta de inactividad.';
             }
 
-            // 2. Cobro, Facturación y Checkout
             if (text.includes('cobrar') || text.includes('pagar') || text.includes('checkout') || text.includes('cuenta') || text.includes('factura') || text.includes('liquidar') || text.includes('dividir')) {
                 return '💳 <strong>Cobro de Mesas:</strong><br>• Al pulsar <em>"Cobrar Mesa"</em>, el sistema suma <strong>exclusivamente</strong> los pedidos en estado <code>Completado</code> (servidos).<br>• Lo que no se haya terminado de servir se cancela para proteger al cliente de cargos indebidos.<br>• Tras el cobro, la mesa se libera y se envía automáticamente el ticket digital si el cliente dejó su correo.';
             }
 
-            // 3. Cancelaciones y Seguridad por PIN
             if (text.includes('cancelar') || text.includes('pin') || text.includes('anular') || text.includes('borrar') || text.includes('eliminar') || text.includes('mermas')) {
                 return '🛡️ <strong>Reglas de Cancelación y PIN:</strong><br>• <strong>Cliente:</strong> Solo puede anular un plato si está en estado <code>Recibido</code>. En cuanto cocina pulsa "Oído" o "Preparando", el botón desaparece de su móvil.<br>• <strong>Personal:</strong> Para cancelar platos ya en elaboración, el sistema exige el <strong>PIN de 4 dígitos</strong> del Administrador/Gerente para evitar mermas sin control.';
             }
 
-            // 4. Tickets Digitales y PDFs
             if (text.includes('ticket') || text.includes('pdf') || text.includes('correo') || text.includes('mail') || text.includes('recibo') || text.includes('ecol[oó]gico') || text.includes('papel')) {
                 return '📄 <strong>Tickets Digitales Inteligentes:</strong><br>• El cliente puede introducir su email en el móvil tras pedir.<br>• El sistema no envía correos sueltos por cada plato: encola el pedido y, en el momento del cobro, genera un <strong>único PDF oficial</strong> consolidado y lo envía al instante por email.';
             }
 
-            // 5. Cocina, Barra y KDS
             if (text.includes('cocina') || text.includes('kds') || text.includes('comanda') || text.includes('pedido') || text.includes('barra') || text.includes('fogones') || text.includes('oido') || text.includes('oído') || text.includes('preparando') || text.includes('completado')) {
                 return '🍳 <strong>Cocina y Pantalla KDS:</strong><br>Los pedidos viajan en tiempo real con aviso sonoro y pasan por 3 fases:<br>1. <strong>Recibido (Cian):</strong> Comanda recién entrada.<br>2. <strong>Oído / Preparando (Naranja):</strong> El cocinero pulsa Oído y avanza a preparación.<br>3. <strong>Completado (Verde):</strong> Servido en mesa (notifica al móvil del cliente).';
             }
 
-            // 6. Llamar al Camarero
             if (text.includes('camarero') || text.includes('llamar') || text.includes('atencion') || text.includes('atención') || text.includes('aviso')) {
                 return '🔔 <strong>Llamada de Camarero:</strong><br>Cuando el cliente pulsa <em>"Llamar Camarero"</em> desde su móvil, la alerta se envía exclusivamente a los camareros y gerentes de sala. <strong>La vista de Cocina filtra e ignora estas alertas</strong> para no distraer la preparación de platos.';
             }
 
-            // 7. Inactividad y Detección Automática
             if (text.includes('inactividad') || text.includes('10 min') || text.includes('10m') || text.includes('sin pedir') || text.includes('tiempo') || text.includes('monitor') || text.includes('ia') || text.includes('inteligencia')) {
                 return '⏱️ <strong>Monitor de Inactividad (IA):</strong><br>Un demonio en segundo plano revisa las mesas cada 30 segundos. Si unos clientes se sientan (escanean QR) pero pasan <strong>10 minutos sin pedir nada</strong>, BarAI envía una alerta acústica y visual al camarero para que se acerque a atenderlos.';
             }
 
-            // 8. Instalación y Descargas
             if (text.includes('instalar') || text.includes('descargar') || text.includes('app') || text.includes('aplicacion') || text.includes('aplicación') || text.includes('play store') || text.includes('app store') || text.includes('requisito')) {
                 return '🚀 <strong>Sin Instalación Requerida:</strong><br>• BarAI funciona 100% en la nube a través de la web.<br>• Ni tus clientes ni tus empleados tienen que descargar nada de la App Store ni Google Play.<br>• Funciona en cualquier navegador de móvil, tablet, TPV o pantalla de cocina.';
             }
 
-            // 9. Hardware y Dispositivos
             if (text.includes('hardware') || text.includes('tablet') || text.includes('ipad') || text.includes('impresora') || text.includes('pantalla') || text.includes('dispositivo') || text.includes('tpv')) {
                 return '📱 <strong>Dispositivos compatibles:</strong><br>• <strong>Cocina/Barra:</strong> Cualquier tablet (Android/iPad), portátil o pantalla táctil con navegador.<br>• <strong>Camareros:</strong> Smartphones o tablets de mano.<br>• <strong>Clientes:</strong> Sus propios móviles Android o iPhone escaneando la cámara.';
             }
 
-            // 10. Carta, Menú y Precios
             if (text.includes('carta') || text.includes('men[uú]') || text.includes('plato') || text.includes('bebida') || text.includes('precio') || text.includes('al[eé]rgeno') || text.includes('foto')) {
                 return '🍽️ <strong>Gestión de Carta:</strong><br>Puedes modificar precios, añadir nuevos platos, alérgenos y fotografías en cualquier momento desde el panel de Administración. Los cambios se reflejan al instante en los teléfonos de los clientes.';
             }
 
-            // 11. Planes, Precios y Costes
             if (text.includes('cuanto cuesta') || text.includes('cuánto cuesta') || text.includes('coste') || text.includes('costo') || text.includes('tarifa') || text.includes('plan') || text.includes('suscripci') || text.includes('precio') || text.includes('gratis') || text.includes('comisi')) {
                 return '💰 <strong>Precios y Modelos de BarAI:</strong><br>Ofrecemos planes escalables adaptados al tamaño de tu local sin comisiones ocultas por pedido. Puedes calcular tu ahorro estimado en nuestra <a href="#roi" class="text-neonCyan hover:underline font-semibold">calculadora de ROI</a> o solicitar una demo personalizada.';
             }
 
-            // 12. Roles y Empleados
             if (text.includes('rol') || text.includes('empleado') || text.includes('cocinero') || text.includes('gerente') || text.includes('administrador') || text.includes('permiso')) {
                 return '👥 <strong>Perfiles y Roles:</strong><br>• <strong>Camarero:</strong> Ve croquis de mesas, cobros y llamadas de sala.<br>• <strong>Cocinero:</strong> Visualiza solo comandas de comida y tiempos de preparación.<br>• <strong>Gerente / Admin:</strong> Control total, estadísticas, cambios de carta y PIN de cancelación.';
             }
 
-            // 13. Conexión y WiFi
             if (text.includes('wifi') || text.includes('internet') || text.includes('conexi') || text.includes('offline') || text.includes('cae') || text.includes('red')) {
                 return '📶 <strong>Conectividad:</strong><br>El sistema requiere conexión a internet (WiFi o datos 4G/5G). Gracias a nuestra sincronización por WebSockets de baja latencia, el consumo de datos es mínimo y extremadamente rápido.';
             }
 
-            // 14. Demo y Solicitar Acceso
             if (text.includes('demo') || text.includes('probar') || text.includes('registro') || text.includes('empezar') || text.includes('contratar') || text.includes('solicitar')) {
                 return '✨ <strong>¡Solicita tu Demo Gratis!</strong><br>Rellena el formulario de acceso anticipado en la parte superior de esta página y nuestro equipo te contactará para preparar una demostración personalizada en tu local.';
             }
 
-            // 15. Soporte y Tickets
             if (text.includes('soporte') || text.includes('ayuda') || text.includes('problema') || text.includes('error') || text.includes('fallo') || text.includes('incidencia') || text.includes('contacto')) {
                 return '🛠️ <strong>Soporte Técnico BarAI:</strong><br>Si estás experimentando una incidencia técnica o necesitas ayuda inmediata, puedes <a href="ticket.html" class="text-neonGreen hover:underline font-bold">abrir un Ticket de Soporte aquí</a>. Recibirás respuesta urgente de nuestro equipo.';
             }
 
-            // Respuesta por Defecto
             return 'Entiendo tu consulta. Para más detalles, puedes preguntarme sobre: <strong>escanear QR</strong>, <strong>KDS de cocina</strong>, <strong>cobrar mesa</strong>, <strong>cancelar con PIN</strong>, <strong>tickets PDF</strong>, <strong>monitor de inactividad</strong> o <strong>dispositivos</strong>.<br><br>También puedes consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso completa</a> o <a href="ticket.html" class="text-neonGreen hover:underline font-semibold">abrir un ticket de soporte</a>.';
         }
 
