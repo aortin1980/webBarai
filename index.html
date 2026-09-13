@@ -188,71 +188,134 @@
 <body class="bg-darkBg text-gray-100 overflow-x-hidden selection:bg-neonGreen selection:text-darkBg">
 
     <header class="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="/" class="flex items-center space-x-3 flex-shrink-0 group">
                 <div
-                    class="w-12 h-12 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1">
-                    <img src="https://lh3.googleusercontent.com/d/1Qp7yp64UNdDlolajCc1Km4y4jLo0NRhZ" alt="BarAI Logo"
-                        class="w-full h-full object-cover rounded-lg">
+                    class="w-11 h-11 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1 group-hover:border-neonGreen transition-colors">
+                    <img src="assets/logo.png" alt="BarAI Logo"
+                        class="w-full h-full object-contain">
                 </div>
                 <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span
                         class="gradient-text">AI</span></span>
-            </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
             <nav aria-label="Navegación principal"
-                class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                class="hidden xl:flex items-center gap-7 text-sm font-medium text-gray-300">
                 <a href="#features" class="hover:text-neonGreen transition-colors">Características</a>
-                <a href="#dashboard-preview" class="hover:text-neonGreen transition-colors">Paneles Gerenciales</a>
-                <a href="#customer-story" class="hover:text-neonGreen transition-colors">Experiencia Cliente</a>
+                <a href="#dashboard-preview" class="hover:text-neonGreen transition-colors">Paneles</a>
+                <a href="#customer-story" class="hover:text-neonGreen transition-colors">Experiencia QR</a>
                 <a href="#calculator" class="hover:text-neonGreen transition-colors">Calculadora</a>
                 <a href="#pricing" class="hover:text-neonGreen transition-colors">Planes</a>
-                <a href="helpdesk.html" class="hover:text-neonGreen transition-colors">Guía Personal</a>
-                <a href="/ayuda" class="hover:text-neonGreen transition-colors text-neonGreen font-semibold">Ayuda Clientes</a>
-                <a href="ticket.html"
-                    class="hover:text-neonGreen transition-colors text-neonCyan font-semibold flex items-center space-x-1"><i
-                        class="fa-solid fa-headset"></i><span>Soporte</span></a>
-            </nav>
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="mailto:info@barai.es"
-                    class="text-xs text-gray-400 hover:text-neonGreen transition-colors flex items-center space-x-1.5 font-medium">
-                    <i class="fa-solid fa-envelope text-neonGreen"></i>
-                    <span>info@barai.es</span>
+                
+                <!-- Dropdown Guías y Ayuda -->
+                <div class="relative group py-2">
+                    <button class="flex items-center space-x-1.5 hover:text-neonGreen transition-colors text-sm font-medium text-gray-300 focus:outline-none">
+                        <span>Guías y Ayuda</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-gray-400 group-hover:rotate-180 transition-transform duration-200"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-64 bg-cardBg/95 backdrop-blur-xl border border-gray-800 rounded-2xl p-2 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 flex flex-col space-y-1">
+                        <a href="/ayuda-clientes.html" class="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-gray-800/80 transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-neonGreen/10 border border-neonGreen/30 text-neonGreen flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Guía Clientes</span>
+                                <span class="text-[11px] text-gray-400">Cómo pedir con QR en mesa</span>
+                            </div>
+                        </a>
+                        <a href="/helpdesk.html" class="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-gray-800/80 transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-neonCyan/10 border border-neonCyan/30 text-neonCyan flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Guía Personal</span>
+                                <span class="text-[11px] text-gray-400">KDS, PIN, cobro y croquis</span>
+                            </div>
+                        </a>
+                        <a href="/ticket-digital" class="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-gray-800/80 transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Ticket Digital</span>
+                                <span class="text-[11px] text-gray-400">Factura simplificada e IVA</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="/ticket.html"
+                    class="hover:text-neonGreen transition-colors text-neonCyan font-semibold flex items-center space-x-1.5 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/50">
+                    <i class="fa-solid fa-headset text-xs"></i>
+                    <span>Soporte</span>
                 </a>
+            </nav>
+
+            <!-- Actions Right Area -->
+            <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
                 <a href="https://app.barai.es" target="_blank"
-                    class="px-4 py-2.5 rounded-xl bg-gray-900 border border-neonCyan/50 text-neonCyan font-semibold text-sm hover:bg-neonCyan/10 transition-all glow-cyan flex items-center space-x-2">
-                    <i class="fa-solid fa-right-to-bracket"></i>
+                    class="px-3.5 py-2 rounded-xl bg-gray-900/90 border border-neonCyan/40 text-neonCyan font-semibold text-xs sm:text-sm hover:bg-neonCyan/10 transition-all glow-cyan flex items-center space-x-1.5">
+                    <i class="fa-solid fa-right-to-bracket text-xs"></i>
                     <span>Iniciar Sesión</span>
                 </a>
                 <a href="#contact"
-                    class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold hover:opacity-90 transition-all glow-green">
-                    Solicitar Demo
+                    class="px-4 py-2 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-xs sm:text-sm hover:opacity-90 transition-all glow-green flex items-center space-x-1.5">
+                    <span>Solicitar Demo</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
             </div>
+
+            <!-- Mobile Hamburger Button -->
             <button id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-controls="mobile-menu"
-                aria-expanded="false" class="md:hidden text-gray-300 focus:outline-none">
-                <i class="fa-solid fa-bars text-2xl"></i>
+                aria-expanded="false" class="xl:hidden text-gray-300 hover:text-white focus:outline-none p-2 rounded-lg bg-gray-900/60 border border-gray-800">
+                <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-6 py-4 space-y-4">
-            <a href="#features" class="block text-gray-300 hover:text-neonGreen">Características</a>
-            <a href="#dashboard-preview" class="block text-gray-300 hover:text-neonGreen">Paneles Gerenciales</a>
-            <a href="#customer-story" class="block text-gray-300 hover:text-neonGreen">Experiencia Cliente</a>
-            <a href="#calculator" class="block text-gray-300 hover:text-neonGreen">Calculadora</a>
-            <a href="#pricing" class="block text-gray-300 hover:text-neonGreen">Planes</a>
-            <a href="helpdesk.html" class="block text-gray-300 hover:text-neonGreen">Guía Personal</a>
-            <a href="/ayuda" class="block text-neonGreen font-semibold hover:underline">Ayuda Clientes</a>
-            <a href="ticket.html" class="block text-neonCyan hover:underline">Soporte Técnico</a>
-            <a href="ticket.html" class="block text-neonCyan font-semibold hover:text-neonGreen"><i
-                    class="fa-solid fa-headset mr-2"></i>Abrir Ticket</a>
-            <div class="pt-2 flex flex-col space-y-3">
-                <a href="mailto:info@barai.es" class="text-center text-xs text-gray-400"><i
-                        class="fa-solid fa-envelope mr-1 text-neonGreen"></i> info@barai.es</a>
+
+        <!-- Mobile / Tablet Drawer Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-cardBg/95 backdrop-blur-xl border-b border-gray-800 px-6 py-5 space-y-4 shadow-2xl">
+            <div class="grid grid-cols-2 gap-2 text-sm">
+                <a href="#features" class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Características</a>
+                <a href="#dashboard-preview" class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Paneles</a>
+                <a href="#customer-story" class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Experiencia QR</a>
+                <a href="#calculator" class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Calculadora</a>
+                <a href="#pricing" class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Planes</a>
+                <a href="/ticket.html" class="block p-2 rounded-lg text-neonCyan hover:underline font-semibold"><i class="fa-solid fa-headset mr-1"></i> Soporte</a>
+            </div>
+
+            <div class="border-t border-gray-800 pt-3 space-y-2">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-500 block px-2">Centro de Ayuda</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    <a href="/ayuda-clientes.html" class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-neonGreen font-medium hover:border-neonGreen">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span>Guía Clientes</span>
+                    </a>
+                    <a href="/helpdesk.html" class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 hover:text-neonGreen hover:border-gray-700">
+                        <i class="fa-solid fa-book-open text-neonCyan"></i>
+                        <span>Guía Personal</span>
+                    </a>
+                    <a href="/ticket-digital" class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 hover:text-neonGreen hover:border-gray-700">
+                        <i class="fa-solid fa-receipt text-purple-400"></i>
+                        <span>Ticket Digital</span>
+                    </a>
+                    <a href="mailto:info@barai.es" class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-envelope text-neonGreen"></i>
+                        <span>info@barai.es</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-2 flex flex-col sm:flex-row gap-3">
                 <a href="https://app.barai.es" target="_blank"
-                    class="text-center py-2.5 rounded-xl bg-gray-900 border border-neonCyan text-neonCyan font-bold flex items-center justify-center space-x-2">
+                    class="w-full text-center py-2.5 rounded-xl bg-gray-900 border border-neonCyan text-neonCyan font-bold text-sm flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span>Iniciar Sesión</span>
                 </a>
-                <a href="#contact" class="text-center py-2.5 rounded-xl bg-neonGreen text-darkBg font-bold">Solicitar
-                    Acceso</a>
+                <a href="#contact" class="w-full text-center py-2.5 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-sm shadow-lg">
+                    <span>Solicitar Demo</span>
+                </a>
             </div>
         </div>
     </header>
