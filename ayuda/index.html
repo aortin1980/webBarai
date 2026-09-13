@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Guía para Clientes y Comensales | Ticket Digital y Valoración | BarAI</title>
+    <title>Guía para Clientes y Comensales | Ticket Digital, Mesa Web y Valoración | BarAI</title>
     <meta name="description"
-        content="Guía completa para comensales en locales con BarAI: cómo pedir desde el móvil con QR, cómo funciona el ticket digital ecológico en PDF y cómo valorar tu experiencia en el restaurante.">
+        content="Guía completa para comensales en locales con BarAI: cómo pedir desde el móvil con QR o Mesa Web, cómo funciona el ticket digital ecológico en PDF con logo y cómo valorar tu experiencia en el restaurante.">
     <meta name="keywords"
-        content="guia clientes barai, pedir con qr restaurante, ticket digital pdf restaurante, valoracion restaurante qr, pedir cuenta movil, carta digital qr">
+        content="guia clientes barai, pedir con qr restaurante, mesa web take away, ticket digital pdf restaurante, valoracion restaurante qr, resenas google hosteleria, pedir cuenta movil, carta digital qr">
     <meta name="author" content="BarAI Technologies">
+    <meta name="version" content="1.0.3">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Spanish">
     <meta name="theme-color" content="#0b0f19">
@@ -25,7 +26,7 @@
     <meta property="og:url" content="https://www.barai.es/ayuda">
     <meta property="og:title" content="Guía de Ayuda para Clientes | Ticket Digital y Valoración | BarAI">
     <meta property="og:description"
-        content="Todo lo que necesitas saber como cliente: pide sin esperas, recibe tu ticket oficial en PDF por email y valora la comida y el servicio en segundos.">
+        content="Todo lo que necesitas saber como cliente: pide sin esperas en mesa o barra, recibe tu ticket oficial en PDF por email con desglose de IVA y valora el servicio en segundos.">
     <meta property="og:image" content="https://www.barai.es/assets/logo.png">
     <meta property="og:site_name" content="BarAI">
     <meta property="og:locale" content="es_ES">
@@ -35,7 +36,7 @@
     <meta name="twitter:url" content="https://www.barai.es/ayuda">
     <meta name="twitter:title" content="Guía para Clientes | Ticket Digital y Valoración BarAI">
     <meta name="twitter:description"
-        content="Pide sin esperas desde tu móvil, recibe tu ticket en PDF y califica tu experiencia gastronómica con BarAI.">
+        content="Pide sin esperas desde tu móvil, recibe tu ticket en PDF con desglose de IVA y califica tu experiencia gastronómica con BarAI.">
     <meta name="twitter:image" content="https://www.barai.es/assets/logo.png">
 
     <!-- Structured Data (Schema.org FAQPage & HowTo) -->
@@ -49,8 +50,8 @@
           "step": [
             {
               "@type": "HowToStep",
-              "name": "Escanear el código QR de la mesa",
-              "text": "Apunta la cámara de tu móvil al código QR situado en tu mesa para abrir la carta digital interactiva sin necesidad de descargar apps."
+              "name": "Escanear el código QR de la mesa o acceder a Mesa Web",
+              "text": "Apunta la cámara de tu móvil al código QR situado en tu mesa o abre el enlace de Mesa Web para abrir la carta digital interactiva al instante sin apps."
             },
             {
               "@type": "HowToStep",
@@ -59,13 +60,13 @@
             },
             {
               "@type": "HowToStep",
-              "name": "Solicitar y recibir el Ticket Digital",
-              "text": "Introduce tu correo electrónico para recibir un único documento PDF oficial y consolidado con el desglose de IVA y todos los consumos servidos."
+              "name": "Solicitar y recibir el Ticket Digital en PDF",
+              "text": "Introduce tu correo electrónico para recibir un único documento PDF oficial y consolidado con el logotipo del bar y el desglose de IVA del 10%."
             },
             {
               "@type": "HowToStep",
-              "name": "Valorar el restaurante",
-              "text": "Puntúa la comida, la rapidez y la atención de 1 a 5 estrellas para ayudar al local a mejorar o recomendarlo en Google."
+              "name": "Valorar el restaurante y reseña en Google",
+              "text": "Puntúa la comida y el servicio con estrellas para ayudar al local a mejorar o recomendarlo en Google Maps."
             }
           ]
         },
@@ -85,15 +86,15 @@
               "name": "¿Cómo funciona el Ticket Digital en PDF?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Al introducir tu correo, el sistema agrupa automáticamente todos los pedidos que hayan sido completados y servidos en tu mesa, generando un único recibo PDF oficial con validez fiscal que llega directo a tu bandeja de entrada."
+                "text": "Al introducir tu correo, el sistema agrupa automáticamente todos los pedidos completados y servidos en tu mesa, generando un único recibo PDF oficial con validez fiscal y desglose de IVA al 10% que llega directo a tu bandeja de entrada."
               }
             },
             {
               "@type": "Question",
-              "name": "¿Cómo funciona la valoración del restaurante?",
+              "name": "¿Qué es la Mesa Web (/order/WEB)?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Una vez finalizada la cuenta, el sistema te muestra una pantalla para calificar la comida, la atención y el ambiente con estrellas (1 a 5) y dejar comentarios directos para la gerencia del restaurante."
+                "text": "Es la versión web para realizar pedidos en barra o para llevar (Take Away) sin necesidad de encontrarse sentado en una mesa física numerada."
               }
             },
             {
@@ -161,7 +162,7 @@
     <header class="sticky top-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="../" class="flex items-center space-x-3 group">
+                <a href="/" class="flex items-center space-x-3 group">
                     <div class="w-10 h-10 rounded-xl bg-cardBg border border-neonGreen/40 flex items-center justify-center p-1 group-hover:border-neonGreen transition-colors">
                         <img src="../assets/logo.png" alt="BarAI Logo" class="w-full h-full object-contain">
                     </div>
@@ -169,7 +170,7 @@
                 </a>
 
                 <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                    <a href="../" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+                    <a href="/" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
                     <a href="#como-funciona" class="text-gray-300 hover:text-white transition-colors">Cómo Pedir</a>
                     <a href="#ticket-digital" class="text-neonGreen hover:text-emerald-400 transition-colors font-semibold">
                         <i class="fa-solid fa-receipt mr-1"></i> Ticket Digital
@@ -178,15 +179,15 @@
                         <i class="fa-solid fa-star mr-1"></i> Valoración
                     </a>
                     <a href="#faq" class="text-gray-300 hover:text-white transition-colors">Preguntas Frecuentes</a>
-                    <a href="../helpdesk.html" class="text-gray-400 hover:text-white text-xs border-l border-gray-800 pl-4">Guía Personal</a>
+                    <a href="/helpdesk.html" class="text-gray-400 hover:text-white text-xs border-l border-gray-800 pl-4">Guía Personal</a>
                 </nav>
 
                 <div class="flex items-center space-x-3">
-                    <a href="../ticket.html" class="inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-gray-900 border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 transition-all">
+                    <a href="/ticket.html" class="inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-gray-900 border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 transition-all">
                         <i class="fa-solid fa-headset text-neonCyan"></i>
                         <span>Soporte</span>
                     </a>
-                    <a href="../#contact" class="hidden sm:inline-flex items-center space-x-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg hover:opacity-95 transition-opacity shadow-lg">
+                    <a href="/#contact" class="hidden sm:inline-flex items-center space-x-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg hover:opacity-95 transition-opacity shadow-lg">
                         <span>Soy un Bar</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -201,20 +202,20 @@
         <section class="pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
             <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neonGreen/10 border border-neonGreen/30 text-neonGreen text-xs font-semibold uppercase tracking-wider mb-6">
                 <i class="fa-solid fa-mobile-screen-button"></i>
-                <span>Guía Oficial del Comensal</span>
+                <span>Guía Oficial del Comensal v1.0.3</span>
             </div>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-tight">
                 Disfruta de tu experiencia en el restaurante con <span class="gradient-text">BarAI</span>
             </h1>
             <p class="mt-5 text-lg text-gray-400 max-w-2xl mx-auto">
-                Pide directamente desde tu mesa con el código QR, consulta alérgenos, recibe tu <strong>ticket oficial en PDF por email</strong> y califica el servicio en pocos segundos.
+                Pide directamente desde tu mesa con el código QR o desde barra con Mesa Web, consulta alérgenos, recibe tu <strong>ticket oficial en PDF con desglose de IVA y logo</strong> y califica el servicio en pocos segundos.
             </p>
 
             <!-- Search Filter Bar -->
             <div class="mt-8 max-w-xl mx-auto">
                 <div class="relative">
                     <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-base"></i>
-                    <input type="text" id="client-search" placeholder="¿Qué necesitas saber? (ej. ticket pdf, factura, cancelar, alérgenos...)"
+                    <input type="text" id="client-search" placeholder="¿Qué necesitas saber? (ej. ticket pdf, factura, cancelar, alérgenos, mesa web...)"
                         class="w-full bg-cardBg border border-gray-800 rounded-2xl pl-12 pr-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors shadow-2xl"
                         oninput="filterClientGuide()">
                 </div>
@@ -261,10 +262,10 @@
                             </div>
                             <h3 class="text-lg font-bold text-white mb-2 flex items-center space-x-2">
                                 <i class="fa-solid fa-qrcode text-neonGreen text-base"></i>
-                                <span>Escanea el QR</span>
+                                <span>Escanea o Abre Mesa Web</span>
                             </h3>
                             <p class="text-xs text-gray-400 leading-relaxed mb-4">
-                                Abre la cámara de tu teléfono móvil y enfoca el código QR colocado en tu mesa. Se abrirá la carta de inmediato en tu navegador.
+                                Abre la cámara de tu teléfono móvil y enfoca el QR en tu mesa (o accede al enlace web de barra/take away). Se abrirá la carta de inmediato en tu navegador.
                             </p>
                         </div>
                         <div class="p-3 bg-gray-900/80 rounded-xl border border-gray-800 text-[11px] text-gray-400 flex items-center space-x-2">
@@ -284,12 +285,12 @@
                                 <span>Explora y Elige</span>
                             </h3>
                             <p class="text-xs text-gray-400 leading-relaxed mb-4">
-                                Navega por las categorías, consulta fotos reales de los platos, revisa alérgenos y añade notas de cocina personalizadas.
+                                Navega por las categorías, consulta fotos reales de los platos, revisa alérgenos y añade notas de cocina personalizadas (ej. <em>"sin cebolla"</em>).
                             </p>
                         </div>
                         <div class="p-3 bg-gray-900/80 rounded-xl border border-gray-800 text-[11px] text-gray-400 flex items-center space-x-2">
                             <i class="fa-solid fa-filter text-neonCyan"></i>
-                            <span>Filtro de celíacos, veganos y lácteos.</span>
+                            <span>Filtro de celíacos, veganos y alérgenos.</span>
                         </div>
                     </div>
 
@@ -304,7 +305,7 @@
                                 <span>Envía a Cocina</span>
                             </h3>
                             <p class="text-xs text-gray-400 leading-relaxed mb-4">
-                                Pulsa "Pedir" y la comanda viaja instantáneamente a la pantalla de cocina o barra. Verás en vivo cuando tu plato esté en preparación.
+                                Pulsa "Pedir" y la comanda viaja instantáneamente a la pantalla de cocina o barra. Podrás ver en tiempo real el progreso: <em>Recibido ➔ Preparando ➔ Servido</em>.
                             </p>
                         </div>
                         <div class="p-3 bg-gray-900/80 rounded-xl border border-gray-800 text-[11px] text-gray-400 flex items-center space-x-2">
@@ -324,7 +325,7 @@
                                 <span>Paga y Recibe Ticket</span>
                             </h3>
                             <p class="text-xs text-gray-400 leading-relaxed mb-4">
-                                Pide la cuenta cuando termines. Deja tu correo y recibe tu ticket oficial en PDF con desglose completo al instante.
+                                Pide la cuenta cuando termines. Deja tu correo y recibe tu ticket oficial en PDF con el logotipo del local y desglose legal de IVA al instante.
                             </p>
                         </div>
                         <div class="p-3 bg-gray-900/80 rounded-xl border border-gray-800 text-[11px] text-gray-400 flex items-center space-x-2">
@@ -364,7 +365,7 @@
                                 <i class="fa-solid fa-rotate-left text-neonCyan text-base mt-0.5"></i>
                                 <div>
                                     <strong class="text-white block font-semibold">Cancelación Inteligente de Platos</strong>
-                                    ¿Te has equivocado al pedir? Puedes anular un plato mientras esté en estado <em>Recibido</em> antes de que cocina empiece a prepararlo.
+                                    ¿Te has equivocado al pedir? Puedes anular un plato mientras esté en estado <em>Recibido</em> antes de que cocina pulse "Oído Cocina".
                                 </div>
                             </div>
                         </div>
@@ -409,7 +410,7 @@
                                 1. Un único correo consolidado
                             </h3>
                             <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
-                                No te inundamos la bandeja de entrada con un email por cada ronda de bebidas o plato. Introduces tu correo electrónico una sola vez y el sistema <strong>agrupa todos los pedidos</strong> de tu mesa.
+                                No te inundamos la bandeja de entrada con un email por cada ronda. Introduces tu correo electrónico una sola vez y el sistema <strong>agrupa todos los pedidos</strong> de tu mesa al cobrar.
                             </p>
                         </div>
                         <div class="text-xs text-neonGreen font-semibold flex items-center">
@@ -424,10 +425,10 @@
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white mb-3">
-                                2. Validez Legal y Fiscal Oficial
+                                2. Validez Legal, Logo e IVA 10%
                             </h3>
                             <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
-                                El PDF adjunto incluye todos los requisitos tributarios: datos fiscales y CIF del local, número de factura/ticket simplificado, fecha, desglose de IVA (10% / 21%) y precios unitarios.
+                                El PDF adjunto incluye el logotipo del establecimiento, datos fiscales oficiales (CIF/NIF), número de factura simplificada y el desglose de Base Imponible y Cuota de IVA al 10% (RD 1619/2012).
                             </p>
                         </div>
                         <div class="text-xs text-neonCyan font-semibold flex items-center">
@@ -445,7 +446,7 @@
                                 3. Solo lo que has consumido
                             </h3>
                             <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
-                                Por estricta regla de seguridad, el ticket solo computa los productos en estado <strong>Completado / Servido</strong>. Cualquier producto no preparado se descarta para protegerte de cobros indebidos.
+                                Por estricta regla de seguridad, el ticket solo computa los productos en estado <strong>Completado / Servido</strong>. Cualquier plato no servido se cancela automáticamente para protegerte de cobros indebidos.
                             </p>
                         </div>
                         <div class="text-xs text-emerald-400 font-semibold flex items-center">
@@ -463,18 +464,18 @@
                         <div>
                             <h4 class="text-base font-bold text-white">Tu privacidad está 100% protegida</h4>
                             <p class="text-xs text-gray-400 mt-1">
-                                Tu correo electrónico únicamente se utiliza para remitirte el PDF de tu consumo. No vendemos tus datos a terceros ni enviamos publicidad no deseada.
+                                Tu correo electrónico únicamente se utiliza para remitirte el PDF de tu consumo y la invitación voluntaria de reseña. No vendemos tus datos a terceros ni enviamos publicidad no deseada.
                             </p>
                         </div>
                     </div>
-                    <a href="../politica-de-privacidad/" class="flex-shrink-0 text-xs text-gray-300 hover:text-neonGreen underline font-medium">
+                    <a href="/politica-de-privacidad/" class="flex-shrink-0 text-xs text-gray-300 hover:text-neonGreen underline font-medium">
                         Ver política de privacidad
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: DETALLE DE LA VALORACIÓN DEL RESTAURANTE -->
+        <!-- Section 4: DETALLE DE LA VALORACIÓN Y RESEÑAS EN GOOGLE -->
         <section id="valoracion" class="py-16 bg-cardBg/40 border-t border-gray-800 guide-card">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -484,10 +485,10 @@
                             <span>Tu Opinión Cuenta</span>
                         </div>
                         <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-                            Sistema de <span class="gradient-text">Valoración y Feedback</span> en Vivo
+                            Sistema de <span class="gradient-text">Valoración y Reseñas</span> en Google
                         </h2>
                         <p class="text-sm sm:text-base text-gray-400 leading-relaxed">
-                            Al cerrar tu cuenta, tendrás la oportunidad de puntuar tu experiencia gastronómica. Este sistema permite al establecimiento escuchar activamente a sus clientes y mejorar el servicio cada día.
+                            Al cerrar tu cuenta, tendrás la oportunidad de puntuar tu experiencia gastronómica. Además, si el local tiene activo el módulo de reseñas, 15 minutos después recibirás una invitación para valorar el restaurante en Google Maps.
                         </p>
 
                         <div class="space-y-4">
@@ -523,9 +524,9 @@
                                     <i class="fa-brands fa-google text-base"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-sm font-bold text-white">Recomendación en Google Reviews</h4>
+                                    <h4 class="text-sm font-bold text-white">Invitación Antispam a Google Maps (15 min)</h4>
                                     <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-                                        Si tu experiencia ha sido excelente (5 estrellas), el sistema te facilitará compartirla en la ficha de Google del restaurante para apoyar al negocio local.
+                                        Si es tu primera visita, recibirás una invitación por email 15 minutos después de pagar. Si ya has visitado el bar con anterioridad, el sistema nunca volverá a enviártela.
                                     </p>
                                 </div>
                             </div>
@@ -628,7 +629,7 @@
                             <i class="fa-solid fa-chevron-down text-gray-500 text-xs transition-transform duration-300"></i>
                         </button>
                         <div class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-400 border-t border-gray-800/50 leading-relaxed">
-                            No. BarAI funciona de manera 100% web instantánea. Solo tienes que abrir la cámara de tu smartphone (Android o iPhone) y enfocar el código QR de tu mesa. La carta se abrirá automáticamente en tu navegador habitual.
+                            No. BarAI funciona de manera 100% web instantánea. Solo tienes que abrir la cámara de tu smartphone (Android o iPhone) y enfocar el código QR de tu mesa o el enlace web de barra. La carta se abrirá automáticamente en tu navegador habitual.
                         </div>
                     </div>
 
@@ -661,7 +662,7 @@
                             <i class="fa-solid fa-chevron-down text-gray-500 text-xs transition-transform duration-300"></i>
                         </button>
                         <div class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-400 border-t border-gray-800/50 leading-relaxed">
-                            El envío es instantáneo. En el momento en que el camarero realiza el cobro o solicitas la cuenta, nuestro servidor genera el archivo PDF consolidado y lo remite a tu email en menos de 5 segundos.
+                            El envío es instantáneo. En el momento en que el camarero realiza el cobro en sala, nuestro servidor genera el archivo PDF consolidado con el logotipo del bar y desglose legal de IVA al 10% y lo remite a tu email en menos de 5 segundos.
                         </div>
                     </div>
 
@@ -673,6 +674,17 @@
                         </button>
                         <div class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-400 border-t border-gray-800/50 leading-relaxed">
                             Sí. Tus respuestas y puntuaciones se tratan con total confidencialidad para permitir al equipo de cocina y de sala mejorar su servicio sin comprometer tus datos personales.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="bg-cardBg rounded-2xl border border-gray-800 overflow-hidden faq-item">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-semibold text-white flex justify-between items-center text-sm sm:text-base hover:text-neonGreen transition-colors">
+                            <span>¿Qué es la Mesa Web (/order/WEB)?</span>
+                            <i class="fa-solid fa-chevron-down text-gray-500 text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-400 border-t border-gray-800/50 leading-relaxed">
+                            Es un enlace directo para pedidos en barra o para llevar (Take Away) que no requiere estar ubicado en una mesa física con código QR, permitiendo pedir rápidamente sin complicaciones.
                         </div>
                     </div>
                 </div>
@@ -689,11 +701,11 @@
                     Aumenta la rotación de mesas, reduce un 80% los errores en comanda y ahorra miles de euros en papel térmico con BarAI.
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="../#contact"
+                    <a href="/#contact"
                         class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-sm hover:opacity-95 transition-opacity shadow-lg">
                         Solicitar Demo Gratis de 2 Meses
                     </a>
-                    <a href="../helpdesk.html"
+                    <a href="/helpdesk.html"
                         class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gray-900 border border-gray-700 text-gray-300 hover:text-white font-semibold text-sm transition-colors">
                         Ver Guía Operativa para Personal
                     </a>
@@ -717,19 +729,20 @@
                     <a href="mailto:info@barai.es" class="hover:text-neonGreen transition-colors font-medium">info@barai.es</a>
                 </div>
                 <div class="flex items-center space-x-4 text-gray-400">
-                    <a href="../ayuda-clientes.html" class="text-neonGreen text-xs border-r border-gray-700 pr-4 font-semibold">Guía Clientes</a>
-                    <a href="../helpdesk.html" class="hover:text-neonGreen text-xs border-r border-gray-700 pr-4">Guía Personal</a>
-                    <a href="../ticket.html" class="hover:text-neonGreen text-xs mr-2 border-r border-gray-700 pr-4">Soporte Técnico</a>
+                    <a href="/ayuda-clientes.html" class="text-neonGreen text-xs border-r border-gray-700 pr-4 font-semibold">Guía Clientes</a>
+                    <a href="/helpdesk.html" class="hover:text-neonGreen text-xs border-r border-gray-700 pr-4">Guía Personal</a>
+                    <a href="/ticket.html" class="hover:text-neonGreen text-xs mr-2 border-r border-gray-700 pr-4">Soporte Técnico</a>
                     <a href="https://www.instagram.com/barai.es/" target="_blank" class="hover:text-neonGreen"><i class="fa-brands fa-instagram text-lg"></i></a>
                 </div>
             </div>
 
             <div class="border-t border-gray-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-4 sm:space-y-0">
-                <p>© 2026 BarAI Technologies. Todos los derechos reservados.</p>
+                <p>© 2026 BarAI Technologies. Todos los derechos reservados. <span class="text-gray-600">v1.0.3</span></p>
                 <div class="flex flex-wrap items-center justify-center gap-6">
-                    <a href="../aviso-legal/" class="hover:text-neonGreen transition-colors">Aviso legal</a>
-                    <a href="../politica-de-privacidad/" class="hover:text-neonGreen transition-colors">Política de privacidad</a>
-                    <a href="../politica-de-cookies/" class="hover:text-neonGreen transition-colors">Política de cookies</a>
+                    <a href="/ticket-digital" class="hover:text-neonGreen transition-colors">Condiciones Ticket Digital</a>
+                    <a href="/aviso-legal/" class="hover:text-neonGreen transition-colors">Aviso legal</a>
+                    <a href="/politica-de-privacidad/" class="hover:text-neonGreen transition-colors">Política de privacidad</a>
+                    <a href="/politica-de-cookies/" class="hover:text-neonGreen transition-colors">Política de cookies</a>
                 </div>
             </div>
         </div>
