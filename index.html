@@ -727,11 +727,11 @@
                             </p>
                             <ul class="space-y-3 text-sm text-gray-300">
                                 <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Control de inventario
-                                        básico</span></li>
+                                        class="fa-solid fa-check text-neonGreen"></i><span>Gestión de pedidos y mesas</span></li>
                                 <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Alertas de stock bajo</span>
-                                </li>
+                                        class="fa-solid fa-check text-neonGreen"></i><span>Carta digital QR</span></li>
+                                <li class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-check text-neonGreen"></i><span>Generación básica de carta</span></li>
                                 <li class="flex items-center space-x-3"><i
                                         class="fa-solid fa-check text-neonGreen"></i><span>Soporte vía
                                         info@barai.es</span>
@@ -761,6 +761,8 @@
                                 <li class="flex items-center space-x-3"><i
                                         class="fa-solid fa-check text-neonGreen"></i><span>Menú digital QR
                                         interactivo</span></li>
+                                <li class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-check text-neonGreen"></i><span>Ticket digital</span></li>
                                 <li class="flex items-center space-x-3"><i
                                         class="fa-solid fa-check text-neonGreen"></i><span>Predicción de demanda por
                                         IA</span></li>
@@ -796,6 +798,8 @@
                                 <li class="flex items-center space-x-3"><i
                                         class="fa-solid fa-check text-neonGreen"></i><span>Integración con TPVs
                                         avanzados</span></li>
+                                <li class="flex items-center space-x-3"><i
+                                        class="fa-solid fa-check text-neonGreen"></i><span>Alertas de control de stock</span></li>
                                 <li class="flex items-center space-x-3"><i
                                         class="fa-solid fa-check text-neonGreen"></i><span>Gerente de cuenta
                                         dedicado</span>
@@ -989,6 +993,8 @@
                     ¡Hola! Soy el asistente virtual de BarAI. ¿En qué puedo ayudarte sobre el funcionamiento de nuestro
                     sistema?
                     <div class="mt-3 flex flex-wrap gap-1.5">
+                        <button onclick="sendQuickReply('¿Cómo puedo probar la DEMO gratuita?')"
+                            class="bg-gradient-to-r from-neonGreen/20 to-neonCyan/20 hover:from-neonGreen/30 hover:to-neonCyan/30 border border-neonGreen/60 text-neonGreen text-xs px-2.5 py-1 rounded-full transition-colors font-semibold">✨ Probar DEMO gratis</button>
                         <button onclick="sendQuickReply('¿Cómo cobro una mesa?')"
                             class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2.5 py-1 rounded-full transition-colors">💳 Cobrar mesa</button>
                         <button onclick="sendQuickReply('¿Cómo cancelo un pedido con PIN?')"
@@ -1259,15 +1265,25 @@
                 return '📶 <strong>Conectividad:</strong><br>El sistema requiere conexión a internet (WiFi o datos 4G/5G). Gracias a nuestra sincronización por WebSockets de baja latencia, el consumo de datos es mínimo y extremadamente rápido.';
             }
 
-            if (text.includes('demo') || text.includes('probar') || text.includes('registro') || text.includes('empezar') || text.includes('contratar') || text.includes('solicitar')) {
-                return '✨ <strong>¡Solicita tu Demo Gratis!</strong><br>Rellena el formulario de acceso anticipado en la parte superior de esta página y nuestro equipo te contactará para preparar una demostración personalizada en tu local.';
+            if (text.includes('demo') || text.includes('probar') || text.includes('test') || text.includes('login') || text.includes('acceder') || text.includes('acceso') || text.includes('credencial') || text.includes('usuario') || text.includes('contrase') || text.includes('pass')) {
+                return '✨ <strong>¡Prueba DEMO Gratuita en Vivo!</strong><br>' +
+                    'Puedes acceder ahora mismo y probar el sistema en directo entrando en 👉 <a href="https://app.barai.es" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a>.<br><br>' +
+                    '🔑 <strong>Credenciales de acceso:</strong><br>' +
+                    '• <strong>Gerente:</strong> Usuario: <code>admin</code> (o <code>gerente</code>) | Pass: <code>admin</code><br>' +
+                    '• <strong>Cocinero:</strong> Usuario: <code>cocinero</code> | Pass: <code>cocinero</code><br>' +
+                    '• <strong>Camarero:</strong> Usuario: <code>camarero</code> | Pass: <code>camarero</code><br><br>' +
+                    '¡Explora el control de mesas en sala, el KDS de cocina y la administración en tiempo real!';
+            }
+
+            if (text.includes('registro') || text.includes('empezar') || text.includes('contratar') || text.includes('solicitar')) {
+                return '✨ <strong>¡Empieza con BarAI!</strong><br>Puedes probar nuestra demo gratuita en <a href="https://app.barai.es" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a> o rellenar el formulario de contacto para que preparemos tu local.';
             }
 
             if (text.includes('soporte') || text.includes('ayuda') || text.includes('problema') || text.includes('error') || text.includes('fallo') || text.includes('incidencia') || text.includes('contacto')) {
                 return '🛠️ <strong>Soporte Técnico BarAI:</strong><br>Si estás experimentando una incidencia técnica o necesitas ayuda inmediata, puedes <a href="ticket.html" class="text-neonGreen hover:underline font-bold">abrir un Ticket de Soporte aquí</a>. Recibirás respuesta urgente de nuestro equipo.';
             }
 
-            return 'Entiendo tu consulta. Para más detalles, puedes preguntarme sobre: <strong>escanear QR</strong>, <strong>KDS de cocina</strong>, <strong>cobrar mesa</strong>, <strong>cancelar con PIN</strong>, <strong>tickets PDF</strong>, <strong>monitor de inactividad</strong> o <strong>dispositivos</strong>.<br><br>También puedes consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso completa</a> o <a href="ticket.html" class="text-neonGreen hover:underline font-semibold">abrir un ticket de soporte</a>.';
+            return 'Entiendo tu consulta. Para más detalles, puedes preguntarme sobre: <strong>probar demo gratis</strong>, <strong>escanear QR</strong>, <strong>KDS de cocina</strong>, <strong>cobrar mesa</strong>, <strong>cancelar con PIN</strong>, <strong>tickets PDF</strong> o <strong>dispositivos</strong>.<br><br>También puedes consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso completa</a> o <a href="ticket.html" class="text-neonGreen hover:underline font-semibold">abrir un ticket de soporte</a>.';
         }
 
         function sendQuickReply(text) {
