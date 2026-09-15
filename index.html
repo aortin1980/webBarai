@@ -1357,35 +1357,35 @@
             const urlParams = new URLSearchParams(window.location.search);
             let ref = urlParams.get('ref') || urlParams.get('source');
             let email = urlParams.get('ref_email');
-            
+
             if (ref) {
                 // Viene de un link con ref explícito
                 let url = 'https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref);
                 if (email) {
                     url += '&email=' + encodeURIComponent(email);
-                    
+
                     // Notificar silenciosamente al Google Script para marcar el clic en Excel
-                    fetch('https://script.google.com/macros/s/AKfycbxB7r9gywJoZVkf89RL3VnkHqjpCiju87R-h_PycPP9J7XxQaY45_WKG1UAIbpy-E2y/exec', {
+                    fetch('https://script.google.com/macros/s/AKfycbxlygfb8KzNmaMQgwO4XMh2z67ZzRS1rGMG-vw_XNF4nH3LT1msewRfb1eb850EsO5w/exec', {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
                         },
                         body: 'email=' + encodeURIComponent(email)
-                    }).catch(()=>console.log("kpi excel error"));
+                    }).catch(() => console.log("kpi excel error"));
                 }
-                
-                fetch(url, {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+
+                fetch(url, { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
             } else {
                 // Ver si viene orgánico de Google
                 const referrer = document.referrer.toLowerCase();
                 if (referrer.includes('google.')) {
-                    fetch('https://app.barai.es/api/track_kpi?source=www_google', {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+                    fetch('https://app.barai.es/api/track_kpi?source=www_google', { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
                 } else if (!referrer || referrer.includes(window.location.hostname)) {
-                    fetch('https://app.barai.es/api/track_kpi?source=www_direct', {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+                    fetch('https://app.barai.es/api/track_kpi?source=www_direct', { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
                 } else {
                     // Otros referrers
-                    fetch('https://app.barai.es/api/track_kpi?source=www_other', {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+                    fetch('https://app.barai.es/api/track_kpi?source=www_other', { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
                 }
             }
         });
