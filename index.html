@@ -1350,6 +1350,30 @@
             }, 450);
         }
     </script>
+
+    <!-- KPI Tracking para Web -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            let ref = urlParams.get('ref') || urlParams.get('source');
+            
+            if (ref) {
+                // Viene de un link con ref explícito
+                fetch('https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref), {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+            } else {
+                // Ver si viene orgánico de Google
+                const referrer = document.referrer.toLowerCase();
+                if (referrer.includes('google.')) {
+                    fetch('https://app.barai.es/api/track_kpi?source=www_google', {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+                } else if (!referrer || referrer.includes(window.location.hostname)) {
+                    fetch('https://app.barai.es/api/track_kpi?source=www_direct', {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+                } else {
+                    // Otros referrers
+                    fetch('https://app.barai.es/api/track_kpi?source=www_other', {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
