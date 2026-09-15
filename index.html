@@ -1156,7 +1156,7 @@
             payload.append('direccion', address);
             payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
 
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbzmEbIcw9JnEYTA9TPgqnl5qpzbs1ei4Zx2PTkfeCM-BhSlEPNhIWLBQ_Z7t07kvPQ4/exec';
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbxB7r9gywJoZVkf89RL3VnkHqjpCiju87R-h_PycPP9J7XxQaY45_WKG1UAIbpy-E2y/exec';
 
             fetch(scriptUrl, {
                 method: 'POST',
@@ -1356,10 +1356,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             let ref = urlParams.get('ref') || urlParams.get('source');
+            let email = urlParams.get('ref_email');
             
             if (ref) {
                 // Viene de un link con ref explícito
-                fetch('https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref), {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+                let url = 'https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref);
+                if (email) url += '&email=' + encodeURIComponent(email);
+                
+                fetch(url, {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
             } else {
                 // Ver si viene orgánico de Google
                 const referrer = document.referrer.toLowerCase();
