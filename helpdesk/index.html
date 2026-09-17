@@ -177,8 +177,7 @@
             <a href="/" class="flex items-center space-x-3">
                 <div
                     class="w-12 h-12 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1">
-                    <img src="../assets/logo.png" alt="BarAI Logo"
-                        class="w-full h-full object-contain">
+                    <img src="../assets/logo.png" alt="BarAI Logo" class="w-full h-full object-contain">
                 </div>
                 <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span
                         class="gradient-text">AI</span></span>
@@ -222,7 +221,9 @@
                     Centro de Ayuda y <span class="gradient-text">Guía de Uso Operativa</span>
                 </h1>
                 <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-                    Guía completa de arquitectura y operativa de BarAI: pedidos en mesa y barra, KDS en cocina, seguridad con PIN, cobro fiscal con IVA 10%, ticket digital con logo, reseñas en Google y SuperAdmin.
+                    Guía completa de arquitectura y operativa de BarAI: pedidos en mesa y barra, KDS en cocina,
+                    seguridad con PIN, cobro fiscal con IVA 10%, ticket digital con logo, reseñas en Google y
+                    SuperAdmin.
                 </p>
 
                 <!-- Buscador Rápido -->
@@ -247,26 +248,36 @@
                                 <i class="fa-solid fa-qrcode"></i>
                                 <span>Punto de Entrada y Validación</span>
                             </div>
-                            <h2 class="text-2xl font-bold text-white mb-4">1. Acceso de Cliente, Mesa Web y Validación</h2>
+                            <h2 class="text-2xl font-bold text-white mb-4">1. Acceso de Cliente, Mesa Web y Validación
+                            </h2>
                             <p class="text-gray-400 mb-6 leading-relaxed text-sm">
-                                El comensal accede a la Web App instantánea mediante escaneo de QR físico en mesa o a través de la URL de Mesa Web, sin descargas ni registros obligatorios.
+                                El comensal accede a la Web App instantánea mediante escaneo de QR físico en mesa o a
+                                través de la URL de Mesa Web, sin descargas ni registros obligatorios.
                             </p>
                             <ul class="space-y-3 mb-6 text-sm">
                                 <li class="flex items-start">
                                     <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
-                                    <p class="text-gray-300"><strong class="text-white">Mesa Web (/order/WEB):</strong> Canal especial para pedidos en barra o para llevar (Take Away) sin validación de código físico.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Mesa Web (/order/WEB):</strong>
+                                        Canal especial para pedidos en barra o para llevar (Take Away) sin validación de
+                                        código físico.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
-                                    <p class="text-gray-300"><strong class="text-white">Validación de Seguridad Modular:</strong> El bar puede activar validación por código visual de 3 letras (ej. <code class="text-neonGreen">M1A</code>) o por proximidad NFC.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Validación de Seguridad
+                                            Modular:</strong> El bar puede activar validación por código visual de 3
+                                        letras (ej. <code class="text-neonGreen">M1A</code>) o por proximidad NFC.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
-                                    <p class="text-gray-300"><strong class="text-white">Apertura de Sesión Cifrada:</strong> Se asigna un identificador único seguro (<code class="text-xs text-gray-400">client_token</code>) y la mesa pasa a estado ocupado en tiempo real.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Apertura de Sesión
+                                            Cifrada:</strong> Se asigna un identificador único seguro (<code
+                                            class="text-xs text-gray-400">client_token</code>) y la mesa pasa a estado
+                                        ocupado en tiempo real.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
-                                    <p class="text-gray-300"><strong class="text-white">Llamar al Camarero:</strong> Alerta silenciosa directa a sala sin generar pedido ni comanda en cocina.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Llamar al Camarero:</strong>
+                                        Alerta silenciosa directa a sala sin generar pedido ni comanda en cocina.</p>
                                 </li>
                             </ul>
                         </div>
@@ -295,30 +306,38 @@
                             </div>
                             <h2 class="text-2xl font-bold text-white mb-4">2. Cocina, KDS y Ciclo de Comandas</h2>
                             <p class="text-gray-400 mb-6 leading-relaxed text-sm">
-                                Recepción en tiempo real por WebSockets con aviso acústico en cola FIFO y transición de estados limpia para el equipo.
+                                Recepción en tiempo real por WebSockets con aviso acústico en cola FIFO y transición de
+                                estados limpia para el equipo.
                             </p>
                             <div class="space-y-3 mb-6 text-sm">
                                 <div class="flex items-start">
                                     <span class="w-3 h-3 rounded-full bg-cyan-400 mt-1.5 mr-3 flex-shrink-0"></span>
-                                    <p class="text-gray-300"><strong class="text-white">Recibido (Cian):</strong> Comanda recién entrada. El cliente aún puede cancelarla desde su móvil si se equivocó.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Recibido (Cian):</strong>
+                                        Comanda recién entrada. El cliente aún puede cancelarla desde su móvil si se
+                                        equivocó.</p>
                                 </div>
                                 <div class="flex items-start">
                                     <span class="w-3 h-3 rounded-full bg-orange-400 mt-1.5 mr-3 flex-shrink-0"></span>
-                                    <p class="text-gray-300"><strong class="text-white">Preparando (Naranja):</strong> El cocinero pulsa <em>"Oído Cocina"</em>. Se bloquea de inmediato la cancelación del comensal.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Preparando (Naranja):</strong>
+                                        El cocinero pulsa <em>"Oído Cocina"</em>. Se bloquea de inmediato la cancelación
+                                        del comensal.</p>
                                 </div>
                                 <div class="flex items-start">
                                     <span class="w-3 h-3 rounded-full bg-green-500 mt-1.5 mr-3 flex-shrink-0"></span>
-                                    <p class="text-gray-300"><strong class="text-white">Listo (Verde):</strong> El plato está emplatado. Se alerta a sala para su entrega en mesa.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Listo (Verde):</strong> El plato
+                                        está emplatado. Se alerta a sala para su entrega en mesa.</p>
                                 </div>
                                 <div class="flex items-start">
                                     <span class="w-3 h-3 rounded-full bg-emerald-400 mt-1.5 mr-3 flex-shrink-0"></span>
-                                    <p class="text-gray-300"><strong class="text-white">Completado / Servido:</strong> Entregado en mesa. Es el único estado computable para el cobro final.</p>
+                                    <p class="text-gray-300"><strong class="text-white">Completado / Servido:</strong>
+                                        Entregado en mesa. Es el único estado computable para el cobro final.</p>
                                 </div>
                             </div>
                             <div
                                 class="bg-blue-900/20 border-l-4 border-blue-500 p-3 rounded-r-lg text-xs text-blue-200">
                                 <i class="fa-solid fa-filter mr-1.5"></i> <strong>Filtro Estricto de Cocina:</strong>
-                                Las llamadas de camarero no saturan la pantalla de cocina; se enrutan exclusivamente a los camareros de sala.
+                                Las llamadas de camarero no saturan la pantalla de cocina; se enrutan exclusivamente a
+                                los camareros de sala.
                             </div>
                         </div>
                     </div>
@@ -332,26 +351,34 @@
                         <i class="fa-solid fa-shield-halved"></i>
                         <span>Control Antifraude y Mermas</span>
                     </div>
-                    <h2 class="text-2xl font-bold text-white mb-4">3. Reglas de Cancelación y PIN Maestro de 4 Dígitos</h2>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Reglas de Cancelación y PIN Maestro de 4 Dígitos
+                    </h2>
                     <p class="text-gray-400 mb-6 leading-relaxed text-sm">
-                        Para erradicar pérdidas de comida y mermas descontroladas, BarAI implementa una doble barrera de seguridad:
+                        Para erradicar pérdidas de comida y mermas descontroladas, BarAI implementa una doble barrera de
+                        seguridad:
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
                         <div class="space-y-4 md:col-span-2">
                             <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
                                 <div class="text-neonCyan text-base font-bold mb-1.5 flex items-center">
-                                    <i class="fa-solid fa-user-xmark mr-2"></i> Cancelación por el Comensal (Ventana Temprana)
+                                    <i class="fa-solid fa-user-xmark mr-2"></i> Cancelación por el Comensal (Ventana
+                                    Temprana)
                                 </div>
                                 <p class="text-gray-400 text-xs leading-relaxed">
-                                    El cliente <strong>solo puede anular</strong> su pedido mientras permanezca en estado <code>Recibido</code>. En cuanto cocina pulsa <em>"Oído Cocina"</em>, el botón desaparece de su pantalla.
+                                    El cliente <strong>solo puede anular</strong> su pedido mientras permanezca en
+                                    estado <code>Recibido</code>. En cuanto cocina pulsa <em>"Oído Cocina"</em>, el
+                                    botón desaparece de su pantalla.
                                 </p>
                             </div>
                             <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
                                 <div class="text-red-400 text-base font-bold mb-1.5 flex items-center">
-                                    <i class="fa-solid fa-key mr-2"></i> Cancelación del Personal (PIN Maestro de 4 Dígitos)
+                                    <i class="fa-solid fa-key mr-2"></i> Cancelación del Personal (PIN Maestro de 4
+                                    Dígitos)
                                 </div>
                                 <p class="text-gray-400 text-xs leading-relaxed">
-                                    Si un plato que ya está en preparación debe anularse (ej. rotura de stock o error), el sistema exige obligatoriamente el <strong>PIN de 4 dígitos</strong> del Gerente. El motivo queda registrado en el registro de auditoría.
+                                    Si un plato que ya está en preparación debe anularse (ej. rotura de stock o error),
+                                    el sistema exige obligatoriamente el <strong>PIN de 4 dígitos</strong> del Gerente.
+                                    El motivo queda registrado en el registro de auditoría.
                                 </p>
                             </div>
                         </div>
@@ -373,26 +400,36 @@
                                 <i class="fa-solid fa-cash-register"></i>
                                 <span>Sala y Facturación</span>
                             </div>
-                            <h2 class="text-2xl font-bold text-white mb-4">4. Croquis en Vivo y Regla de Cobro de Mesas</h2>
+                            <h2 class="text-2xl font-bold text-white mb-4">4. Croquis en Vivo y Regla de Cobro de Mesas
+                            </h2>
                             <p class="text-gray-400 mb-6 leading-relaxed text-sm">
-                                Visualización en tiempo real del estado de cada mesa y liquidación con estricta protección al consumidor:
+                                Visualización en tiempo real del estado de cada mesa y liquidación con estricta
+                                protección al consumidor:
                             </p>
                             <ul class="space-y-3 mb-6 text-sm text-gray-300">
                                 <li class="flex items-start">
                                     <i class="fa-solid fa-circle-dot text-neonGreen mt-1 mr-3 flex-shrink-0"></i>
-                                    <span><strong>Regla de Cobro Exclusivo:</strong> Al pulsar <em>"Cobrar Mesa"</em>, el total suma <em>únicamente</em> los pedidos en estado <code>Completado</code> (servidos).</span>
+                                    <span><strong>Regla de Cobro Exclusivo:</strong> Al pulsar <em>"Cobrar Mesa"</em>,
+                                        el total suma <em>únicamente</em> los pedidos en estado <code>Completado</code>
+                                        (servidos).</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa-solid fa-circle-dot text-orange-400 mt-1 mr-3 flex-shrink-0"></i>
-                                    <span><strong>Cancelación de Pedidos Huérfanos:</strong> Cualquier plato que haya quedado en preparación se anula automáticamente para jamás facturar un plato no consumido.</span>
+                                    <span><strong>Cancelación de Pedidos Huérfanos:</strong> Cualquier plato que haya
+                                        quedado en preparación se anula automáticamente para jamás facturar un plato no
+                                        consumido.</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa-solid fa-circle-dot text-neonCyan mt-1 mr-3 flex-shrink-0"></i>
-                                    <span><strong>Desglose Oficial de IVA (10% Hostelería España):</strong> Todos los tickets calculan la Base Imponible (<code class="text-xs">Total / 1.10</code>), Cuota de IVA 10% y Total final conforme a la normativa RD 1619/2012.</span>
+                                    <span><strong>Desglose Oficial de IVA (10% Hostelería España):</strong> Todos los
+                                        tickets calculan la Base Imponible (<code class="text-xs">Total / 1.10</code>),
+                                        Cuota de IVA 10% y Total final conforme a la normativa RD 1619/2012.</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa-solid fa-circle-dot text-purple-400 mt-1 mr-3 flex-shrink-0"></i>
-                                    <span><strong>Liberación de Mesa:</strong> La sesión se cierra, la mesa vuelve al color verde (Libre) y se dispara el ticket digital y la encuesta de satisfacción.</span>
+                                    <span><strong>Liberación de Mesa:</strong> La sesión se cierra, la mesa vuelve al
+                                        color verde (Libre) y se dispara el ticket digital y la encuesta de
+                                        satisfacción.</span>
                                 </li>
                             </ul>
                         </div>
@@ -414,32 +451,43 @@
                             <i class="fa-solid fa-star"></i>
                             <span>Fidelización y Automatización</span>
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-4">5. Ticket Digital con Logo y Reseñas en Google (15 min)</h2>
+                        <h2 class="text-2xl font-bold text-white mb-4">5. Ticket Digital con Logo y Reseñas en Google
+                            (15 min)</h2>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                             <!-- Ticket Digital -->
                             <div class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700/50">
                                 <h3 class="text-lg font-bold text-white mb-3 flex items-center">
-                                    <i class="fa-solid fa-file-pdf text-neonCyan mr-2.5"></i> Ticket Consolidado en PDF con Logo
+                                    <i class="fa-solid fa-file-pdf text-neonCyan mr-2.5"></i> Ticket Consolidado en PDF
+                                    con Logo
                                 </h3>
                                 <p class="text-gray-400 text-xs leading-relaxed mb-3">
-                                    Si el comensal solicita su ticket, el sistema encola la petición. Al cobrar la mesa, se despacha un <strong>único PDF oficial consolidado</strong> con el logotipo del bar (<code class="text-neonGreen">feature_ticket_logo</code>) y desglose fiscal completo.
+                                    Si el comensal solicita su ticket, el sistema encola la petición. Al cobrar la mesa,
+                                    se despacha un <strong>único PDF oficial consolidado</strong> con el logotipo del
+                                    bar (<code class="text-neonGreen">con el producto Logo</code>) y desglose fiscal
+                                    completo.
                                 </p>
                                 <p class="text-gray-400 text-xs leading-relaxed">
-                                    El logotipo subido por el Gerente se estampa en el PDF, en el cuerpo del correo, en las invitaciones a reseñas y en el pre-ticket impreso del TPV.
+                                    El logotipo subido por el Gerente se estampa en el PDF, en el cuerpo del correo, en
+                                    las invitaciones a reseñas y en el pre-ticket impreso del TPV.
                                 </p>
                             </div>
 
                             <!-- Reseñas Google 15 min -->
                             <div class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700/50">
                                 <h3 class="text-lg font-bold text-white mb-3 flex items-center">
-                                    <i class="fa-solid fa-star text-amber-400 mr-2.5"></i> Módulo de Reseñas Google (Antispam)
+                                    <i class="fa-solid fa-star text-amber-400 mr-2.5"></i> Módulo de Reseñas Google
+                                    (Antispam)
                                 </h3>
                                 <p class="text-gray-400 text-xs leading-relaxed mb-3">
-                                    Si el bar tiene activo <code class="text-neonGreen">feature_google_reviews</code>, <strong>15 minutos después</strong> de recibir el ticket el cliente recibe un email invitándole a valorar el local con 5 estrellas en Google Maps.
+                                    Si el bar tiene activo <code class="text-neonGreen">el producto de Reviews</code>,
+                                    <strong>15 minutos después</strong> de recibir el ticket el cliente recibe un email
+                                    invitándole a valorar el local con 5 estrellas en Google Maps.
                                 </p>
                                 <p class="text-gray-400 text-xs leading-relaxed">
-                                    <strong>Filtro Antispam Estricto:</strong> Si el comensal ya recibió esta invitación en una visita anterior a este bar, el sistema lo detecta en base de datos y <strong>jamás vuelve a enviársela</strong>.
+                                    <strong>Filtro Antispam Estricto:</strong> Si el comensal ya recibió esta invitación
+                                    en una visita anterior a este bar, el sistema lo detecta en base de datos y
+                                    <strong>jamás vuelve a enviársela</strong>.
                                 </p>
                             </div>
                         </div>
@@ -461,7 +509,9 @@
                                 <i class="fa-solid fa-wine-glass text-neonGreen mr-2"></i> Carta Base y Parseo IA
                             </h3>
                             <p class="text-gray-400 text-xs leading-relaxed">
-                                Pobla el catálogo con más de 30 referencias de cervezas (Estrella Damm, Moritz, Voll-Damm), vinos DO y cafés con un clic, o importa cartas físicas mediante Inteligencia Artificial (Gemini).
+                                Pobla el catálogo con más de 30 referencias de cervezas (Estrella Damm, Moritz,
+                                Voll-Damm), vinos DO y cafés con un clic, o importa cartas físicas mediante Inteligencia
+                                Artificial (Gemini).
                             </p>
                         </div>
                         <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
@@ -469,15 +519,19 @@
                                 <i class="fa-solid fa-cubes text-neonCyan mr-2"></i> Upselling Modular con 1 Clic
                             </h3>
                             <p class="text-gray-400 text-xs leading-relaxed">
-                                Si el bar desea activar módulos bloqueados (Performance, Reseñas Google, Validación NFC), dispone de un botón directo para solicitar el alta a administración con sus datos precargados.
+                                Si el bar desea activar módulos bloqueados (Performance, Reseñas Google, Validación
+                                NFC), dispone de un botón directo para solicitar el alta a administración con sus datos
+                                precargados.
                             </p>
                         </div>
                         <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
                             <h3 class="text-white font-bold text-sm mb-2 flex items-center">
-                                <i class="fa-solid fa-clock-rotate-left text-amber-400 mr-2"></i> Monitor de Inactividad (10m)
+                                <i class="fa-solid fa-clock-rotate-left text-amber-400 mr-2"></i> Monitor de Inactividad
+                                (10m)
                             </h3>
                             <p class="text-gray-400 text-xs leading-relaxed">
-                                Auditoría continua en segundo plano: si una mesa lleva más de 10 minutos abierta sin pedir nada, se marca en rojo en el croquis para que el personal se acerque a atenderla.
+                                Auditoría continua en segundo plano: si una mesa lleva más de 10 minutos abierta sin
+                                pedir nada, se marca en rojo en el croquis para que el personal se acerque a atenderla.
                             </p>
                         </div>
                     </div>
@@ -491,7 +545,8 @@
                         <i class="fa-solid fa-crown"></i>
                         <span>Panel Central de Plataforma</span>
                     </div>
-                    <h2 class="text-2xl font-bold text-white mb-4">7. Herramientas del SuperAdmin (<code class="text-purple-400 text-lg">/webadmin</code>)</h2>
+                    <h2 class="text-2xl font-bold text-white mb-4">7. Herramientas del SuperAdmin (<code
+                            class="text-purple-400 text-lg">/webadmin</code>)</h2>
                     <p class="text-gray-400 mb-6 leading-relaxed text-sm">
                         Panel de supervisión global para la gestión técnica y comercial de toda la red de locales BarAI:
                     </p>
@@ -500,28 +555,32 @@
                             <i class="fa-solid fa-building text-purple-400 mt-1"></i>
                             <div>
                                 <strong class="text-white block">Control de Locales y Módulos:</strong>
-                                Alta y edición de empresas, datos fiscales y activación granular de los 8 módulos de contrato.
+                                Alta y edición de empresas, datos fiscales y activación granular de los 8 módulos de
+                                contrato.
                             </div>
                         </div>
                         <div class="p-4 bg-gray-900/60 rounded-xl border border-gray-800 flex items-start space-x-3">
                             <i class="fa-solid fa-envelope-circle-check text-purple-400 mt-1"></i>
                             <div>
                                 <strong class="text-white block">Configuración SMTP Global:</strong>
-                                Gestión de credenciales de correo de la plataforma con comprobación de test de envío en vivo.
+                                Gestión de credenciales de correo de la plataforma con comprobación de test de envío en
+                                vivo.
                             </div>
                         </div>
                         <div class="p-4 bg-gray-900/60 rounded-xl border border-gray-800 flex items-start space-x-3">
                             <i class="fa-solid fa-users-viewfinder text-purple-400 mt-1"></i>
                             <div>
                                 <strong class="text-white block">Auditoría de Emails y Reseñas:</strong>
-                                Visor de correos de comensales recogidos, estado de entrega del ticket y de reseñas, con exportación a CSV.
+                                Visor de correos de comensales recogidos, estado de entrega del ticket y de reseñas, con
+                                exportación a CSV.
                             </div>
                         </div>
                         <div class="p-4 bg-gray-900/60 rounded-xl border border-gray-800 flex items-start space-x-3">
                             <i class="fa-solid fa-microchip text-purple-400 mt-1"></i>
                             <div>
                                 <strong class="text-white block">Monitor de Servidor y Facturación:</strong>
-                                Métricas en tiempo real de CPU, RAM, Disco, emisión de recibos oficiales a los bares en PDF y bloqueo de IPs.
+                                Métricas en tiempo real de CPU, RAM, Disco, emisión de recibos oficiales a los bares en
+                                PDF y bloqueo de IPs.
                             </div>
                         </div>
                     </div>
@@ -532,8 +591,10 @@
             <!-- Sección de Preguntas Frecuentes Interactivas (Acordeón) -->
             <div class="mt-16">
                 <div class="text-center mb-8">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Preguntas Frecuentes y Reglas Operativas</h2>
-                    <p class="text-gray-400 text-sm">Haz clic en cualquier pregunta para ver el detalle de la regla operativa.</p>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Preguntas Frecuentes y Reglas Operativas
+                    </h2>
+                    <p class="text-gray-400 text-sm">Haz clic en cualquier pregunta para ver el detalle de la regla
+                        operativa.</p>
                 </div>
 
                 <div class="space-y-4 max-w-3xl mx-auto">
@@ -542,13 +603,17 @@
                         class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
                         <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
                             <span class="font-semibold text-white text-sm sm:text-base flex items-center">
-                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Qué ocurre si un cliente se sienta y no pide nada?
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Qué ocurre si un cliente
+                                se sienta y no pide nada?
                             </span>
                             <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
                         </div>
                         <div
                             class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
-                            El sistema detecta automáticamente la sesión abierta. Si transcurren 10 minutos sin registrar ningún pedido, el monitor de inactividad de BarAI envía una alerta acústica y visual al panel de los camareros indicando <em>"Atender Mesa X (Lleva 10m sin pedir)"</em> y tiñe la mesa de rojo en el plano de sala.
+                            El sistema detecta automáticamente la sesión abierta. Si transcurren 10 minutos sin
+                            registrar ningún pedido, el monitor de inactividad de BarAI envía una alerta acústica y
+                            visual al panel de los camareros indicando <em>"Atender Mesa X (Lleva 10m sin pedir)"</em> y
+                            tiñe la mesa de rojo en el plano de sala.
                         </div>
                     </div>
 
@@ -556,13 +621,17 @@
                         class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
                         <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
                             <span class="font-semibold text-white text-sm sm:text-base flex items-center">
-                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Puedo cobrar una mesa si hay platos pendientes en cocina?
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Puedo cobrar una mesa si
+                                hay platos pendientes en cocina?
                             </span>
                             <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
                         </div>
                         <div
                             class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
-                            Al presionar "Cobrar Mesa", el sistema suma <strong>únicamente los productos completados y servidos</strong>. Cualquier comanda que haya quedado en estado "Recibido" o "Preparando" se cancela automáticamente en la base de datos para proteger al cliente y no cobrar productos no consumidos.
+                            Al presionar "Cobrar Mesa", el sistema suma <strong>únicamente los productos completados y
+                                servidos</strong>. Cualquier comanda que haya quedado en estado "Recibido" o
+                            "Preparando" se cancela automáticamente en la base de datos para proteger al cliente y no
+                            cobrar productos no consumidos.
                         </div>
                     </div>
 
@@ -570,13 +639,16 @@
                         class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
                         <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
                             <span class="font-semibold text-white text-sm sm:text-base flex items-center">
-                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Por qué se solicita un PIN de cancelación al personal?
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Por qué se solicita un
+                                PIN de cancelación al personal?
                             </span>
                             <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
                         </div>
                         <div
                             class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
-                            Cuando una comanda ya ha sido aceptada por cocina y está en preparación, se requiere el PIN de 4 dígitos del Administrador o Gerente para asegurar que las mermas o anulaciones de comida queden registradas con autorización responsable en los registros de auditoría.
+                            Cuando una comanda ya ha sido aceptada por cocina y está en preparación, se requiere el PIN
+                            de 4 dígitos del Administrador o Gerente para asegurar que las mermas o anulaciones de
+                            comida queden registradas con autorización responsable en los registros de auditoría.
                         </div>
                     </div>
 
@@ -584,13 +656,16 @@
                         class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
                         <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
                             <span class="font-semibold text-white text-sm sm:text-base flex items-center">
-                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Los cocineros reciben las notificaciones de "Llamar Camarero"?
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Los cocineros reciben
+                                las notificaciones de "Llamar Camarero"?
                             </span>
                             <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
                         </div>
                         <div
                             class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
-                            No. La vista de rol <code>cocinero</code> tiene un filtro estricto que ignora las llamadas de servicio de sala. Solo los camareros y administradores reciben la alerta para no distraer la producción en fogones.
+                            No. La vista de rol <code>cocinero</code> tiene un filtro estricto que ignora las llamadas
+                            de servicio de sala. Solo los camareros y administradores reciben la alerta para no distraer
+                            la producción en fogones.
                         </div>
                     </div>
 
@@ -598,13 +673,17 @@
                         class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
                         <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
                             <span class="font-semibold text-white text-sm sm:text-base flex items-center">
-                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Cómo funciona el módulo de Reseñas de Google por email?
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Cómo funciona el módulo
+                                de Reseñas de Google por email?
                             </span>
                             <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
                         </div>
                         <div
                             class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
-                            15 minutos después de enviar el ticket digital, el sistema envía un correo invitando al comensal a valorar el bar en Google Maps. Cuenta con <strong>protección estricta antispam</strong>: si el cliente ya recibió una invitación previa para ese bar, nunca vuelve a enviársela.
+                            15 minutos después de enviar el ticket digital, el sistema envía un correo invitando al
+                            comensal a valorar el bar en Google Maps. Cuenta con <strong>protección estricta
+                                antispam</strong>: si el cliente ya recibió una invitación previa para ese bar, nunca
+                            vuelve a enviársela.
                         </div>
                     </div>
 
@@ -612,13 +691,16 @@
                         class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
                         <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
                             <span class="font-semibold text-white text-sm sm:text-base flex items-center">
-                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Cómo funciona el aislamiento de datos entre restaurantes?
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> ¿Cómo funciona el
+                                aislamiento de datos entre restaurantes?
                             </span>
                             <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
                         </div>
                         <div
                             class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
-                            BarAI es una plataforma multi-empresa con aislamiento estricto. Toda petición SQL requiere <code>WHERE company_id = ?</code> y las conexiones WebSocket están suscritas a salas privadas (<code>company_&lt;id&gt;</code>), asegurando privacidad absoluta entre locales.
+                            BarAI es una plataforma multi-empresa con aislamiento estricto. Toda petición SQL requiere
+                            <code>WHERE company_id = ?</code> y las conexiones WebSocket están suscritas a salas
+                            privadas (<code>company_&lt;id&gt;</code>), asegurando privacidad absoluta entre locales.
                         </div>
                     </div>
 
@@ -634,7 +716,8 @@
                 </div>
                 <h3 class="text-xl font-bold text-white mb-2">¿Necesitas asistencia técnica personalizada?</h3>
                 <p class="text-gray-400 text-sm max-w-md mx-auto mb-6">
-                    Si experimentas alguna incidencia operativa o deseas configurar un nuevo terminal, nuestro equipo de soporte está disponible.
+                    Si experimentas alguna incidencia operativa o deseas configurar un nuevo terminal, nuestro equipo de
+                    soporte está disponible.
                 </p>
                 <a href="/ticket.html"
                     class="inline-flex items-center space-x-2 px-6 py-3 bg-neonGreen text-darkBg font-bold rounded-xl hover:bg-neonCyan transition-all shadow-lg hover:shadow-neonCyan/30 text-sm">
@@ -652,13 +735,16 @@
             <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-400">
                 <a href="/ayuda-clientes.html" class="text-neonGreen font-semibold hover:underline">Guía Clientes</a>
                 <a href="/helpdesk.html" class="hover:text-neonGreen transition-colors">Guía Personal</a>
-                <a href="/condiciones-ticket-digital/" class="hover:text-neonGreen transition-colors">Condiciones Ticket Digital</a>
+                <a href="/condiciones-ticket-digital/" class="hover:text-neonGreen transition-colors">Condiciones Ticket
+                    Digital</a>
                 <a href="/aviso-legal/" class="hover:text-neonGreen transition-colors">Aviso legal</a>
-                <a href="/politica-de-privacidad/" class="hover:text-neonGreen transition-colors">Política de privacidad</a>
+                <a href="/politica-de-privacidad/" class="hover:text-neonGreen transition-colors">Política de
+                    privacidad</a>
                 <a href="/politica-de-cookies/" class="hover:text-neonGreen transition-colors">Política de cookies</a>
                 <a href="/ticket.html" class="hover:text-neonGreen transition-colors">Soporte</a>
             </div>
-            <p class="text-xs text-gray-500">© 2026 BarAI Technologies. Todos los derechos reservados. <span class="text-gray-600">v1.0.3</span></p>
+            <p class="text-xs text-gray-500">© 2026 BarAI Technologies. Todos los derechos reservados. <span
+                    class="text-gray-600">v1.0.3</span></p>
         </div>
     </footer>
 
