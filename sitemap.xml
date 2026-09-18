@@ -1,93 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Principal / Landing Page -->
   <url>
     <loc>https://www.barai.es/</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/logo.png</image:loc>
+      <image:title>BarAI - Gestión y Optimización para Bares y Restaurantes con IA</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/client_view_mockup.jpg</image:loc>
+      <image:title>BarAI Carta Digital y Pedidos QR</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/kitchen_panel_mockup.jpg</image:loc>
+      <image:title>BarAI KDS Panel de Cocina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/table_map_mockup.jpg</image:loc>
+      <image:title>BarAI Croquis y Gestión de Mesas</image:title>
+    </image:image>
   </url>
+
+  <!-- Helpdesk y Manual Operativo Oficial -->
   <url>
     <loc>https://www.barai.es/helpdesk</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/cliente_vista_pedidos.png</image:loc>
+      <image:title>Vista Móvil de Pedidos BarAI</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/cocina_panel_kds.png</image:loc>
+      <image:title>Panel KDS Cocina y Barra BarAI</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/sala_croquis_mesas.png</image:loc>
+      <image:title>Plano de Mesas y Sala BarAI</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/administracion_ajustes.png</image:loc>
+      <image:title>Panel de Administración y Ajustes BarAI</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.barai.es/helpdesk.html</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Guía de Ayuda para Clientes y Comensales -->
+  <url>
+    <loc>https://www.barai.es/ayuda-clientes</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.barai.es/assets/cliente_vista_pedidos.png</image:loc>
+      <image:title>Guía de Pedidos QR para Clientes BarAI</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.barai.es/ayuda-clientes.html</loc>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.barai.es/ayuda</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.barai.es/ayuda.html</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Soporte Técnico y Apertura de Tickets -->
   <url>
-    <loc>https://www.barai.es/ayuda-clientes</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.barai.es/ayuda-clientes.html</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.barai.es/ticket</loc>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.barai.es/ticket-digital</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.barai.es/ticket-digital.html</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.barai.es/ticket.html</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Ticket Digital y Validez Fiscal -->
+  <url>
+    <loc>https://www.barai.es/ticket-digital</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.barai.es/ticket-digital.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.barai.es/condiciones-ticket-digital</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.barai.es/condiciones-ticket-digital/</loc>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.barai.es/condiciones-ticket-digital.html</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
+
+  <!-- Aviso Legal -->
   <url>
-    <loc>https://www.barai.es/condiciones-ticket-digital/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.barai.es/aviso-legal</loc>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.barai.es/aviso-legal/</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.barai.es/aviso-legal.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Política de Privacidad -->
+  <url>
+    <loc>https://www.barai.es/politica-de-privacidad</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.barai.es/politica-de-privacidad/</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.barai.es/politica-de-privacidad.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Política de Cookies -->
+  <url>
+    <loc>https://www.barai.es/politica-de-cookies</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.barai.es/politica-de-cookies/</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.barai.es/politica-de-cookies.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

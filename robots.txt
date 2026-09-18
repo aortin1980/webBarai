@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Directivas para recursos internos no indexables
+Disallow: /mailmarketing/
+Disallow: /*.gs$
+Disallow: /*.md$
+
+# Sitemap oficial
 Sitemap: https://www.barai.es/sitemap.xml
