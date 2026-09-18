@@ -104,7 +104,7 @@
                     "about": {
                         "@id": "https://www.barai.es/#software"
                     },
-                    "dateModified": "2026-09-18",
+                    "dateModified": "2026-09-08",
                     "inLanguage": "es"
                 }
             ]
@@ -1533,6 +1533,15 @@
             const urlParams = new URLSearchParams(window.location.search);
             let ref = urlParams.get('ref') || urlParams.get('source');
             let email = urlParams.get('ref_email');
+<<<<<<< HEAD
+            
+            if (ref) {
+                // Viene de un link con ref explícito
+                let url = 'https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref);
+                if (email) url += '&email=' + encodeURIComponent(email);
+                
+                fetch(url, {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+=======
 
             if (ref) {
                 // Viene de un link con ref explícito
@@ -1552,6 +1561,7 @@
                 }
 
                 fetch(url, { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
+>>>>>>> 570f60bc0f9461984106605b0efc540bac7ef333
             } else {
                 // Ver si viene orgánico de Google
                 const referrer = document.referrer.toLowerCase();
