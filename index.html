@@ -1332,7 +1332,7 @@
             payload.append('direccion', address);
             payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
 
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbxB7r9gywJoZVkf89RL3VnkHqjpCiju87R-h_PycPP9J7XxQaY45_WKG1UAIbpy-E2y/exec';
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwuMVkGgnAar8wTDOPNC5-Okc1KZBp7kjnE_WIfTJt3u-8G4C6iByPI3W_xj_bdLllh/exec';
 
             fetch(scriptUrl, {
                 method: 'POST',
@@ -1534,13 +1534,13 @@
             let ref = urlParams.get('ref') || urlParams.get('source');
             let email = urlParams.get('ref_email');
 <<<<<<< HEAD
-            
+
             if (ref) {
                 // Viene de un link con ref explícito
                 let url = 'https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref);
                 if (email) url += '&email=' + encodeURIComponent(email);
-                
-                fetch(url, {mode: 'no-cors'}).catch(()=>console.log("kpi log error"));
+
+                fetch(url, { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
 =======
 
             if (ref) {
