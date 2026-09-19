@@ -1332,7 +1332,7 @@
             payload.append('direccion', address);
             payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
 
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwuMVkGgnAar8wTDOPNC5-Okc1KZBp7kjnE_WIfTJt3u-8G4C6iByPI3W_xj_bdLllh/exec';
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbyPL_IXZdz9YyO31kC3BDO6q99KzD_t7GChNY-IJQMHVyXm34Zh-mL_6xg2_Co6W8kZ/exec';
 
             fetch(scriptUrl, {
                 method: 'POST',
@@ -1533,21 +1533,16 @@
             const urlParams = new URLSearchParams(window.location.search);
             let ref = urlParams.get('ref') || urlParams.get('source');
             let email = urlParams.get('ref_email');
-<<<<<<< HEAD
-
-            if (ref) {
-                // Viene de un link con ref explícito
-                let url = 'https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref);
-                if (email) url += '&email=' + encodeURIComponent(email);
-
-                fetch(url, { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
-=======
 
             if (ref) {
                 // Viene de un link con ref explícito
                 let url = 'https://app.barai.es/api/track_kpi?source=www_' + encodeURIComponent(ref);
                 if (email) {
                     url += '&email=' + encodeURIComponent(email);
+
+                    // Auto-rellenar email si el form está presente
+                    const emailInput = document.getElementById('email');
+                    if (emailInput) emailInput.value = email;
 
                     // Notificar silenciosamente al Google Script para marcar el clic en Excel
                     fetch('https://script.google.com/macros/s/AKfycbxhNn7iQpBA7zwramxwcjummcd3L011ysQECVDWb9oi8iU8hK82v1hWbYqSlUV25Hnk/exec', {
@@ -1561,7 +1556,6 @@
                 }
 
                 fetch(url, { mode: 'no-cors' }).catch(() => console.log("kpi log error"));
->>>>>>> 570f60bc0f9461984106605b0efc540bac7ef333
             } else {
                 // Ver si viene orgánico de Google
                 const referrer = document.referrer.toLowerCase();
