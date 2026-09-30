@@ -66,10 +66,10 @@
                     "@id": "https://www.barai.es/#software",
                     "name": "BarAI",
                     "url": "https://www.barai.es/",
-                    "description": "Plataforma de gestión con inteligencia artificial para bares y restaurantes.",
+                    "description": "AI-powered bar and restaurant management platform. Real-time orders, predictive inventory, kitchen display system, staff control and QR digital menus.",
                     "applicationCategory": "BusinessApplication",
                     "operatingSystem": "Web",
-                    "inLanguage": "es",
+                    "inLanguage": ["es", "en"],
                     "publisher": {
                         "@id": "https://www.barai.es/#organization"
                     },
@@ -487,8 +487,8 @@
                     <div id="tab-grid" class="tab-content active space-y-4">
                         <div
                             class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
-                            <span>Vista en vivo de cocina y barra (Compatible con tablets y móviles)</span>
-                            <span class="text-neonGreen font-mono">Bar AI - Sincronizado</span>
+                            <span data-i18n="panel_grid_sub">Vista en vivo de cocina y barra (Compatible con tablets y móviles)</span>
+                            <span class="text-neonGreen font-mono" data-i18n="panel_grid_badge">Bar AI - Sincronizado</span>
                         </div>
                         <div
                             class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-xl">
@@ -503,8 +503,8 @@
                     <div id="tab-mesas" class="tab-content space-y-4">
                         <div
                             class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
-                            <span>Control detallado de mesas activas, importes totales y cobros</span>
-                            <span class="text-neonCyan font-mono">Actualización Instantánea</span>
+                            <span data-i18n="panel_tables_sub">Control detallado de mesas activas, importes totales y cobros</span>
+                            <span class="text-neonCyan font-mono" data-i18n="panel_tables_badge">Actualización Instantánea</span>
                         </div>
                         <img loading="lazy" decoding="async" src="https://i.imgur.com/kcQaMzX.png"
                             alt="Gestión de Mesas Dashboard" class="w-full rounded-xl border border-gray-800 shadow-xl">
@@ -513,8 +513,8 @@
                     <div id="tab-performance" class="tab-content space-y-4">
                         <div
                             class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
-                            <span>Métricas de velocidad de servicio, pedidos totales y eficiencia del staff</span>
-                            <span class="text-neonGreen font-mono">Algoritmo Predictivo IA</span>
+                            <span data-i18n="panel_perf_sub">Métricas de velocidad de servicio, pedidos totales y eficiencia del staff</span>
+                            <span class="text-neonGreen font-mono" data-i18n="panel_perf_badge">Algoritmo Predictivo IA</span>
                         </div>
                         <img loading="lazy" decoding="async" src="https://i.imgur.com/Gk54cNM.png"
                             alt="Performance Metrics Dashboard"
@@ -524,26 +524,21 @@
                     <div id="tab-personal" class="tab-content space-y-4">
                         <div
                             class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
-                            <span>Monitoreo de camareros, cocineros y línea de tiempo de conexiones en tiempo
-                                real</span>
-                            <span class="text-neonCyan font-mono">Control de Sesiones</span>
+                            <span data-i18n="panel_staff_sub">Monitoreo de camareros, cocineros y línea de tiempo de conexiones en tiempo real</span>
+                            <span class="text-neonCyan font-mono" data-i18n="panel_staff_badge">Control de Sesiones</span>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             <div>
                                 <img loading="lazy" decoding="async" src="https://i.imgur.com/TamTUpR.png"
                                     alt="Panel general de empleados conectados y desconectados"
                                     class="w-full rounded-xl border border-gray-800 shadow-xl">
-                                <p class="text-xs text-gray-400 mt-2 text-center">Panel general de empleados conectados
-                                    y
-                                    desconectados</p>
+                                <p class="text-xs text-gray-400 mt-2 text-center" data-i18n="panel_staff_cap1">Panel general de empleados conectados y desconectados</p>
                             </div>
                             <div>
                                 <img loading="lazy" decoding="async" src="https://i.imgur.com/jfNVM7S.png"
                                     alt="Línea de tiempo de actividad por usuario"
                                     class="w-full rounded-xl border border-gray-800 shadow-xl">
-                                <p class="text-xs text-gray-400 mt-2 text-center">Línea de tiempo de actividad por
-                                    usuario
-                                </p>
+                                <p class="text-xs text-gray-400 mt-2 text-center" data-i18n="panel_staff_cap2">Línea de tiempo de actividad por usuario</p>
                             </div>
                         </div>
                     </div>
@@ -551,8 +546,8 @@
                     <div id="tab-cobros" class="tab-content space-y-4">
                         <div
                             class="flex justify-between items-center pb-3 border-b border-gray-800 text-xs text-gray-400">
-                            <span>Historial de tickets cobrados por fecha, empleado y desglose de caja</span>
-                            <span class="text-neonGreen font-mono">Caja Registradora Inteligente</span>
+                            <span data-i18n="panel_pay_sub">Historial de tickets cobrados por fecha, empleado y desglose de caja</span>
+                            <span class="text-neonGreen font-mono" data-i18n="panel_pay_badge">Caja Registradora Inteligente</span>
                         </div>
                         <img loading="lazy" decoding="async" src="https://i.imgur.com/bfMaLPV.png"
                             alt="Historial de Cobros Dashboard"
@@ -644,7 +639,8 @@
                     <div class="bg-cardBg p-4 rounded-2xl border border-gray-800">
                         <img loading="lazy" decoding="async" src="https://i.imgur.com/Vvry0GI.png"
                             alt="Mateo Customer Journey" class="w-full rounded-xl border border-gray-800">
-                        <p class="text-xs text-gray-400 mt-2 text-center">Secuencia detallada de interacción del cliente
+                        <p class="text-xs text-gray-400 mt-2 text-center" data-i18n="qr_img_cap">
+                            Secuencia detallada de interacción del cliente
                         </p>
                     </div>
                     <div class="bg-cardBg p-4 rounded-2xl border border-gray-800 flex items-center justify-center">
@@ -653,12 +649,10 @@
                                 class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center mx-auto mb-4 glow-green">
                                 <i class="fa-solid fa-martini-glass-citrus text-darkBg text-2xl"></i>
                             </div>
-                            <h4 class="text-2xl font-bold text-white mb-2">Diseñado para la Hostelería del Futuro</h4>
-                            <p class="text-gray-400 text-sm">Optimiza cada proceso de tu local desde un único panel
-                                inteligente respaldado por inteligencia artificial.</p>
+                            <h4 class="text-2xl font-bold text-white mb-2" data-i18n="qr_future_title">Diseñado para la Hostelería del Futuro</h4>
+                            <p class="text-gray-400 text-sm" data-i18n="qr_future_body">Optimiza cada proceso de tu local desde un único panel inteligente respaldado por inteligencia artificial.</p>
                             <a href="#contact"
-                                class="mt-6 inline-block px-6 py-3 rounded-xl bg-neonGreen text-darkBg font-bold text-sm">Solicitar
-                                Demo</a>
+                                class="mt-6 inline-block px-6 py-3 rounded-xl bg-neonGreen text-darkBg font-bold text-sm" data-i18n="cta_demo">Solicitar Demo</a>
                         </div>
                     </div>
                 </div>
@@ -1411,8 +1405,21 @@
                 chat_q1: 'Probar DEMO gratis', chat_q2: 'Cobrar mesa', chat_q3: 'Cancelar / PIN',
                 chat_q4: 'Cocina / KDS', chat_q5: 'Ticket PDF', chat_q6: 'Alerta 10m', chat_q7: 'Dispositivos',
                 chat_toggle_tip: 'Asistente BarAI', chat_input_ph: 'Escribe tu duda...',
-                // Quick reply triggers (for chatbot)
-                qr_demo: '¿Cómo puedo probar la DEMO gratuita?', qr_table: '¿Cómo cobro una mesa?',
+                // Dashboard panel labels
+                panel_grid_sub: 'Vista en vivo de cocina y barra (Compatible con tablets y móviles)',
+                panel_grid_badge: 'Bar AI - Sincronizado',
+                panel_tables_sub: 'Control detallado de mesas activas, importes totales y cobros',
+                panel_tables_badge: 'Actualización Instantánea',
+                panel_perf_sub: 'Métricas de velocidad de servicio, pedidos totales y eficiencia del staff',
+                panel_perf_badge: 'Algoritmo Predictivo IA',
+                panel_staff_sub: 'Monitoreo de camareros, cocineros y línea de tiempo de conexiones en tiempo real',
+                panel_staff_badge: 'Control de Sesiones',
+                panel_staff_cap1: 'Panel general de empleados conectados y desconectados',
+                panel_staff_cap2: 'Línea de tiempo de actividad por usuario',
+                panel_pay_sub: 'Historial de tickets cobrados por fecha, empleado y desglose de caja',
+                panel_pay_badge: 'Caja Registradora Inteligente',
+                // QR section image caption
+                qr_img_cap: 'Secuencia detallada de interacción del cliente',
                 qr_cancel: '¿Cómo cancelo un pedido con PIN?', qr_kds: '¿Cómo funciona el KDS de cocina?',
                 qr_ticket: '¿Cómo son los tickets digitales?', qr_alert: '¿Qué pasa si una mesa lleva 10 minutos sin pedir?',
                 qr_hw: '¿Qué hardware necesito?'
@@ -1519,15 +1526,48 @@
                 chat_q1: 'Try free DEMO', chat_q2: 'Checkout a table', chat_q3: 'Cancel / PIN',
                 chat_q4: 'Kitchen / KDS', chat_q5: 'PDF receipt', chat_q6: '10-min alert', chat_q7: 'Devices',
                 chat_toggle_tip: 'BarAI Assistant', chat_input_ph: 'Type your question...',
-                // Quick reply triggers (EN)
-                qr_demo: 'How can I try the free DEMO?', qr_table: 'How do I check out a table?',
+                // Dashboard panel labels (EN)
+                panel_grid_sub: 'Live kitchen & bar view (tablet and mobile compatible)',
+                panel_grid_badge: 'Bar AI - In Sync',
+                panel_tables_sub: 'Detailed control of active tables, total amounts and checkouts',
+                panel_tables_badge: 'Instant Update',
+                panel_perf_sub: 'Service speed metrics, total orders and staff efficiency',
+                panel_perf_badge: 'AI Predictive Algorithm',
+                panel_staff_sub: 'Monitor waiters, chefs and real-time connection timeline',
+                panel_staff_badge: 'Session Control',
+                panel_staff_cap1: 'Overall panel of connected and disconnected staff',
+                panel_staff_cap2: 'Activity timeline per user',
+                panel_pay_sub: 'History of settled tickets by date, employee and cash breakdown',
+                panel_pay_badge: 'Smart Cash Register',
+                // QR section image caption
+                qr_img_cap: 'Detailed customer interaction sequence',
                 qr_cancel: 'How do I cancel an order with PIN?', qr_kds: 'How does the kitchen KDS work?',
                 qr_ticket: 'How do digital receipts work?', qr_alert: 'What happens if a table has not ordered in 10 minutes?',
                 qr_hw: 'What hardware do I need?'
             }
         };
 
-        let currentLang = localStorage.getItem('barai_lang') || 'es';
+        // ── Detección automática de idioma (3 niveles de prioridad) ──────────────
+        // 1. Parámetro URL: ?lang=en  (usado por los hreflang de Google)
+        // 2. Preferencia guardada en localStorage por el usuario
+        // 3. Idioma del navegador / sistema operativo
+        (function detectLang() {
+            const urlParam = new URLSearchParams(window.location.search).get('lang');
+            const stored   = localStorage.getItem('barai_lang');
+            const browser  = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+            let lang;
+            if (urlParam && (urlParam === 'es' || urlParam === 'en')) {
+                lang = urlParam;
+            } else if (stored && (stored === 'es' || stored === 'en')) {
+                lang = stored;
+            } else {
+                // Detecta inglés en cualquier variante (en, en-US, en-GB, en-AU…)
+                lang = browser.startsWith('en') ? 'en' : 'es';
+            }
+            window.__barai_initial_lang = lang;
+            localStorage.setItem('barai_lang', lang);
+        })();
+        let currentLang = window.__barai_initial_lang || 'es';
 
         function applyLang(lang) {
             const t = translations[lang];
