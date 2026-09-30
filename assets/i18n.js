@@ -91,6 +91,35 @@
         const label = lang === 'es' ? 'EN' : 'ES';
         if (btnDesktop) btnDesktop.textContent = label;
         if (btnMobile) btnMobile.textContent = label;
+
+        // Automatically update internal links on the home page so they point to the correct language subfolder
+        const path = window.location.pathname;
+        if (path === '/' || path === '/index.html') {
+            const pages = [
+                'helpdesk', 'ayuda-clientes', 'ticket', 'ticket-digital', 
+                'condiciones-ticket-digital', 'aviso-legal', 'politica-de-privacidad', 'politica-de-cookies'
+            ];
+            document.querySelectorAll('a').forEach(a => {
+                let href = a.getAttribute('href');
+                if (href && !href.startsWith('http') && !href.startsWith('#') && href !== '/') {
+                    for (const page of pages) {
+                        if (href.includes(page)) {
+                            if (lang === 'en') {
+                                if (!href.includes('/en/')) {
+                                    a.setAttribute('href', `/en/${page}/`);
+                                }
+                            } else {
+                                if (href.includes('/en/')) {
+                                    // Revert back to standard Spanish links (the ones used in index.html)
+                                    a.setAttribute('href', href.startsWith('/') ? `/${page}.html` : `${page}.html`);
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+            });
+        }
     }
 
     window.toggleLang = function () {
