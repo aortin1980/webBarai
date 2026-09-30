@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Official User Guide and Helpdesk | BarAI Hospitality</title>
+    <meta name="description"
+        content="BarAI's official manual and business rules: QR ordering, takeaway web table, visual and NFC validation, kitchen KDS, security PIN, PDF digital receipt with logo, Google reviews.">
+    <meta name="keywords"
+        content="barai helpdesk, barai manual, hospitality business rules, kitchen kds, qr orders, web table, nfc validation, cancellation pin, pdf digital receipt, hospitality google reviews">
+    <meta name="author" content="BarAI Technologies">
+    <meta name="version" content="1.0.3">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="theme-color" content="#0b0f19">
+    <link rel="canonical" href="https://www.barai.es/helpdesk" />
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="shortcut icon" href="../assets/logo.ico">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.barai.es/en/helpdesk">
+    <meta property="og:title" content="Official User Guide and Helpdesk | BarAI Hospitality">
+    <meta property="og:description"
+        content="BarAI's operational manual and business rules: table and web orders, kitchen KDS, PIN security, 10% VAT billing, Google reviews.">
+    <meta property="og:image" content="https://www.barai.es/assets/logo.png">
+    <meta property="og:site_name" content="BarAI">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.barai.es/en/helpdesk">
+    <meta name="twitter:title" content="Official User Guide and Helpdesk | BarAI">
+    <meta name="twitter:description"
+        content="BarAI operational manual and business rules: table orders, kitchen KDS, security PIN, digital receipt, and administration.">
+    <meta name="twitter:image" content="https://www.barai.es/assets/logo.png">
+
+    <!-- Structured Data (Schema.org FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens if a customer sits down and orders nothing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The system automatically detects the open session. If 10 minutes pass without any registered orders, BarAI's inactivity monitor sends an acoustic and visual alert to the waiters' panel indicating 'Attend Table X (10m without ordering)' and dyes the table red on the floor plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I charge a table if there are pending dishes in the kitchen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By pressing Charge Table, the system only adds up the completed and served products. Any order left in the Received or Preparing status is automatically canceled in the database so you don't charge for unconsumed items."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is a cancellation PIN required for staff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When an order has already been accepted by the kitchen via 'Heard Kitchen' and is in preparation, a 4-digit Administrator or Manager PIN is required to ensure that losses or cancellations are audited with responsible authorization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do cooks receive 'Call Waiter' notifications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The cook role view has a strict filter that ignores dining room service calls to avoid distracting stove production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the Google Reviews by email module work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "15 minutes after sending the digital receipt, the system automatically sends an email inviting the diner to rate the bar on Google. It has strict anti-spam protection: if the customer already received a previous invitation for that bar, it never sends it again."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Web Table (/order/WEB)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a special channel for bar or takeaway orders without physical table position validation, allowing quick orders to be processed directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the VAT breakdown applied to receipts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In accordance with Spanish tax regulations (RD 1619/2012), all receipts break down the Taxable Base at the 10% hospitality rate (Total / 1.10), the corresponding VAT Rate, and the final Total with VAT included."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        neonGreen: '#10b981',
+                        neonCyan: '#06b6d4',
+                        darkGreen: '#022c22'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+
+        .glow-green {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-glass {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Acordeón Styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, padding 0.3s ease;
+        }
+
+        .accordion-active .accordion-content {
+            max-height: 900px;
+            padding-top: 1rem;
+            padding-bottom: 1.25rem;
+        }
+
+        .accordion-active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-darkBg text-gray-100 selection:bg-neonGreen selection:text-darkBg min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center space-x-3">
+                <div
+                    class="w-12 h-12 rounded-xl bg-cardBg border border-neonGreen/40 overflow-hidden glow-green flex items-center justify-center p-1">
+                    <img src="../assets/logo.png" alt="BarAI Logo" class="w-full h-full object-contain">
+                </div>
+                <span class="text-2xl font-extrabold tracking-wider text-white">Bar<span
+                        class="gradient-text">AI</span></span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="/ayuda-clientes.html"
+                    class="hidden md:inline-flex items-center space-x-2 text-xs font-semibold text-gray-300 hover:text-neonCyan transition-colors">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Customer Guide</span>
+                </a>
+                <a href="/ticket.html"
+                    class="px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-neonGreen/20 hover:bg-neonGreen hover:text-black border border-neonGreen/50 rounded-xl transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Open Ticket</span>
+                </a>
+                <a href="/"
+                    class="text-sm font-medium text-gray-300 hover:text-neonGreen transition-colors flex items-center space-x-2">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span class="hidden sm:inline">Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neonCyan/10 rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+
+            <!-- Hero Helpdesk -->
+            <div class="text-center mb-12">
+                <div
+                    class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Official Manual and Business Rules v1.0.3</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+                    Help Center and <span class="gradient-text">Operational User Guide</span>
+                </h1>
+                <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+                    Complete guide to BarAI's architecture and operations: table and bar orders, kitchen KDS,
+                    PIN security, tax collection with 10% VAT, digital receipt with logo, Google reviews.
+                </p>
+
+                <!-- Buscador Rápido -->
+                <div class="max-w-xl mx-auto relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" id="helpSearch" onkeyup="filterHelpdesk()"
+                        placeholder="Search by topic: QR, web table, NFC, kitchen, cancel, charge, PIN, VAT, reviews..."
+                        class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-cardBg/90 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen focus:ring-2 focus:ring-neonGreen/30 transition-all text-sm shadow-xl">
+                </div>
+            </div>
+
+            <!-- Contenedor de Módulos Visuales -->
+            <div class="space-y-12" id="helpSections">
+
+                <!-- Sección 1: Cliente, Mesa Web y Validaciones de Seguridad -->
+                <div
+                    class="help-card bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                            <div
+                                class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-blue-800/50">
+                                <i class="fa-solid fa-qrcode"></i>
+                                <span>Entry Point and Validation</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white mb-4">1. Customer Access, Web Table and Validation
+                            </h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                The diner accesses the instant Web App by scanning a physical QR code at the table or
+                                through the Web Table URL, with no downloads or mandatory registrations.
+                            </p>
+                            <ul class="space-y-3 mb-6 text-sm">
+                                <li class="flex items-start">
+                                    <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
+                                    <p class="text-gray-300"><strong class="text-white">Web Table (/order/WEB):</strong>
+                                        Special channel for bar or takeaway orders without physical code
+                                        validation.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
+                                    <p class="text-gray-300"><strong class="text-white">Modular Security
+                                            Validation:</strong> The bar can activate validation via a 3-letter visual
+                                        code (e.g. <code class="text-neonGreen">M1A</code>) or NFC proximity.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
+                                    <p class="text-gray-300"><strong class="text-white">Encrypted Session
+                                            Opening:</strong> A secure unique identifier is assigned (<code
+                                            class="text-xs text-gray-400">client_token</code>) and the table turns to
+                                        occupied status in real-time.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="mt-1 mr-3 text-neonCyan"><i class="fa-solid fa-circle-check"></i></div>
+                                    <p class="text-gray-300"><strong class="text-white">Call Waiter:</strong>
+                                        Direct silent alert to the dining room without generating an order or kitchen ticket.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-gray-800">
+                            <img src="../assets/cliente_vista_pedidos.png" alt="BarAI Customer Mobile View"
+                                class="rounded-xl shadow-2xl max-h-[380px] w-auto object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 2: Cocina & Estados de Comanda -->
+                <div
+                    class="help-card bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div
+                            class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-800 order-2 md:order-1">
+                            <img src="../assets/cocina_panel_kds.png" alt="Kitchen and Bar KDS Panel"
+                                class="rounded-xl shadow-2xl w-full object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-8 md:p-10 flex flex-col justify-center order-1 md:order-2">
+                            <div
+                                class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-orange-900/30 text-orange-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-orange-800/50">
+                                <i class="fa-solid fa-fire-burner"></i>
+                                <span>Kitchen and Bar KDS</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white mb-4">2. Kitchen, KDS and Order Cycle</h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Real-time reception via WebSockets with acoustic alert in FIFO queue and clean state
+                                transitions for the team.
+                            </p>
+                            <div class="space-y-3 mb-6 text-sm">
+                                <div class="flex items-start">
+                                    <span class="w-3 h-3 rounded-full bg-cyan-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                                    <p class="text-gray-300"><strong class="text-white">Received (Cyan):</strong>
+                                        Newly arrived order. The customer can still cancel it from their mobile if they made a
+                                        mistake.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-3 h-3 rounded-full bg-orange-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                                    <p class="text-gray-300"><strong class="text-white">Preparing (Orange):</strong>
+                                        The cook presses <em>"Heard Kitchen"</em>. Cancellation by the diner is immediately blocked.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-3 h-3 rounded-full bg-green-500 mt-1.5 mr-3 flex-shrink-0"></span>
+                                    <p class="text-gray-300"><strong class="text-white">Ready (Green):</strong> The dish
+                                        is plated. The dining room is alerted for delivery to the table.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="w-3 h-3 rounded-full bg-emerald-400 mt-1.5 mr-3 flex-shrink-0"></span>
+                                    <p class="text-gray-300"><strong class="text-white">Completed / Served:</strong>
+                                        Delivered to the table. This is the only state computable for final billing.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-blue-900/20 border-l-4 border-blue-500 p-3 rounded-r-lg text-xs text-blue-200">
+                                <i class="fa-solid fa-filter mr-1.5"></i> <strong>Strict Kitchen Filter:</strong>
+                                Waiter calls do not saturate the kitchen screen; they are routed exclusively to
+                                dining room staff.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 3: Seguridad y Cancelaciones -->
+                <div
+                    class="help-card bg-cardBg border border-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl transition-all duration-300">
+                    <div
+                        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-900/30 text-red-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-red-800/50">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Anti-fraud & Loss Control</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Cancellation Rules and 4-Digit Master PIN
+                    </h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                        To eradicate food waste and uncontrolled losses, BarAI implements a double security barrier:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="space-y-4 md:col-span-2">
+                            <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
+                                <div class="text-neonCyan text-base font-bold mb-1.5 flex items-center">
+                                    <i class="fa-solid fa-user-xmark mr-2"></i> Diner Cancellation (Early
+                                    Window)
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    The customer <strong>can only cancel</strong> their order while it remains in
+                                    <code>Received</code> status. As soon as the kitchen presses <em>"Heard Kitchen"</em>, the
+                                    button disappears from their screen.
+                                </p>
+                            </div>
+                            <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
+                                <div class="text-red-400 text-base font-bold mb-1.5 flex items-center">
+                                    <i class="fa-solid fa-key mr-2"></i> Staff Cancellation (4-Digit Master
+                                    PIN)
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    If a dish already in preparation must be canceled (e.g. out of stock or error),
+                                    the system strictly requires the Manager's <strong>4-digit PIN</strong>.
+                                    The reason is recorded in the audit log.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-gray-900 p-4 rounded-2xl border border-gray-800 flex items-center justify-center">
+                            <img src="../assets/administracion_ajustes.png" alt="Admin and Settings Panel"
+                                class="rounded-xl shadow-xl w-full max-h-[220px] object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 4: Croquis & Facturación -->
+                <div
+                    class="help-card bg-cardBg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                            <div
+                                class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-900/30 text-purple-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-purple-800/50">
+                                <i class="fa-solid fa-cash-register"></i>
+                                <span>Dining Room and Billing</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white mb-4">4. Live Floor Plan and Table Charging Rules
+                            </h2>
+                            <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                                Real-time visualization of each table's status and settlement with strict
+                                consumer protection:
+                            </p>
+                            <ul class="space-y-3 mb-6 text-sm text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-circle-dot text-neonGreen mt-1 mr-3 flex-shrink-0"></i>
+                                    <span><strong>Exclusive Charging Rule:</strong> By pressing <em>"Charge Table"</em>,
+                                        the total adds up <em>only</em> the orders in <code>Completed</code> status
+                                        (served).</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-circle-dot text-orange-400 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span><strong>Orphaned Orders Cancellation:</strong> Any dish left
+                                        in preparation is automatically canceled to ensure an unconsumed dish is never billed.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-circle-dot text-neonCyan mt-1 mr-3 flex-shrink-0"></i>
+                                    <span><strong>Official VAT Breakdown (10% Hospitality Spain):</strong> All
+                                        receipts calculate the Taxable Base (<code class="text-xs">Total / 1.10</code>),
+                                        10% VAT Rate, and final Total in accordance with RD 1619/2012 regulations.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-circle-dot text-purple-400 mt-1 mr-3 flex-shrink-0"></i>
+                                    <span><strong>Table Release:</strong> The session is closed, the table turns back to
+                                        green (Free) and the digital receipt and satisfaction survey are triggered.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="bg-gray-900 min-h-[280px] flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-gray-800">
+                            <img src="../assets/sala_croquis_mesas.png" alt="Dining Room Floor Plan"
+                                class="rounded-xl shadow-2xl w-full object-contain border border-gray-700 hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 5: Digital Receipt, Logo y Reseñas Google -->
+                <div
+                    class="help-card bg-gradient-to-br from-cardBg to-gray-900 border border-neonGreen/30 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-neonGreen/5 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div
+                            class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neonGreen/20 text-neonGreen text-xs font-bold uppercase tracking-wider mb-6 w-max border border-neonGreen/30">
+                            <i class="fa-solid fa-star"></i>
+                            <span>Loyalty and Automation</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white mb-4">5. Digital Receipt with Logo and Google Reviews
+                            (15 min)</h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                            <!-- Digital Receipt -->
+                            <div class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700/50">
+                                <h3 class="text-lg font-bold text-white mb-3 flex items-center">
+                                    <i class="fa-solid fa-file-pdf text-neonCyan mr-2.5"></i> Consolidated PDF Receipt
+                                    with Logo
+                                </h3>
+                                <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                                    If the diner requests their receipt, the system queues the request. Upon charging the table,
+                                    a <strong>single consolidated official PDF</strong> is dispatched with the bar's
+                                    logo (<code class="text-neonGreen">with the Logo product</code>) and full tax breakdown.
+                                </p>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    The logo uploaded by the Manager is stamped on the PDF, in the email body, in
+                                    the review invitations, and on the printed POS pre-receipt.
+                                </p>
+                            </div>
+
+                            <!-- Reseñas Google 15 min -->
+                            <div class="bg-gray-800/40 p-6 rounded-2xl border border-gray-700/50">
+                                <h3 class="text-lg font-bold text-white mb-3 flex items-center">
+                                    <i class="fa-solid fa-star text-amber-400 mr-2.5"></i> Google Reviews Module
+                                    (Anti-spam)
+                                </h3>
+                                <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                                    If the bar has <code class="text-neonGreen">the Reviews product</code> active,
+                                    <strong>15 minutes after</strong> receiving the receipt, the customer receives an email
+                                    inviting them to rate the venue with 5 stars on Google Maps.
+                                </p>
+                                <p class="text-gray-400 text-xs leading-relaxed">
+                                    <strong>Strict Anti-spam Filter:</strong> If the diner already received this invitation
+                                    during a previous visit to this bar, the database detects it and
+                                    <strong>never sends it again</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 6: Administración, Carta Base IA y Contratos Modulares -->
+                <div
+                    class="help-card bg-cardBg border border-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl transition-all duration-300">
+                    <div
+                        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-900/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6 w-max border border-emerald-800/50">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Bar Management & Configuration</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-4">6. Administration, AI Base Menu and Contracts</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                        <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
+                            <h3 class="text-white font-bold text-sm mb-2 flex items-center">
+                                <i class="fa-solid fa-wine-glass text-neonGreen mr-2"></i> Base Menu & AI Parsing
+                            </h3>
+                            <p class="text-gray-400 text-xs leading-relaxed">
+                                Populate the catalog with over 30 references of beers (Estrella Damm, Moritz,
+                                Voll-Damm), DO wines and coffees with one click, or import physical menus using
+                                Artificial Intelligence (Gemini).
+                            </p>
+                        </div>
+                        <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
+                            <h3 class="text-white font-bold text-sm mb-2 flex items-center">
+                                <i class="fa-solid fa-cubes text-neonCyan mr-2"></i> 1-Click Modular Upselling
+                            </h3>
+                            <p class="text-gray-400 text-xs leading-relaxed">
+                                If the bar wishes to activate locked modules (Performance, Google Reviews, NFC Validation),
+                                there is a direct button to request activation from administration with pre-loaded details.
+                            </p>
+                        </div>
+                        <div class="bg-gray-900/60 p-5 rounded-2xl border border-gray-800">
+                            <h3 class="text-white font-bold text-sm mb-2 flex items-center">
+                                <i class="fa-solid fa-clock-rotate-left text-amber-400 mr-2"></i> Inactivity Monitor
+                                (10m)
+                            </h3>
+                            <p class="text-gray-400 text-xs leading-relaxed">
+                                Continuous background auditing: if a table has been open for over 10 minutes without
+                                ordering anything, it is marked red on the floor plan so staff can go attend to it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sección de FAQs Interactivas (Acordeón) -->
+            <div class="mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">FAQs and Operational Rules
+                    </h2>
+                    <p class="text-gray-400 text-sm">Click on any question to view the operational rule details.</p>
+                </div>
+
+                <div class="space-y-4 max-w-3xl mx-auto">
+
+                    <div
+                        class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> What happens if a customer
+                                sits down and orders nothing?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div
+                            class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            The system automatically detects the open session. If 10 minutes pass without
+                            any registered orders, BarAI's inactivity monitor sends an acoustic and
+                            visual alert to the waiters' panel indicating <em>"Attend Table X (10m without ordering)"</em> and
+                            dyes the table red on the floor plan.
+                        </div>
+                    </div>
+
+                    <div
+                        class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> Can I charge a table if
+                                there are pending dishes in the kitchen?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div
+                            class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            By pressing "Charge Table", the system adds up <strong>only the completed and
+                                served products</strong>. Any order left in "Received" or
+                            "Preparing" status is automatically canceled in the database to protect the customer and avoid
+                            charging for unconsumed products.
+                        </div>
+                    </div>
+
+                    <div
+                        class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> Why is a cancellation
+                                PIN required for staff?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div
+                            class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            When an order has already been accepted by the kitchen and is in preparation, the Administrator
+                            or Manager's 4-digit PIN is required to ensure that food losses or cancellations
+                            are recorded with responsible authorization in the audit logs.
+                        </div>
+                    </div>
+
+                    <div
+                        class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> Do cooks receive
+                                "Call Waiter" notifications?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div
+                            class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            No. The <code>cook</code> role view has a strict filter that ignores dining room
+                            service calls. Only waiters and administrators receive the alert to avoid distracting
+                            stove production.
+                        </div>
+                    </div>
+
+                    <div
+                        class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> How does the Google Reviews
+                                by email module work?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div
+                            class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            15 minutes after sending the digital receipt, the system sends an email inviting the diner
+                            to rate the bar on Google Maps. It has <strong>strict anti-spam protection</strong>: 
+                            if the customer already received a previous invitation for that bar, it never sends it again.
+                        </div>
+                    </div>
+
+                    <div
+                        class="accordion-item bg-cardBg border border-gray-800 rounded-2xl p-5 cursor-pointer transition-all hover:border-gray-700">
+                        <div class="flex items-center justify-between" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-white text-sm sm:text-base flex items-center">
+                                <i class="fa-solid fa-circle-question text-neonCyan mr-3"></i> How does data isolation
+                                between restaurants work?
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon transition-transform"></i>
+                        </div>
+                        <div
+                            class="accordion-content text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 mt-2">
+                            BarAI is a multi-tenant platform with strict isolation. Every SQL request requires
+                            <code>WHERE company_id = ?</code> and WebSocket connections are subscribed to private rooms
+                            (<code>company_&lt;id&gt;</code>), ensuring absolute privacy between venues.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Call to Action Support -->
+            <div
+                class="mt-16 bg-gradient-to-r from-cardBg via-gray-900 to-cardBg border border-gray-800 rounded-3xl p-8 text-center shadow-xl">
+                <div
+                    class="w-12 h-12 rounded-full bg-neonGreen/20 text-neonGreen flex items-center justify-center mx-auto mb-4 text-xl">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Do you need personalized technical assistance?</h3>
+                <p class="text-gray-400 text-sm max-w-md mx-auto mb-6">
+                    If you experience any operational incidents or wish to configure a new terminal, our support team is available.
+                </p>
+                <a href="/ticket.html"
+                    class="inline-flex items-center space-x-2 px-6 py-3 bg-neonGreen text-darkBg font-bold rounded-xl hover:bg-neonCyan transition-all shadow-lg hover:shadow-neonCyan/30 text-sm">
+                    <span>Create Support Ticket</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-cardBg py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-400">
+                <a href="/en/ayuda-clientes/" class="text-neonGreen font-semibold hover:underline">Customer Guide</a>
+                <a href="/en/helpdesk/" class="hover:text-neonGreen transition-colors">Staff Guide</a>
+                <a href="/en/condiciones-ticket-digital/" class="hover:text-neonGreen transition-colors">Digital Receipt Conditions</a>
+                <a href="/en/aviso-legal/" class="hover:text-neonGreen transition-colors">Legal Notice</a>
+                <a href="/en/politica-de-privacidad/" class="hover:text-neonGreen transition-colors">Privacy Policy</a>
+                <a href="/en/politica-de-cookies/" class="hover:text-neonGreen transition-colors">Cookie Policy</a>
+                <a href="/en/ticket/" class="hover:text-neonGreen transition-colors">Support</a>
+            </div>
+            <p class="text-xs text-gray-500">© 2026 BarAI Technologies. All rights reserved. <span
+                    class="text-gray-600">v1.0.3</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const isActive = item.classList.contains('accordion-active');
+
+            // Cerrar todos
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('accordion-active');
+            });
+
+            // Si no estaba activo, abrirlo
+            if (!isActive) {
+                item.classList.add('accordion-active');
+            }
+        }
+
+        function filterHelpdesk() {
+            const input = document.getElementById('helpSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.help-card');
+            const accordions = document.querySelectorAll('.accordion-item');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            accordions.forEach(acc => {
+                const text = acc.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    acc.style.display = 'block';
+                } else {
+                    acc.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
