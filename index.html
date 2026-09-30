@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Básico -->
-    <title>BarAI - Gestión y Optimización para Bares y Restaurantes con IA</title>
-    <meta name="description"
+    <title id="seo-title">BarAI - Gestión y Optimización para Bares y Restaurantes con IA</title>
+    <meta id="seo-desc" name="description"
         content="BarAI es la plataforma de gestión impulsada por Inteligencia Artificial diseñada para optimizar los procesos, reducir costes y mejorar la rentabilidad de tu bar o restaurante.">
-    <meta name="keywords"
+    <meta id="seo-keywords" name="keywords"
         content="gestión bares, gestión restaurantes, optimización hostelería, inteligencia artificial hostelería, software restaurantes, BarAI, TPV inteligente, rentabilidad bar, control de comandas">
     <meta name="author" content="BarAI Technologies">
     <meta name="version" content="1.0.3">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="Spanish">
+    <meta id="seo-lang" name="language" content="Spanish">
     <meta name="theme-color" content="#0b0f19">
     <link rel="canonical" href="https://www.barai.es/" />
+    <!-- hreflang: bilingual support -->
+    <link rel="alternate" hreflang="es" href="https://www.barai.es/" />
+    <link rel="alternate" hreflang="en" href="https://www.barai.es/?lang=en" />
+    <link rel="alternate" hreflang="en-US" href="https://www.barai.es/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://www.barai.es/" />
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="shortcut icon" href="assets/logo.ico">
     <link rel="apple-touch-icon" href="assets/logo.png">
@@ -26,18 +31,18 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.barai.es/">
-    <meta property="og:title" content="BarAI - Gestión y Optimización para Bares y Restaurantes con IA">
-    <meta property="og:description"
+    <meta id="og-title" property="og:title" content="BarAI - Gestión y Optimización para Bares y Restaurantes con IA">
+    <meta id="og-desc" property="og:description"
         content="Descubre cómo nuestra plataforma con Inteligencia Artificial puede transformar la rentabilidad y el control de tu bar o restaurante.">
     <meta property="og:image" content="https://www.barai.es/assets/logo.png">
     <meta property="og:site_name" content="BarAI">
-    <meta property="og:locale" content="es_ES">
+    <meta id="og-locale" property="og:locale" content="es_ES">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.barai.es/">
-    <meta name="twitter:title" content="BarAI - IA para Hostelería">
-    <meta name="twitter:description"
+    <meta id="tw-title" name="twitter:title" content="BarAI - IA para Hostelería">
+    <meta id="tw-desc" name="twitter:description"
         content="Descubre cómo nuestra plataforma con Inteligencia Artificial puede transformar la rentabilidad y el control de tu bar o restaurante.">
     <meta name="twitter:image" content="https://www.barai.es/assets/logo.png">
     <script type="application/ld+json">
@@ -71,13 +76,13 @@
                     "offers": [
                         {
                             "@type": "Offer",
-                            "price": "79",
+                            "price": "29,99",
                             "priceCurrency": "EUR",
                             "url": "https://www.barai.es/#pricing"
                         },
                         {
                             "@type": "Offer",
-                            "price": "159",
+                            "price": "89,99",
                             "priceCurrency": "EUR",
                             "url": "https://www.barai.es/#pricing"
                         }
@@ -203,18 +208,23 @@
             <!-- Desktop Navigation Links -->
             <nav aria-label="Navegación principal"
                 class="hidden xl:flex items-center gap-7 text-sm font-medium text-gray-300">
-                <a href="#features" class="hover:text-neonGreen transition-colors">Características</a>
-                <a href="#dashboard-preview" class="hover:text-neonGreen transition-colors">Paneles</a>
-                <a href="#customer-story" class="hover:text-neonGreen transition-colors">Experiencia QR</a>
-                <a href="#testimonials" class="hover:text-neonGreen transition-colors">Opiniones</a>
-                <a href="#calculator" class="hover:text-neonGreen transition-colors">Calculadora</a>
-                <a href="#pricing" class="hover:text-neonGreen transition-colors">Planes</a>
+                <a href="#features" class="hover:text-neonGreen transition-colors"
+                    data-i18n="nav_features">Características</a>
+                <a href="#dashboard-preview" class="hover:text-neonGreen transition-colors"
+                    data-i18n="nav_panels">Paneles</a>
+                <a href="#customer-story" class="hover:text-neonGreen transition-colors" data-i18n="nav_qr">Experiencia
+                    QR</a>
+                <a href="#testimonials" class="hover:text-neonGreen transition-colors"
+                    data-i18n="nav_reviews">Opiniones</a>
+                <a href="#calculator" class="hover:text-neonGreen transition-colors"
+                    data-i18n="nav_calculator">Calculadora</a>
+                <a href="#pricing" class="hover:text-neonGreen transition-colors" data-i18n="nav_plans">Planes</a>
 
                 <!-- Dropdown Guías y Ayuda -->
                 <div class="relative group py-2">
                     <button
                         class="flex items-center space-x-1.5 hover:text-neonGreen transition-colors text-sm font-medium text-gray-300 focus:outline-none">
-                        <span>Guías y Ayuda</span>
+                        <span data-i18n="nav_guides">Guías y Ayuda</span>
                         <i
                             class="fa-solid fa-chevron-down text-[10px] text-gray-400 group-hover:rotate-180 transition-transform duration-200"></i>
                     </button>
@@ -227,8 +237,10 @@
                                 <i class="fa-solid fa-mobile-screen-button"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-bold text-white block">Guía Clientes</span>
-                                <span class="text-[11px] text-gray-400">Cómo pedir con QR en mesa</span>
+                                <span class="text-xs font-bold text-white block" data-i18n="guide_customers">Guía
+                                    Clientes</span>
+                                <span class="text-[11px] text-gray-400" data-i18n="guide_customers_sub">Cómo pedir con
+                                    QR en mesa</span>
                             </div>
                         </a>
                         <a href="/helpdesk.html"
@@ -238,8 +250,10 @@
                                 <i class="fa-solid fa-book-open"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-bold text-white block">Guía Personal</span>
-                                <span class="text-[11px] text-gray-400">KDS, PIN, cobro y croquis</span>
+                                <span class="text-xs font-bold text-white block" data-i18n="guide_staff">Guía
+                                    Personal</span>
+                                <span class="text-[11px] text-gray-400" data-i18n="guide_staff_sub">KDS, PIN, cobro y
+                                    croquis</span>
                             </div>
                         </a>
                         <a href="/ticket-digital"
@@ -249,8 +263,10 @@
                                 <i class="fa-solid fa-receipt"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-bold text-white block">Ticket Digital</span>
-                                <span class="text-[11px] text-gray-400">Factura simplificada e IVA</span>
+                                <span class="text-xs font-bold text-white block" data-i18n="guide_ticket">Ticket
+                                    Digital</span>
+                                <span class="text-[11px] text-gray-400" data-i18n="guide_ticket_sub">Factura
+                                    simplificada e IVA</span>
                             </div>
                         </a>
                     </div>
@@ -259,20 +275,26 @@
                 <a href="/ticket.html"
                     class="hover:text-neonGreen transition-colors text-neonCyan font-semibold flex items-center space-x-1.5 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/50">
                     <i class="fa-solid fa-headset text-xs"></i>
-                    <span>Soporte</span>
+                    <span data-i18n="nav_support">Soporte</span>
                 </a>
             </nav>
 
             <!-- Actions Right Area -->
             <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
+                <!-- Language Toggle -->
+                <button id="lang-toggle" onclick="toggleLang()"
+                    class="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-gray-900/80 border border-gray-700 text-gray-300 hover:border-neonGreen hover:text-neonGreen transition-all text-xs font-bold tracking-wider">
+                    <i class="fa-solid fa-globe text-xs"></i>
+                    <span id="lang-label">EN</span>
+                </button>
                 <a href="https://app.barai.es/login?ref=web_login" target="_blank"
                     class="px-3.5 py-2 rounded-xl bg-gray-900/90 border border-neonCyan/40 text-neonCyan font-semibold text-xs sm:text-sm hover:bg-neonCyan/10 transition-all glow-cyan flex items-center space-x-1.5">
                     <i class="fa-solid fa-right-to-bracket text-xs"></i>
-                    <span>Iniciar Sesión</span>
+                    <span data-i18n="nav_login">Iniciar Sesión</span>
                 </a>
                 <a href="#contact"
                     class="px-4 py-2 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-xs sm:text-sm hover:opacity-90 transition-all glow-green flex items-center space-x-1.5">
-                    <span>Solicitar Demo</span>
+                    <span data-i18n="cta_demo">Solicitar Demo</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
             </div>
@@ -289,43 +311,45 @@
         <div id="mobile-menu"
             class="hidden xl:hidden bg-cardBg/95 backdrop-blur-xl border-b border-gray-800 px-6 py-5 space-y-4 shadow-2xl">
             <div class="grid grid-cols-2 gap-2 text-sm">
-                <a href="#features"
-                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Características</a>
+                <a href="#features" class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50"
+                    data-i18n="nav_features">Características</a>
                 <a href="#dashboard-preview"
-                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Paneles</a>
+                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50"
+                    data-i18n="nav_panels">Paneles</a>
                 <a href="#customer-story"
-                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Experiencia
-                    QR</a>
+                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50"
+                    data-i18n="nav_qr">Experiencia QR</a>
                 <a href="#testimonials"
-                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Opiniones
-                    5★</a>
+                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50"
+                    data-i18n="nav_reviews">Opiniones 5★</a>
                 <a href="#calculator"
-                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Calculadora</a>
-                <a href="#pricing"
-                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50">Planes</a>
+                    class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50"
+                    data-i18n="nav_calculator">Calculadora</a>
+                <a href="#pricing" class="block p-2 rounded-lg text-gray-300 hover:text-neonGreen hover:bg-gray-800/50"
+                    data-i18n="nav_plans">Planes</a>
                 <a href="/ticket.html"
                     class="block p-2 rounded-lg text-neonCyan hover:underline font-semibold col-span-2"><i
-                        class="fa-solid fa-headset mr-1"></i> Soporte</a>
+                        class="fa-solid fa-headset mr-1"></i> <span data-i18n="nav_support">Soporte</span></a>
             </div>
 
             <div class="border-t border-gray-800 pt-3 space-y-2">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-500 block px-2">Centro de
-                    Ayuda</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-500 block px-2"
+                    data-i18n="help_center">Centro de Ayuda</span>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                     <a href="/ayuda-clientes.html"
                         class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-neonGreen font-medium hover:border-neonGreen">
                         <i class="fa-solid fa-mobile-screen-button"></i>
-                        <span>Guía Clientes</span>
+                        <span data-i18n="guide_customers">Guía Clientes</span>
                     </a>
                     <a href="/helpdesk.html"
                         class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 hover:text-neonGreen hover:border-gray-700">
                         <i class="fa-solid fa-book-open text-neonCyan"></i>
-                        <span>Guía Personal</span>
+                        <span data-i18n="guide_staff">Guía Personal</span>
                     </a>
                     <a href="/ticket-digital"
                         class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-300 hover:text-neonGreen hover:border-gray-700">
                         <i class="fa-solid fa-receipt text-purple-400"></i>
-                        <span>Ticket Digital</span>
+                        <span data-i18n="guide_ticket">Ticket Digital</span>
                     </a>
                     <a href="mailto:info@barai.es"
                         class="flex items-center space-x-2 p-2 rounded-lg bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-white">
@@ -336,14 +360,20 @@
             </div>
 
             <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                <!-- Mobile Language Toggle -->
+                <button onclick="toggleLang()"
+                    class="w-full text-center py-2.5 rounded-xl bg-gray-900 border border-gray-700 text-gray-300 font-bold text-sm flex items-center justify-center space-x-2 hover:border-neonGreen hover:text-neonGreen transition-all">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="lang-label-mobile">EN</span>
+                </button>
                 <a href="https://app.barai.es/login?ref=web_login" target="_blank"
                     class="w-full text-center py-2.5 rounded-xl bg-gray-900 border border-neonCyan text-neonCyan font-bold text-sm flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-right-to-bracket"></i>
-                    <span>Iniciar Sesión</span>
+                    <span data-i18n="nav_login">Iniciar Sesión</span>
                 </a>
                 <a href="#contact"
                     class="w-full text-center py-2.5 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-sm shadow-lg">
-                    <span>Solicitar Demo</span>
+                    <span data-i18n="cta_demo">Solicitar Demo</span>
                 </a>
             </div>
         </div>
@@ -362,16 +392,18 @@
                 <div
                     class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-cardBg border border-neonGreen/30 mb-8 glow-green">
                     <span class="flex h-2 w-2 rounded-full bg-neonGreen animate-ping"></span>
-                    <span class="text-xs sm:text-sm font-semibold text-neonGreen tracking-wide uppercase">Plataforma
-                        Inteligente de Hostelería 2026</span>
+                    <span class="text-xs sm:text-sm font-semibold text-neonGreen tracking-wide uppercase"
+                        data-i18n="hero_badge">Plataforma Inteligente de Hostelería 2026</span>
                 </div>
 
                 <h1
                     class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight">
-                    ¡Revoluciona tu Bar con <span class="gradient-text">Inteligencia Artificial</span>! 🚀
+                    <span data-i18n="hero_title">¡Revoluciona tu Bar con </span><span class="gradient-text"
+                        data-i18n="hero_title_highlight">Inteligencia Artificial</span><span
+                        data-i18n="hero_title_end">! 🚀</span>
                 </h1>
 
-                <p class="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-light">
+                <p class="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-light" data-i18n="hero_sub">
                     BarAI | Plataforma Integral de Gestión y Optimización. Integración total en tiempo real: inventario
                     predictivo, comandas en cocina, control de personal, ventas y menús digitales QR.
                 </p>
@@ -381,12 +413,12 @@
                     <a href="#contact"
                         class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-lg hover:scale-105 transition-transform glow-green flex items-center justify-center space-x-3">
                         <i class="fa-solid fa-rocket"></i>
-                        <span>Solicitar Demo</span>
+                        <span data-i18n="cta_demo">Solicitar Demo</span>
                     </a>
                     <a href="#dashboard-preview"
                         class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cardBg border border-gray-700 text-white font-semibold text-lg hover:border-neonCyan transition-all flex items-center justify-center space-x-3 glow-cyan">
                         <i class="fa-solid fa-desktop text-neonCyan"></i>
-                        <span>Ver Paneles en Acción</span>
+                        <span data-i18n="hero_cta2">Ver Paneles en Acción</span>
                     </a>
                 </div>
 
@@ -414,38 +446,40 @@
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <div
                         class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
-                        <span>Sistema Operativo Integral para Gerentes</span>
+                        <span data-i18n="dash_badge">Sistema Operativo Integral para Gerentes</span>
                     </div>
                     <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-                        Explora los <span class="gradient-text">Módulos del Sistema</span>
+                        <span data-i18n="dash_title">Explora los </span><span class="gradient-text"
+                            data-i18n="dash_title_hl">Módulos del Sistema</span>
                     </h2>
-                    <p class="mt-4 text-gray-400 text-lg">
+                    <p class="mt-4 text-gray-400 text-lg" data-i18n="dash_sub">
                         Control absoluto desde el panel de gerencia, comandas en tiempo real, control de personal,
-                        cobros y
-                        analíticas de rendimiento impulsadas por IA.
+                        cobros y analíticas de rendimiento impulsadas por IA.
                     </p>
                 </div>
 
                 <div class="flex flex-wrap justify-center gap-3 mb-10">
                     <button onclick="switchTab('grid')" id="btn-grid"
                         class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg shadow-lg">
-                        <i class="fa-solid fa-bolt mr-2"></i> Live Grid (Comandas)
+                        <i class="fa-solid fa-bolt mr-2"></i> <span data-i18n="tab_grid">Live Grid (Comandas)</span>
                     </button>
                     <button onclick="switchTab('mesas')" id="btn-mesas"
                         class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
-                        <i class="fa-solid fa-chair mr-2"></i> Gestión de Mesas
+                        <i class="fa-solid fa-chair mr-2"></i> <span data-i18n="tab_tables">Gestión de Mesas</span>
                     </button>
                     <button onclick="switchTab('performance')" id="btn-performance"
                         class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
-                        <i class="fa-solid fa-chart-line mr-2"></i> Performance & IA
+                        <i class="fa-solid fa-chart-line mr-2"></i> <span data-i18n="tab_performance">Performance &
+                            IA</span>
                     </button>
                     <button onclick="switchTab('personal')" id="btn-personal"
                         class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
-                        <i class="fa-solid fa-users mr-2"></i> Control de Personal
+                        <i class="fa-solid fa-users mr-2"></i> <span data-i18n="tab_staff">Control de Personal</span>
                     </button>
                     <button onclick="switchTab('cobros')" id="btn-cobros"
                         class="px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-gray-900 border border-gray-800 text-gray-300 hover:text-white">
-                        <i class="fa-solid fa-cash-register mr-2"></i> Historial de Cobros
+                        <i class="fa-solid fa-cash-register mr-2"></i> <span data-i18n="tab_payments">Historial de
+                            Cobros</span>
                     </button>
                 </div>
 
@@ -533,12 +567,13 @@
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <div
                         class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
-                        <span>Recorrido del Cliente en Terraza</span>
+                        <span data-i18n="qr_badge">Recorrido del Cliente en Terraza</span>
                     </div>
                     <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-                        La Experiencia <span class="gradient-text">BarAI</span> Paso a Paso
+                        <span data-i18n="qr_title">La Experiencia </span><span class="gradient-text">BarAI</span><span
+                            data-i18n="qr_title_end"> Paso a Paso</span>
                     </h2>
-                    <p class="mt-4 text-gray-400 text-lg">
+                    <p class="mt-4 text-gray-400 text-lg" data-i18n="qr_sub">
                         Desde que Mateo se sienta en la terraza hasta que escanea el QR, pide y disfruta de su bebida
                         favorita con confirmación instantánea.
                     </p>
@@ -551,8 +586,9 @@
                                 alt="Storyboard Experiencia Cliente"
                                 class="w-full h-auto object-cover rounded-xl border border-gray-800">
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Secuencia Completa en Mesa</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="qr_seq_title">Secuencia Completa en
+                            Mesa</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="qr_seq_body">
                             1. Mateo toma asiento en el bar.<br>
                             2. Escanea el código QR de madera de la mesa.<br>
                             3. Visualiza la carta digital multidioma en su smartphone.<br>
@@ -569,10 +605,11 @@
                                 <div
                                     class="w-10 h-10 rounded-xl bg-neonGreen/10 flex items-center justify-center text-neonGreen font-bold">
                                     1</div>
-                                <h4 class="text-lg font-bold text-white">Escaneo sin Descargas</h4>
+                                <h4 class="text-lg font-bold text-white" data-i18n="qr_step1_title">Escaneo sin
+                                    Descargas</h4>
                             </div>
-                            <p class="text-gray-400 text-sm">El cliente accede de inmediato vía web móvil con menús
-                                adaptados (ES, CAT, EN, CN).</p>
+                            <p class="text-gray-400 text-sm" data-i18n="qr_step1_body">El cliente accede de inmediato
+                                vía web móvil con menús adaptados (ES, CAT, EN, CN).</p>
                         </div>
 
                         <div
@@ -581,10 +618,11 @@
                                 <div
                                     class="w-10 h-10 rounded-xl bg-neonCyan/10 flex items-center justify-center text-neonCyan font-bold">
                                     2</div>
-                                <h4 class="text-lg font-bold text-white">Sincronización con Barra</h4>
+                                <h4 class="text-lg font-bold text-white" data-i18n="qr_step2_title">Sincronización con
+                                    Barra</h4>
                             </div>
-                            <p class="text-gray-400 text-sm">El pedido entra al instante en el grid de cocina y barra,
-                                reduciendo los tiempos de servicio a la mitad.</p>
+                            <p class="text-gray-400 text-sm" data-i18n="qr_step2_body">El pedido entra al instante en el
+                                grid de cocina y barra, reduciendo los tiempos de servicio a la mitad.</p>
                         </div>
 
                         <div
@@ -593,11 +631,11 @@
                                 <div
                                     class="w-10 h-10 rounded-xl bg-neonGreen/10 flex items-center justify-center text-neonGreen font-bold">
                                     3</div>
-                                <h4 class="text-lg font-bold text-white">Felicidad y Fidelización</h4>
+                                <h4 class="text-lg font-bold text-white" data-i18n="qr_step3_title">Felicidad y
+                                    Fidelización</h4>
                             </div>
-                            <p class="text-gray-400 text-sm">Clientes más satisfechos, mayor rotación de mesas y aumento
-                                del
-                                ticket medio por noche.</p>
+                            <p class="text-gray-400 text-sm" data-i18n="qr_step3_body">Clientes más satisfechos, mayor
+                                rotación de mesas y aumento del ticket medio por noche.</p>
                         </div>
                     </div>
                 </div>
@@ -631,10 +669,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-                        Características Principales de <span class="gradient-text">BarAI</span>
+                        <span data-i18n="feat_title">Características Principales de </span><span
+                            class="gradient-text">BarAI</span>
                     </h2>
-                    <p class="mt-4 text-gray-400 text-lg">Tecnología punta diseñada específicamente para la hostelería
-                        moderna.</p>
+                    <p class="mt-4 text-gray-400 text-lg" data-i18n="feat_sub">Tecnología punta diseñada específicamente
+                        para la hostelería moderna.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -644,9 +683,9 @@
                             class="w-14 h-14 rounded-xl bg-neonGreen/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-boxes-stacked text-neonGreen text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Inventario Predictivo</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Control en tiempo real de mermas, bebidas y
-                            alimentos con alertas automáticas antes de agotar existencias.</p>
+                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="feat1_title">Inventario Predictivo</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="feat1_body">Control en tiempo real
+                            de mermas, bebidas y alimentos con alertas automáticas antes de agotar existencias.</p>
                     </div>
 
                     <div
@@ -655,9 +694,10 @@
                             class="w-14 h-14 rounded-xl bg-neonCyan/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-users-gear text-neonCyan text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Gestión de Personal IA</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Control de conexiones, turnos y rendimiento de
-                            camareros y cocineros con líneas de tiempo detalladas.</p>
+                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="feat2_title">Gestión de Personal IA
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="feat2_body">Control de conexiones,
+                            turnos y rendimiento de camareros y cocineros con líneas de tiempo detalladas.</p>
                     </div>
 
                     <div
@@ -666,10 +706,11 @@
                             class="w-14 h-14 rounded-xl bg-neonGreen/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-cash-register text-neonGreen text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">POS & Cobros Inteligentes</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Historial de cobros unificado por fechas,
-                            cierre de
-                            caja automático y gestión fluida de mesas activas y cobradas.</p>
+                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="feat3_title">POS & Cobros Inteligentes
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="feat3_body">Historial de cobros
+                            unificado por fechas, cierre de caja automático y gestión fluida de mesas activas y
+                            cobradas.</p>
                     </div>
 
                     <div
@@ -678,9 +719,9 @@
                             class="w-14 h-14 rounded-xl bg-neonCyan/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-language text-neonCyan text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Soporte Multidioma</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Cartas digitales adaptadas automáticamente para
-                            turistas en Español, Catalán, Inglés y Chino.</p>
+                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="feat4_title">Soporte Multidioma</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="feat4_body">Cartas digitales
+                            adaptadas automáticamente para turistas en Español, Catalán, Inglés y Chino.</p>
                     </div>
                 </div>
 
@@ -696,21 +737,22 @@
                         <div
                             class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold glow-green">
                             <i class="fa-solid fa-shield-check mr-1"></i>
-                            <span>Cumplimiento Normativo</span>
+                            <span data-i18n="vf_badge">Cumplimiento Normativo</span>
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">
-                            Sistema Certificado <span class="text-neonGreen">VeriFactu</span>
+                            <span data-i18n="vf_title">Sistema Certificado </span><span
+                                class="text-neonGreen">VeriFactu</span>
                         </h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                            BarAI cumple estrictamente con la normativa <strong>VeriFactu</strong> y la Ley Antifraude
-                            de la Agencia Tributaria. Todas las facturas y tickets emitidos son inalterables, trazables
-                            y se envían de forma automática, garantizando la total tranquilidad legal para tu negocio
-                            frente a inspecciones.
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-i18n="vf_body">
+                            BarAI cumple estrictamente con la normativa VeriFactu y la Ley Antifraude de la Agencia
+                            Tributaria. Todas las facturas y tickets emitidos son inalterables, trazables y se envían de
+                            forma automática, garantizando la total tranquilidad legal para tu negocio frente a
+                            inspecciones.
                         </p>
                         <a href="declaracion-responsable.html"
                             class="inline-flex items-center text-neonCyan hover:text-white transition-colors text-sm font-semibold group">
                             <i class="fa-solid fa-file-signature mr-2 group-hover:scale-110 transition-transform"></i>
-                            Ver Declaración Responsable Oficial
+                            <span data-i18n="vf_link">Ver Declaración Responsable Oficial</span>
                         </a>
                     </div>
 
@@ -739,18 +781,19 @@
                     <div class="max-w-2xl mb-10">
                         <div
                             class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold">
-                            <span>Calculadora de Rentabilidad</span>
+                            <span data-i18n="calc_badge">Calculadora de Rentabilidad</span>
                         </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white">¿Cuánto puedes ahorrar con BarAI?</h2>
-                        <p class="text-gray-400 text-sm mt-2">Mueve el selector según la facturación mensual estimada de
-                            tu
-                            local.</p>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white" data-i18n="calc_title">¿Cuánto puedes
+                            ahorrar con BarAI?</h2>
+                        <p class="text-gray-400 text-sm mt-2" data-i18n="calc_sub">Mueve el selector según la
+                            facturación mensual estimada de tu local.</p>
                     </div>
 
                     <div class="space-y-8">
                         <div>
                             <div class="flex justify-between items-center mb-3">
-                                <span class="text-sm font-semibold text-gray-300">Facturación Mensual Estimada:</span>
+                                <span class="text-sm font-semibold text-gray-300" data-i18n="calc_revenue">Facturación
+                                    Mensual Estimada:</span>
                                 <span id="volume-label" class="text-2xl font-black text-neonGreen">€30,000 / mes</span>
                             </div>
                             <input type="range" id="volume-range" min="10000" max="150000" step="5000" value="30000"
@@ -760,12 +803,14 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-gray-800">
                             <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800">
-                                <div class="text-xs text-gray-400">Ahorro Estimado en Mermas y Stock</div>
+                                <div class="text-xs text-gray-400" data-i18n="calc_savings">Ahorro Estimado en Mermas y
+                                    Stock</div>
                                 <div id="saved-money" class="text-3xl font-black text-white mt-1">€4,500 <span
                                         class="text-xs text-neonGreen font-normal">/ mes</span></div>
                             </div>
                             <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800">
-                                <div class="text-xs text-gray-400">Tiempo Administrativo Recuperado</div>
+                                <div class="text-xs text-gray-400" data-i18n="calc_time">Tiempo Administrativo
+                                    Recuperado</div>
                                 <div id="saved-time" class="text-3xl font-black text-white mt-1">32 hrs <span
                                         class="text-xs text-neonCyan font-normal">/ mes</span></div>
                             </div>
@@ -782,12 +827,13 @@
                     <div
                         class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold shadow-lg glow-green">
                         <i class="fa-solid fa-star text-amber-400"></i>
-                        <span>Casos de Éxito y Opiniones Verificadas</span>
+                        <span data-i18n="test_badge">Casos de Éxito y Opiniones Verificadas</span>
                     </div>
                     <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-                        Locales que ya han transformado su servicio con <span class="gradient-text">BarAI</span>
+                        <span data-i18n="test_title">Locales que ya han transformado su servicio con </span><span
+                            class="gradient-text">BarAI</span>
                     </h2>
-                    <p class="mt-4 text-gray-400 text-lg">
+                    <p class="mt-4 text-gray-400 text-lg" data-i18n="test_sub">
                         Descubre cómo bares y restaurantes reales aceleran comandas, aumentan su rotación de mesas y
                         multiplican sus reseñas en Google.
                     </p>
@@ -808,10 +854,10 @@
                                 </div>
                                 <span
                                     class="inline-flex items-center px-2.5 py-1 rounded-full bg-neonGreen/10 border border-neonGreen/30 text-neonGreen text-[11px] font-semibold">
-                                    <i class="fa-solid fa-circle-check mr-1"></i> Cliente Verificado
+                                    <i class="fa-solid fa-circle-check mr-1"></i> <span data-i18n="verified">Cliente Verificado</span>
                                 </span>
                             </div>
-                            <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6 italic" data-i18n="test1_quote">
                                 "En horas punta de terraza era una locura atender a tiempo. Con BarAI, los clientes
                                 escanean el QR de madera, piden en segundos y las comandas vuelan a cocina. Hemos
                                 incrementado un <strong class="text-white font-bold">35% la rotación de mesas</strong> y
@@ -824,8 +870,7 @@
                                 class="w-12 h-12 rounded-full object-cover border-2 border-neonGreen/40 flex-shrink-0">
                             <div>
                                 <h4 class="text-white font-bold text-sm">Carlos Mendoza</h4>
-                                <p class="text-gray-400 text-xs">Gerente en <strong class="text-neonGreen">Bar 7 de
-                                        Vi</strong></p>
+                                <p class="text-gray-400 text-xs"><span data-i18n="test1_role">Gerente en</span> <strong class="text-neonGreen">Bar 7 de Vi</strong></p>
                                 <span class="text-[11px] text-gray-500">Barcelona</span>
                             </div>
                         </div>
@@ -845,10 +890,10 @@
                                 </div>
                                 <span
                                     class="inline-flex items-center px-2.5 py-1 rounded-full bg-neonCyan/10 border border-neonCyan/30 text-neonCyan text-[11px] font-semibold">
-                                    <i class="fa-solid fa-circle-check mr-1"></i> Cliente Verificado
+                                    <i class="fa-solid fa-circle-check mr-1"></i> <span data-i18n="verified">Cliente Verificado</span>
                                 </span>
                             </div>
-                            <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6 italic" data-i18n="test2_quote">
                                 "El KDS de cocina es una maravilla: cero papel y cero errores de sala. Además, el módulo
                                 de <strong class="text-white font-bold">reseñas automáticas de Google Maps</strong> nos
                                 ha hecho conseguir más de 80 opiniones de 5 estrellas en apenas dos meses."
@@ -860,14 +905,13 @@
                                 class="w-12 h-12 rounded-full object-cover border-2 border-neonCyan/40 flex-shrink-0">
                             <div>
                                 <h4 class="text-white font-bold text-sm">Marta Rovira</h4>
-                                <p class="text-gray-400 text-xs">Jefa de Sala en <strong
-                                        class="text-neonCyan">Restaurante Capri</strong></p>
+                                <p class="text-gray-400 text-xs"><span data-i18n="test2_role">Jefa de Sala en</span> <strong class="text-neonCyan">Restaurante Capri</strong></p>
                                 <span class="text-[11px] text-gray-500">Barcelona</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Testimonio 3: Cervecería La Beer -->
+                    <!-- Testimonio 3: Cerveceria La Beer -->
                     <div
                         class="bg-cardBg p-8 rounded-3xl border border-gray-800 hover:border-emerald-400/40 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-2xl">
                         <div>
@@ -881,10 +925,10 @@
                                 </div>
                                 <span
                                     class="inline-flex items-center px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold">
-                                    <i class="fa-solid fa-circle-check mr-1"></i> Cliente Verificado
+                                    <i class="fa-solid fa-circle-check mr-1"></i> <span data-i18n="verified">Cliente Verificado</span>
                                 </span>
                             </div>
-                            <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6 italic" data-i18n="test3_quote">
                                 "Que el cliente no tenga que bajarse ninguna aplicación de la tienda fue decisivo. Los
                                 tickets fiscales en PDF con nuestro logotipo y el cobro ágil han erradicado los errores
                                 de caja. La mejor inversión que hemos hecho."
@@ -896,8 +940,7 @@
                                 class="w-12 h-12 rounded-full object-cover border-2 border-emerald-400/40 flex-shrink-0">
                             <div>
                                 <h4 class="text-white font-bold text-sm">Antonio García</h4>
-                                <p class="text-gray-400 text-xs">Propietario en <strong
-                                        class="text-emerald-400">Cervecería La Beer</strong></p>
+                                <p class="text-gray-400 text-xs"><span data-i18n="test3_role">Propietario en</span> <strong class="text-emerald-400">Cervecería La Beer</strong></p>
                                 <span class="text-[11px] text-gray-500">Barcelona</span>
                             </div>
                         </div>
@@ -916,22 +959,22 @@
                                     class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                     class="fa-solid fa-star"></i>
                             </div>
-                            <div class="text-xs text-gray-400">Valoración Media de Clientes</div>
+                            <div class="text-xs text-gray-400" data-i18n="stat1">Valoración Media de Clientes</div>
                         </div>
                         <div class="pt-4 md:pt-0">
                             <div class="text-3xl sm:text-4xl font-black text-neonCyan">+35%</div>
-                            <div class="text-xs text-white font-semibold my-1">Rotación en Mesas</div>
-                            <div class="text-xs text-gray-400">Más comensales atendidos por turno</div>
+                            <div class="text-xs text-white font-semibold my-1" data-i18n="stat2_title">Rotación en Mesas</div>
+                            <div class="text-xs text-gray-400" data-i18n="stat2_sub">Más comensales atendidos por turno</div>
                         </div>
                         <div class="pt-4 md:pt-0">
                             <div class="text-3xl sm:text-4xl font-black text-purple-400">0%</div>
-                            <div class="text-xs text-white font-semibold my-1">Comandas Perdidas</div>
-                            <div class="text-xs text-gray-400">Sincronización WebSockets en vivo</div>
+                            <div class="text-xs text-white font-semibold my-1" data-i18n="stat3_title">Comandas Perdidas</div>
+                            <div class="text-xs text-gray-400" data-i18n="stat3_sub">Sincronización WebSockets en vivo</div>
                         </div>
                         <div class="pt-4 md:pt-0">
                             <div class="text-3xl sm:text-4xl font-black text-amber-400">&lt; 3s</div>
-                            <div class="text-xs text-white font-semibold my-1">Acceso Inmediato</div>
-                            <div class="text-xs text-gray-400">Sin descargas ni registros de App</div>
+                            <div class="text-xs text-white font-semibold my-1" data-i18n="stat4_title">Acceso Inmediato</div>
+                            <div class="text-xs text-gray-400" data-i18n="stat4_sub">Sin descargas ni registros de App</div>
                         </div>
                     </div>
                 </div>
@@ -942,128 +985,83 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-                        Planes Adaptados a tu <span class="gradient-text">Negocio</span>
+                        <span data-i18n="pricing_title">Planes Adaptados a tu </span><span class="gradient-text"
+                            data-i18n="pricing_title_hl">Negocio</span>
                     </h2>
-                    <p class="mt-4 text-gray-400 text-lg">Sin costes ocultos. Escala desde un bar de barrio hasta
-                        grandes
-                        cadenas de restauración.</p>
+                    <p class="mt-4 text-gray-400 text-lg" data-i18n="pricing_sub">Sin costes ocultos. Escala desde un
+                        bar de barrio hasta grandes cadenas de restauración.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Plan Básico -->
                     <div class="bg-cardBg p-8 rounded-3xl border border-gray-800 flex flex-col justify-between">
                         <div>
-                            <div class="text-xs font-bold text-neonGreen uppercase tracking-wider mb-2">Básico Bar</div>
+                            <div class="text-xs font-bold text-neonGreen uppercase tracking-wider mb-2" data-i18n="plan1_name">Básico Bar</div>
                             <div class="flex items-end space-x-2 mb-1">
-                                <span
-                                    class="text-2xl font-bold text-gray-500 line-through decoration-red-500">29,99€</span>
-                                <span class="text-4xl font-extrabold text-white">0,00€<span
-                                        class="text-sm font-normal text-gray-400">/mes</span></span>
+                                <span class="text-2xl font-bold text-gray-500 line-through decoration-red-500">29,99€</span>
+                                <span class="text-4xl font-extrabold text-white">0,00€<span class="text-sm font-normal text-gray-400" data-i18n="per_month">/mes</span></span>
                             </div>
-                            <div class="text-sm text-neonGreen font-bold mb-2">durante 2 meses</div>
-                            <div
-                                class="text-xs text-neonGreen bg-neonGreen/10 border border-neonGreen/20 inline-block px-2 py-1 rounded-md mb-2">
+                            <div class="text-sm text-neonGreen font-bold mb-2" data-i18n="plan_free_period">durante 2 meses</div>
+                            <div class="text-xs text-neonGreen bg-neonGreen/10 border border-neonGreen/20 inline-block px-2 py-1 rounded-md mb-2" data-i18n="plan1_saving">
                                 Ahorra hasta 59,98 € con la oferta</div>
-                            <div class="text-sm text-gray-400 mb-4">Después 29,99 €/mes</div>
-                            <p class="text-gray-400 text-sm mb-6">Ideal para locales pequeños o cafeterías con barra
-                                única.
-                            </p>
+                            <div class="text-sm text-gray-400 mb-4" data-i18n="plan1_after">Después 29,99 €/mes</div>
+                            <p class="text-gray-400 text-sm mb-6" data-i18n="plan1_desc">Ideal para locales pequeños o cafeterías con barra única.</p>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Gestión de pedidos y
-                                        mesas</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Carta digital QR</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Generación básica de
-                                        carta</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Soporte vía
-                                        info@barai.es</span>
-                                </li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan1_f1">Gestión de pedidos y mesas</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan1_f2">Carta digital QR</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan1_f3">Generación básica de carta</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan1_f4">Soporte vía info@barai.es</span></li>
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <a href="#contact"
-                                class="block text-center py-3 rounded-xl border border-neonGreen text-neonGreen font-bold hover:bg-neonGreen/10 transition-colors">Elegir
-                                Básico</a>
+                            <a href="#contact" class="block text-center py-3 rounded-xl border border-neonGreen text-neonGreen font-bold hover:bg-neonGreen/10 transition-colors" data-i18n="plan1_cta">Elegir Básico</a>
                         </div>
                     </div>
 
+                    <!-- Plan Pro -->
                     <div
                         class="bg-gradient-to-b from-cardBg to-gray-900 p-8 rounded-3xl border-2 border-neonGreen flex flex-col justify-between relative glow-green">
                         <div
-                            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neonGreen text-darkBg text-xs font-extrabold px-3 py-1 rounded-full">
-                            MÁS POPULAR
-                        </div>
+                            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neonGreen text-darkBg text-xs font-extrabold px-3 py-1 rounded-full" data-i18n="plan_popular">MÁS POPULAR</div>
                         <div>
-                            <div class="text-xs font-bold text-neonCyan uppercase tracking-wider mb-2">Pro Hostelería
-                            </div>
+                            <div class="text-xs font-bold text-neonCyan uppercase tracking-wider mb-2" data-i18n="plan2_name">Pro Hostelería</div>
                             <div class="flex items-end space-x-2 mb-1">
-                                <span
-                                    class="text-2xl font-bold text-gray-500 line-through decoration-red-500">89,99€</span>
-                                <span class="text-4xl font-extrabold text-white">0,00€<span
-                                        class="text-sm font-normal text-gray-400">/mes</span></span>
+                                <span class="text-2xl font-bold text-gray-500 line-through decoration-red-500">89,99€</span>
+                                <span class="text-4xl font-extrabold text-white">0,00€<span class="text-sm font-normal text-gray-400" data-i18n="per_month">/mes</span></span>
                             </div>
-                            <div class="text-sm text-neonGreen font-bold mb-2">durante 2 meses</div>
-                            <div
-                                class="text-xs text-neonGreen bg-neonGreen/10 border border-neonGreen/20 inline-block px-2 py-1 rounded-md mb-2">
+                            <div class="text-sm text-neonGreen font-bold mb-2" data-i18n="plan_free_period">durante 2 meses</div>
+                            <div class="text-xs text-neonGreen bg-neonGreen/10 border border-neonGreen/20 inline-block px-2 py-1 rounded-md mb-2" data-i18n="plan2_saving">
                                 Ahorra hasta 179,98 € con la oferta</div>
-                            <div class="text-sm text-gray-400 mb-4">Después 89,99 €/mes</div>
-                            <p class="text-gray-400 text-sm mb-6">Para bares medianos y terrazas con alta rotación.</p>
+                            <div class="text-sm text-gray-400 mb-4" data-i18n="plan2_after">Después 89,99 €/mes</div>
+                            <p class="text-gray-400 text-sm mb-6" data-i18n="plan2_desc">Para bares medianos y terrazas con alta rotación.</p>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Menú digital QR
-                                        interactivo</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Ticket digital</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Predicción de demanda por
-                                        IA</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Optimización de personal y
-                                        turnos</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Soporte prioritario
-                                        info@barai.es</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan2_f1">Menú digital QR interactivo</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan2_f2">Ticket digital</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan2_f3">Predicción de demanda por IA</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan2_f4">Optimización de personal y turnos</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan2_f5">Soporte prioritario info@barai.es</span></li>
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <a href="#contact"
-                                class="block text-center py-3 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold hover:opacity-95 transition-all">Elegir
-                                Pro</a>
+                            <a href="#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold hover:opacity-95 transition-all" data-i18n="plan2_cta">Elegir Pro</a>
                         </div>
                     </div>
 
+                    <!-- Plan Enterprise -->
                     <div class="bg-cardBg p-8 rounded-3xl border border-gray-800 flex flex-col justify-between">
                         <div>
-                            <div class="text-xs font-bold text-neonCyan uppercase tracking-wider mb-2">Enterprise /
-                                Cadenas
-                            </div>
-                            <div class="text-4xl font-extrabold text-white mb-4">Personalizado</div>
-                            <p class="text-gray-400 text-sm mb-6">Para franquicias y grupos de restauración con
-                                múltiples
-                                locales.</p>
+                            <div class="text-xs font-bold text-neonCyan uppercase tracking-wider mb-2" data-i18n="plan3_name">Enterprise / Cadenas</div>
+                            <div class="text-4xl font-extrabold text-white mb-4" data-i18n="plan3_price">Personalizado</div>
+                            <p class="text-gray-400 text-sm mb-6" data-i18n="plan3_desc">Para franquicias y grupos de restauración con múltiples locales.</p>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Multi-local
-                                        sincronizado</span>
-                                </li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Integración con TPVs
-                                        avanzados</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Alertas de control de
-                                        stock</span></li>
-                                <li class="flex items-center space-x-3"><i
-                                        class="fa-solid fa-check text-neonGreen"></i><span>Gerente de cuenta
-                                        dedicado</span>
-                                </li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan3_f1">Multi-local sincronizado</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan3_f2">Integración con TPVs avanzados</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan3_f3">Alertas de control de stock</span></li>
+                                <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-neonGreen"></i><span data-i18n="plan3_f4">Gerente de cuenta dedicado</span></li>
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <a href="#contact"
-                                class="block text-center py-3 rounded-xl border border-neonCyan text-neonCyan font-bold hover:bg-neonCyan/10 transition-colors">Contactar
-                                Ventas</a>
+                            <a href="#contact" class="block text-center py-3 rounded-xl border border-neonCyan text-neonCyan font-bold hover:bg-neonCyan/10 transition-colors" data-i18n="plan3_cta">Contactar Ventas</a>
                         </div>
                     </div>
                 </div>
@@ -1076,33 +1074,30 @@
                 <div class="bg-cardBg rounded-3xl border border-gray-800 p-8 sm:p-12 shadow-2xl">
                     <div class="text-center max-w-xl mx-auto mb-10">
                         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                            Empieza con <span class="gradient-text">BarAI</span>
+                            <span data-i18n="contact_title">Empieza con </span><span class="gradient-text">BarAI</span>
                         </h2>
-                        <p class="mt-3 text-gray-400 text-sm">
+                        <p class="mt-3 text-gray-400 text-sm" data-i18n="contact_sub">
                             Rellena el formulario y envíalo directamente a nuestro equipo en <strong
                                 class="text-white">info@barai.es</strong>.
                         </p>
                     </div>
 
                     <form id="waitlist-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                        <div
-                            class="bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-center p-4 rounded-xl mb-4">
+                        <div class="bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-center p-4 rounded-xl mb-4"
+                            data-i18n="contact_promo">
                             🎉 ¡Los 2 primeros meses del Pack Básico son GRATIS! 🎉
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label
-                                    class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nombre
-                                    y
-                                    Apellido</label>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2"
+                                    data-i18n="form_name">Nombre y Apellido</label>
                                 <input type="text" id="name" required
                                     class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
-                                    placeholder="Ej. Ana Martínez">
+                                    data-i18n-placeholder="form_name_ph" placeholder="Ej. Ana Martínez">
                             </div>
                             <div>
-                                <label
-                                    class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Correo
-                                    Electrónico</label>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2"
+                                    data-i18n="form_email">Correo Electrónico</label>
                                 <input type="email" id="email" required
                                     class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
                                     placeholder="ana@tubar.com">
@@ -1111,17 +1106,15 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label
-                                    class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nombre
-                                    del Bar / Restaurante</label>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2"
+                                    data-i18n="form_business">Nombre del Bar / Restaurante</label>
                                 <input type="text" id="business" required
                                     class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
-                                    placeholder="Ej. Bar AI">
+                                    data-i18n-placeholder="form_business_ph" placeholder="Ej. Bar AI">
                             </div>
                             <div>
-                                <label
-                                    class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Teléfono
-                                    / WhatsApp</label>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2"
+                                    data-i18n="form_phone">Teléfono / WhatsApp</label>
                                 <input type="tel" id="phone" required
                                     class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
                                     placeholder="+34 600 000 000">
@@ -1137,19 +1130,20 @@
                                     placeholder="Ej. B12345678">
                             </div>
                             <div>
-                                <label
-                                    class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Dirección,
-                                    CP, Ciudad <span class="normal-case font-normal text-gray-500">(opcional)</span></label>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2"
+                                    data-i18n="form_address">Dirección,
+                                    CP, Ciudad <span class="normal-case font-normal text-gray-500"
+                                        data-i18n="form_optional">(opcional)</span></label>
                                 <input type="text" id="address"
                                     class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
-                                    placeholder="Ej. Gran Vía 1, 28013, Madrid">
+                                    data-i18n-placeholder="form_address_ph" placeholder="Ej. Gran Vía 1, 28013, Madrid">
                             </div>
                         </div>
 
                         <button type="submit"
                             class="w-full py-4 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-lg hover:opacity-95 transition-opacity glow-green shadow-lg flex items-center justify-center space-x-2">
                             <i class="fa-solid fa-paper-plane"></i>
-                            <span>Enviar Solicitud a info@barai.es</span>
+                            <span data-i18n="form_submit">Enviar Solicitud a info@barai.es</span>
                         </button>
                     </form>
 
@@ -1183,12 +1177,12 @@
                 </div>
                 <div class="flex items-center space-x-4 text-gray-400">
                     <a href="/ayuda"
-                        class="text-neonGreen hover:underline text-xs border-r border-gray-700 pr-4 font-semibold">Ayuda
-                        Clientes</a>
-                    <a href="helpdesk.html" class="hover:text-neonGreen text-xs border-r border-gray-700 pr-4">Guía
-                        Personal</a>
-                    <a href="ticket.html" class="hover:text-neonGreen text-xs mr-2 border-r border-gray-700 pr-4">Abrir
-                        Ticket de Soporte</a>
+                        class="text-neonGreen hover:underline text-xs border-r border-gray-700 pr-4 font-semibold"
+                        data-i18n="footer_help">Ayuda Clientes</a>
+                    <a href="helpdesk.html" class="hover:text-neonGreen text-xs border-r border-gray-700 pr-4"
+                        data-i18n="footer_staff_guide">Guía Personal</a>
+                    <a href="ticket.html" class="hover:text-neonGreen text-xs mr-2 border-r border-gray-700 pr-4"
+                        data-i18n="footer_ticket">Abrir Ticket de Soporte</a>
                     <a href="https://www.youtube.com/@BarAIGestion" target="_blank" rel="noopener noreferrer"
                         class="hover:text-red-500 transition-colors" title="YouTube"><i
                             class="fa-brands fa-youtube text-lg"></i></a>
@@ -1201,21 +1195,23 @@
             <div
                 class="border-t border-gray-800/80 pt-6 flex flex-col lg:flex-row items-center justify-between text-xs text-gray-500 space-y-4 lg:space-y-0">
                 <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                    <p>© 2026 BarAI Technologies. Todos los derechos reservados. <span
-                            class="text-gray-600">v1.0.3</span></p>
+                    <p><span data-i18n="footer_rights">© 2026 BarAI Technologies. Todos los derechos reservados.</span>
+                        <span class="text-gray-600">v1.0.3</span>
+                    </p>
                     <div class="flex items-center space-x-3 bg-white rounded-lg px-2.5 py-1.5 shadow-sm">
                         <img src="assets/verifactu-logo.png" alt="VeriFactu" class="h-5 object-contain">
                         <img src="assets/agencia-tributaria.png" alt="Agencia Tributaria" class="h-5 object-contain">
                     </div>
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-6">
-                    <a href="/ticket-digital" class="hover:text-neonGreen transition-colors">Condiciones Ticket
-                        Digital</a>
-                    <a href="/aviso-legal/" class="hover:text-neonGreen transition-colors">Aviso legal</a>
-                    <a href="/politica-de-privacidad/" class="hover:text-neonGreen transition-colors">Política de
-                        privacidad</a>
-                    <a href="/politica-de-cookies/" class="hover:text-neonGreen transition-colors">Política de
-                        cookies</a>
+                    <a href="/ticket-digital" class="hover:text-neonGreen transition-colors"
+                        data-i18n="footer_ticket_terms">Condiciones Ticket Digital</a>
+                    <a href="/aviso-legal/" class="hover:text-neonGreen transition-colors"
+                        data-i18n="footer_legal">Aviso legal</a>
+                    <a href="/politica-de-privacidad/" class="hover:text-neonGreen transition-colors"
+                        data-i18n="footer_privacy">Política de privacidad</a>
+                    <a href="/politica-de-cookies/" class="hover:text-neonGreen transition-colors"
+                        data-i18n="footer_cookies">Política de cookies</a>
                 </div>
             </div>
         </div>
@@ -1230,7 +1226,7 @@
             al Canal</span>
     </a>
 
-    <!-- Chatbot Helpdesk -->
+        <!-- Chatbot Helpdesk -->
     <div id="chatbot-container"
         class="fixed bottom-24 right-6 w-80 sm:w-96 bg-cardBg border border-neonCyan/30 rounded-2xl shadow-2xl flex flex-col hidden z-50 overflow-hidden"
         style="height: 500px; max-height: 70vh;">
@@ -1241,9 +1237,9 @@
                     <i class="fa-solid fa-robot"></i>
                 </div>
                 <div>
-                    <h3 class="text-white font-bold text-sm">Asistente BarAI</h3>
+                    <h3 class="text-white font-bold text-sm" data-i18n="chat_title">Asistente BarAI</h3>
                     <p class="text-xs text-neonGreen flex items-center"><span
-                            class="w-2 h-2 rounded-full bg-neonGreen inline-block mr-1"></span> En línea</p>
+                            class="w-2 h-2 rounded-full bg-neonGreen inline-block mr-1"></span> <span data-i18n="chat_online">En línea</span></p>
                 </div>
             </div>
             <button onclick="toggleChatbot()" class="text-gray-400 hover:text-white transition-colors">
@@ -1260,30 +1256,29 @@
                     <i class="fa-solid fa-robot text-xs"></i>
                 </div>
                 <div class="bg-gray-800 text-gray-200 p-3 rounded-2xl rounded-tl-none border border-gray-700">
-                    ¡Hola! Soy el asistente virtual de BarAI. ¿En qué puedo ayudarte sobre el funcionamiento de nuestro
-                    sistema?
+                    <span data-i18n="chat_greeting">¡Hola! Soy el asistente virtual de BarAI. ¿En qué puedo ayudarte sobre el funcionamiento de nuestro sistema?</span>
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <button onclick="sendQuickReply('¿Cómo puedo probar la DEMO gratuita?')"
+                        <button onclick="sendQuickReply(translations[currentLang].qr_demo || '¿Cómo puedo probar la DEMO gratuita?')"
                             class="bg-gradient-to-r from-neonGreen/20 to-neonCyan/20 hover:from-neonGreen/30 hover:to-neonCyan/30 border border-neonGreen/60 text-neonGreen text-xs px-2.5 py-1 rounded-full transition-colors font-semibold">✨
-                            Probar DEMO gratis</button>
-                        <button onclick="sendQuickReply('¿Cómo cobro una mesa?')"
+                            <span data-i18n="chat_q1">Probar DEMO gratis</span></button>
+                        <button onclick="sendQuickReply(translations[currentLang].qr_table || '¿Cómo cobro una mesa?')"
                             class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2.5 py-1 rounded-full transition-colors">💳
-                            Cobrar mesa</button>
-                        <button onclick="sendQuickReply('¿Cómo cancelo un pedido con PIN?')"
+                            <span data-i18n="chat_q2">Cobrar mesa</span></button>
+                        <button onclick="sendQuickReply(translations[currentLang].qr_cancel || '¿Cómo cancelo un pedido con PIN?')"
                             class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2.5 py-1 rounded-full transition-colors">🛡️
-                            Cancelar / PIN</button>
-                        <button onclick="sendQuickReply('¿Cómo funciona el KDS de cocina?')"
+                            <span data-i18n="chat_q3">Cancelar / PIN</span></button>
+                        <button onclick="sendQuickReply(translations[currentLang].qr_kds || '¿Cómo funciona el KDS de cocina?')"
                             class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2.5 py-1 rounded-full transition-colors">🍳
-                            Cocina / KDS</button>
-                        <button onclick="sendQuickReply('¿Cómo son los tickets digitales?')"
+                            <span data-i18n="chat_q4">Cocina / KDS</span></button>
+                        <button onclick="sendQuickReply(translations[currentLang].qr_ticket || '¿Cómo son los tickets digitales?')"
                             class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2.5 py-1 rounded-full transition-colors">📄
-                            Ticket PDF</button>
-                        <button onclick="sendQuickReply('¿Qué pasa si una mesa lleva 10 minutos sin pedir?')"
+                            <span data-i18n="chat_q5">Ticket PDF</span></button>
+                        <button onclick="sendQuickReply(translations[currentLang].qr_alert || '¿Qué pasa si una mesa lleva 10 minutos sin pedir?')"
                             class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2.5 py-1 rounded-full transition-colors">⏱️
-                            Alerta 10m</button>
-                        <button onclick="sendQuickReply('¿Qué hardware necesito?')"
+                            <span data-i18n="chat_q6">Alerta 10m</span></button>
+                        <button onclick="sendQuickReply(translations[currentLang].qr_hw || '¿Qué hardware necesito?')"
                             class="bg-gray-900 hover:bg-gray-700 border border-neonCyan/40 text-gray-300 text-xs px-2.5 py-1 rounded-full transition-colors">📱
-                            Dispositivos</button>
+                            <span data-i18n="chat_q7">Dispositivos</span></button>
                     </div>
                 </div>
             </div>
@@ -1292,7 +1287,7 @@
         <!-- Input -->
         <div class="p-3 bg-gray-900 border-t border-gray-800">
             <form onsubmit="handleChatSubmit(event)" class="flex items-center space-x-2">
-                <input type="text" id="chatbot-input" placeholder="Escribe tu duda..."
+                <input type="text" id="chatbot-input" data-i18n-placeholder="chat_input_ph" placeholder="Escribe tu duda..."
                     class="flex-grow bg-darkBg border border-gray-700 rounded-full px-4 py-2 text-white text-sm focus:outline-none focus:border-neonCyan transition-colors"
                     autocomplete="off">
                 <button type="submit"
@@ -1308,9 +1303,282 @@
         class="fixed bottom-24 right-6 bg-neonCyan text-darkBg rounded-full w-14 h-14 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:bg-cyan-400 hover:scale-110 transition-all z-40 group">
         <i class="fa-solid fa-robot text-2xl"></i>
         <span
-            class="absolute right-16 bg-gray-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-700">Asistente
-            BarAI</span>
+            class="absolute right-16 bg-gray-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-700" data-i18n="chat_toggle_tip">Asistente BarAI</span>
     </button>
+
+    <!-- i18n Engine -->
+    <script>
+        const translations = {
+            es: {
+                // SEO
+                seo_title: 'BarAI - Gestión y Optimización para Bares y Restaurantes con IA',
+                seo_desc: 'BarAI es la plataforma de gestión impulsada por Inteligencia Artificial diseñada para optimizar los procesos, reducir costes y mejorar la rentabilidad de tu bar o restaurante.',
+                seo_keywords: 'gestión bares, gestión restaurantes, optimización hostelería, inteligencia artificial hostelería, software restaurantes, BarAI, TPV inteligente, rentabilidad bar, control de comandas',
+                seo_lang: 'Spanish', og_locale: 'es_ES',
+                og_title: 'BarAI - Gestión y Optimización para Bares y Restaurantes con IA',
+                og_desc: 'Descubre cómo nuestra plataforma con Inteligencia Artificial puede transformar la rentabilidad y el control de tu bar o restaurante.',
+                tw_title: 'BarAI - IA para Hostelería',
+                tw_desc: 'Descubre cómo nuestra plataforma con Inteligencia Artificial puede transformar la rentabilidad y el control de tu bar o restaurante.',
+                // Nav
+                nav_features: 'Características', nav_panels: 'Paneles', nav_qr: 'Experiencia QR',
+                nav_reviews: 'Opiniones', nav_calculator: 'Calculadora', nav_plans: 'Planes',
+                nav_guides: 'Guías y Ayuda', nav_support: 'Soporte', nav_login: 'Iniciar Sesión',
+                guide_customers: 'Guía Clientes', guide_customers_sub: 'Cómo pedir con QR en mesa',
+                guide_staff: 'Guía Personal', guide_staff_sub: 'KDS, PIN, cobro y croquis',
+                guide_ticket: 'Ticket Digital', guide_ticket_sub: 'Factura simplificada e IVA',
+                help_center: 'Centro de Ayuda', cta_demo: 'Solicitar Demo',
+                // Hero
+                hero_badge: 'Plataforma Inteligente de Hostelería 2026',
+                hero_title: '¡Revoluciona tu Bar con ', hero_title_highlight: 'Inteligencia Artificial', hero_title_end: '! 🚀',
+                hero_sub: 'BarAI | Plataforma Integral de Gestión y Optimización. Integración total en tiempo real: inventario predictivo, comandas en cocina, control de personal, ventas y menús digitales QR.',
+                hero_cta2: 'Ver Paneles en Acción',
+                // Dashboards
+                dash_badge: 'Sistema Operativo Integral para Gerentes',
+                dash_title: 'Explora los ', dash_title_hl: 'Módulos del Sistema',
+                dash_sub: 'Control absoluto desde el panel de gerencia, comandas en tiempo real, control de personal, cobros y analíticas de rendimiento impulsadas por IA.',
+                tab_grid: 'Live Grid (Comandas)', tab_tables: 'Gestión de Mesas',
+                tab_performance: 'Performance & IA', tab_staff: 'Control de Personal', tab_payments: 'Historial de Cobros',
+                // QR
+                qr_badge: 'Recorrido del Cliente en Terraza',
+                qr_title: 'La Experiencia ', qr_title_end: ' Paso a Paso',
+                qr_sub: 'Desde que Mateo se sienta en la terraza hasta que escanea el QR, pide y disfruta de su bebida favorita con confirmación instantánea.',
+                qr_seq_title: 'Secuencia Completa en Mesa',
+                qr_seq_body: '1. Mateo toma asiento en el bar.<br>2. Escanea el código QR de madera de la mesa.<br>3. Visualiza la carta digital multidioma en su smartphone.<br>4. Añade productos al carrito de forma instantánea.<br>5. Recibe la confirmación inmediata del pedido.<br>6. Disfruta de una atención excelente y sin esperas.',
+                qr_step1_title: 'Escaneo sin Descargas', qr_step1_body: 'El cliente accede de inmediato vía web móvil con menús adaptados (ES, CAT, EN, CN).',
+                qr_step2_title: 'Sincronización con Barra', qr_step2_body: 'El pedido entra al instante en el grid de cocina y barra, reduciendo los tiempos de servicio a la mitad.',
+                qr_step3_title: 'Felicidad y Fidelización', qr_step3_body: 'Clientes más satisfechos, mayor rotación de mesas y aumento del ticket medio por noche.',
+                qr_future_title: 'Diseñado para la Hostelería del Futuro', qr_future_body: 'Optimiza cada proceso de tu local desde un único panel inteligente respaldado por inteligencia artificial.',
+                // Features
+                feat_title: 'Características Principales de ', feat_sub: 'Tecnología punta diseñada específicamente para la hostelería moderna.',
+                feat1_title: 'Inventario Predictivo', feat1_body: 'Control en tiempo real de mermas, bebidas y alimentos con alertas automáticas antes de agotar existencias.',
+                feat2_title: 'Gestión de Personal IA', feat2_body: 'Control de conexiones, turnos y rendimiento de camareros y cocineros con líneas de tiempo detalladas.',
+                feat3_title: 'POS & Cobros Inteligentes', feat3_body: 'Historial de cobros unificado por fechas, cierre de caja automático y gestión fluida de mesas activas y cobradas.',
+                feat4_title: 'Soporte Multidioma', feat4_body: 'Cartas digitales adaptadas automáticamente para turistas en Español, Catalán, Inglés y Chino.',
+                // VeriFactu
+                vf_badge: 'Cumplimiento Normativo', vf_title: 'Sistema Certificado ',
+                vf_body: 'BarAI cumple estrictamente con la normativa VeriFactu y la Ley Antifraude de la Agencia Tributaria. Todas las facturas y tickets emitidos son inalterables, trazables y se envían de forma automática, garantizando la total tranquilidad legal para tu negocio frente a inspecciones.',
+                vf_link: 'Ver Declaración Responsable Oficial',
+                // Calculator
+                calc_badge: 'Calculadora de Rentabilidad', calc_title: '¿Cuánto puedes ahorrar con BarAI?',
+                calc_sub: 'Mueve el selector según la facturación mensual estimada de tu local.',
+                calc_revenue: 'Facturación Mensual Estimada:', calc_savings: 'Ahorro Estimado en Mermas y Stock', calc_time: 'Tiempo Administrativo Recuperado',
+                // Testimonials
+                test_badge: 'Casos de Éxito y Opiniones Verificadas',
+                test_title: 'Locales que ya han transformado su servicio con ',
+                test_sub: 'Descubre cómo bares y restaurantes reales aceleran comandas, aumentan su rotación de mesas y multiplican sus reseñas en Google.',
+                verified: 'Cliente Verificado',
+                test1_quote: '"En horas punta de terraza era una locura atender a tiempo. Con BarAI, los clientes escanean el QR de madera, piden en segundos y las comandas vuelan a cocina. Hemos incrementado un <strong class="text-white font-bold">35% la rotación de mesas</strong> y el equipo trabaja mucho más desahogado."',
+                test1_role: 'Gerente en',
+                test2_quote: '"El KDS de cocina es una maravilla: cero papel y cero errores de sala. Además, el módulo de <strong class="text-white font-bold">reseñas automáticas de Google Maps</strong> nos ha hecho conseguir más de 80 opiniones de 5 estrellas en apenas dos meses."',
+                test2_role: 'Jefa de Sala en',
+                test3_quote: '"Que el cliente no tenga que bajarse ninguna aplicación de la tienda fue decisivo. Los tickets fiscales en PDF con nuestro logotipo y el cobro ágil han erradicado los errores de caja. La mejor inversión que hemos hecho."',
+                test3_role: 'Propietario en',
+                // Stats
+                stat1: 'Valoración Media de Clientes',
+                stat2_title: 'Rotación en Mesas', stat2_sub: 'Más comensales atendidos por turno',
+                stat3_title: 'Comandas Perdidas', stat3_sub: 'Sincronización WebSockets en vivo',
+                stat4_title: 'Acceso Inmediato', stat4_sub: 'Sin descargas ni registros de App',
+                // Pricing
+                pricing_title: 'Planes Adaptados a tu ', pricing_title_hl: 'Negocio',
+                pricing_sub: 'Sin costes ocultos. Escala desde un bar de barrio hasta grandes cadenas de restauración.',
+                plan_popular: 'MÁS POPULAR', per_month: '/mes', plan_free_period: 'durante 2 meses',
+                plan1_name: 'Básico Bar', plan1_saving: 'Ahorra hasta 59,98 € con la oferta', plan1_after: 'Después 29,99 €/mes',
+                plan1_desc: 'Ideal para locales pequeños o cafeterías con barra única.',
+                plan1_f1: 'Gestión de pedidos y mesas', plan1_f2: 'Carta digital QR', plan1_f3: 'Generación básica de carta', plan1_f4: 'Soporte vía info@barai.es', plan1_cta: 'Elegir Básico',
+                plan2_name: 'Pro Hostelería', plan2_saving: 'Ahorra hasta 179,98 € con la oferta', plan2_after: 'Después 89,99 €/mes',
+                plan2_desc: 'Para bares medianos y terrazas con alta rotación.',
+                plan2_f1: 'Menú digital QR interactivo', plan2_f2: 'Ticket digital', plan2_f3: 'Predicción de demanda por IA', plan2_f4: 'Optimización de personal y turnos', plan2_f5: 'Soporte prioritario info@barai.es', plan2_cta: 'Elegir Pro',
+                plan3_name: 'Enterprise / Cadenas', plan3_price: 'Personalizado', plan3_desc: 'Para franquicias y grupos de restauración con múltiples locales.',
+                plan3_f1: 'Multi-local sincronizado', plan3_f2: 'Integración con TPVs avanzados', plan3_f3: 'Alertas de control de stock', plan3_f4: 'Gerente de cuenta dedicado', plan3_cta: 'Contactar Ventas',
+                // Contact form
+                contact_title: 'Empieza con ',
+                contact_sub: 'Rellena el formulario y envíalo directamente a nuestro equipo en <strong class="text-white">info@barai.es</strong>.',
+                contact_promo: '🎉 ¡Los 2 primeros meses del Pack Básico son GRATIS! 🎉',
+                form_name: 'Nombre y Apellido', form_name_ph: 'Ej. Ana Martínez',
+                form_email: 'Correo Electrónico',
+                form_business: 'Nombre del Bar / Restaurante', form_business_ph: 'Ej. Bar AI',
+                form_phone: 'Teléfono / WhatsApp',
+                form_address: 'Dirección, CP, Ciudad', form_address_ph: 'Ej. Gran Vía 1, 28013, Madrid',
+                form_optional: '(opcional)', form_submit: 'Enviar Solicitud a info@barai.es',
+                // Footer
+                footer_help: 'Ayuda Clientes', footer_staff_guide: 'Guía Personal',
+                footer_ticket: 'Abrir Ticket de Soporte', footer_rights: '© 2026 BarAI Technologies. Todos los derechos reservados.',
+                footer_ticket_terms: 'Condiciones Ticket Digital', footer_legal: 'Aviso legal',
+                footer_privacy: 'Política de privacidad', footer_cookies: 'Política de cookies',
+                // Chatbot
+                chat_title: 'Asistente BarAI', chat_online: 'En línea',
+                chat_greeting: '¡Hola! Soy el asistente virtual de BarAI. ¿En qué puedo ayudarte sobre el funcionamiento de nuestro sistema?',
+                chat_q1: 'Probar DEMO gratis', chat_q2: 'Cobrar mesa', chat_q3: 'Cancelar / PIN',
+                chat_q4: 'Cocina / KDS', chat_q5: 'Ticket PDF', chat_q6: 'Alerta 10m', chat_q7: 'Dispositivos',
+                chat_toggle_tip: 'Asistente BarAI', chat_input_ph: 'Escribe tu duda...',
+                // Quick reply triggers (for chatbot)
+                qr_demo: '¿Cómo puedo probar la DEMO gratuita?', qr_table: '¿Cómo cobro una mesa?',
+                qr_cancel: '¿Cómo cancelo un pedido con PIN?', qr_kds: '¿Cómo funciona el KDS de cocina?',
+                qr_ticket: '¿Cómo son los tickets digitales?', qr_alert: '¿Qué pasa si una mesa lleva 10 minutos sin pedir?',
+                qr_hw: '¿Qué hardware necesito?'
+            },
+            en: {
+                // SEO (US-EN)
+                seo_title: 'BarAI - AI-Powered Bar & Restaurant Management Platform',
+                seo_desc: 'BarAI is the Artificial Intelligence management platform designed to streamline operations, cut costs and boost profitability for bars and restaurants.',
+                seo_keywords: 'bar management software, restaurant management AI, hospitality software, smart POS system, AI restaurant, BarAI, QR digital menu, table management, kitchen display system, staff scheduling',
+                seo_lang: 'English', og_locale: 'en_US',
+                og_title: 'BarAI - AI-Powered Bar & Restaurant Management',
+                og_desc: 'Discover how our AI platform can transform the profitability and control of your bar or restaurant.',
+                tw_title: 'BarAI - AI for Hospitality',
+                tw_desc: 'Discover how our AI platform can transform the profitability and control of your bar or restaurant.',
+                // Nav
+                nav_features: 'Features', nav_panels: 'Dashboards', nav_qr: 'QR Experience',
+                nav_reviews: 'Reviews', nav_calculator: 'Calculator', nav_plans: 'Plans',
+                nav_guides: 'Guides & Help', nav_support: 'Support', nav_login: 'Log In',
+                guide_customers: 'Customer Guide', guide_customers_sub: 'How to order via QR at the table',
+                guide_staff: 'Staff Guide', guide_staff_sub: 'KDS, PIN, checkout & floor map',
+                guide_ticket: 'Digital Receipt', guide_ticket_sub: 'Simplified invoice & VAT',
+                help_center: 'Help Center', cta_demo: 'Request Demo',
+                // Hero
+                hero_badge: 'Smart Hospitality Platform 2026',
+                hero_title: 'Revolutionize your Bar with ', hero_title_highlight: 'Artificial Intelligence', hero_title_end: '! 🚀',
+                hero_sub: 'BarAI | All-in-One Management & Optimization Platform. Full real-time integration: predictive inventory, kitchen orders, staff control, sales & QR digital menus.',
+                hero_cta2: 'See Dashboards in Action',
+                // Dashboards
+                dash_badge: 'Comprehensive Operating System for Managers',
+                dash_title: 'Explore the ', dash_title_hl: 'System Modules',
+                dash_sub: 'Total control from the management panel, real-time orders, staff monitoring, payments and AI-powered performance analytics.',
+                tab_grid: 'Live Grid (Orders)', tab_tables: 'Table Management',
+                tab_performance: 'Performance & AI', tab_staff: 'Staff Control', tab_payments: 'Payment History',
+                // QR
+                qr_badge: 'Customer Journey on the Terrace',
+                qr_title: 'The ', qr_title_end: ' Experience Step by Step',
+                qr_sub: 'From the moment Mateo sits on the terrace to scanning the QR, ordering and enjoying his favourite drink with instant confirmation.',
+                qr_seq_title: 'Full Table Sequence',
+                qr_seq_body: '1. Mateo takes a seat at the bar.<br>2. Scans the wooden QR code on the table.<br>3. Views the multilingual digital menu on his smartphone.<br>4. Adds items to the cart instantly.<br>5. Receives immediate order confirmation.<br>6. Enjoys excellent service with no waiting.',
+                qr_step1_title: 'Scan — No Downloads', qr_step1_body: 'Customers access immediately via mobile web with adapted menus (ES, CAT, EN, CN).',
+                qr_step2_title: 'Bar & Kitchen Sync', qr_step2_body: 'Orders reach the kitchen/bar grid instantly, cutting service times in half.',
+                qr_step3_title: 'Happiness & Loyalty', qr_step3_body: 'Happier customers, faster table turnover and a higher average spend per night.',
+                qr_future_title: 'Built for the Hospitality of Tomorrow', qr_future_body: 'Optimise every process of your venue from a single intelligent panel powered by artificial intelligence.',
+                // Features
+                feat_title: 'Core Features of ', feat_sub: 'Cutting-edge technology designed specifically for modern hospitality.',
+                feat1_title: 'Predictive Inventory', feat1_body: 'Real-time control of waste, drinks and food with automatic alerts before running out of stock.',
+                feat2_title: 'AI Staff Management', feat2_body: 'Track connections, shifts and performance of waiters and chefs with detailed timelines.',
+                feat3_title: 'Smart POS & Payments', feat3_body: 'Unified payment history by date, automatic cash-up and smooth management of active and settled tables.',
+                feat4_title: 'Multilingual Support', feat4_body: 'Digital menus automatically adapted for tourists in Spanish, Catalan, English and Chinese.',
+                // VeriFactu
+                vf_badge: 'Regulatory Compliance', vf_title: 'VeriFactu Certified System ',
+                vf_body: 'BarAI strictly complies with VeriFactu regulations and the Spanish Tax Agency Anti-Fraud Law. All invoices and receipts are tamper-proof, traceable and sent automatically, guaranteeing complete legal peace of mind for your business during inspections.',
+                vf_link: 'View Official Responsible Declaration',
+                // Calculator
+                calc_badge: 'Profitability Calculator', calc_title: 'How much can you save with BarAI?',
+                calc_sub: 'Move the slider according to the estimated monthly revenue of your venue.',
+                calc_revenue: 'Estimated Monthly Revenue:', calc_savings: 'Estimated Savings on Waste & Stock', calc_time: 'Administrative Time Recovered',
+                // Testimonials
+                test_badge: 'Success Stories & Verified Reviews',
+                test_title: 'Venues that have already transformed their service with ',
+                test_sub: 'Discover how real bars and restaurants speed up orders, increase table turnover and multiply their Google reviews.',
+                verified: 'Verified Customer',
+                test1_quote: '"During peak terrace hours it was impossible to keep up. With BarAI, customers scan the wooden QR code, order in seconds and tickets fly straight to the kitchen. We have increased <strong class="text-white font-bold">table turnover by 35%</strong> and the team works with so much less stress."',
+                test1_role: 'Manager at',
+                test2_quote: '"The kitchen KDS is a game-changer: zero paper and zero floor errors. Plus, the <strong class="text-white font-bold">automatic Google Maps review module</strong> helped us collect over 80 five-star reviews in just two months."',
+                test2_role: 'Head of Service at',
+                test3_quote: '"The fact that customers don\'t need to download any app was the deciding factor. The PDF fiscal receipts with our logo and the fast checkout have eliminated all cash-register errors. Best investment we ever made."',
+                test3_role: 'Owner at',
+                // Stats
+                stat1: 'Average Customer Rating',
+                stat2_title: 'Table Turnover', stat2_sub: 'More diners served per shift',
+                stat3_title: 'Lost Orders', stat3_sub: 'Live WebSocket synchronisation',
+                stat4_title: 'Instant Access', stat4_sub: 'No downloads or app sign-ups needed',
+                // Pricing
+                pricing_title: 'Plans Tailored to your ', pricing_title_hl: 'Business',
+                pricing_sub: 'No hidden costs. Scale from a neighbourhood bar to large restaurant chains.',
+                plan_popular: 'MOST POPULAR', per_month: '/mo', plan_free_period: 'for 2 months',
+                plan1_name: 'Basic Bar', plan1_saving: 'Save up to €59.98 with this offer', plan1_after: 'Then €29.99/mo',
+                plan1_desc: 'Ideal for small venues or cafés with a single bar.',
+                plan1_f1: 'Order & table management', plan1_f2: 'QR digital menu', plan1_f3: 'Basic menu builder', plan1_f4: 'Support via info@barai.es', plan1_cta: 'Choose Basic',
+                plan2_name: 'Pro Hospitality', plan2_saving: 'Save up to €179.98 with this offer', plan2_after: 'Then €89.99/mo',
+                plan2_desc: 'For mid-size bars and high-turnover terraces.',
+                plan2_f1: 'Interactive QR digital menu', plan2_f2: 'Digital receipt', plan2_f3: 'AI demand forecasting', plan2_f4: 'Staff & shift optimisation', plan2_f5: 'Priority support info@barai.es', plan2_cta: 'Choose Pro',
+                plan3_name: 'Enterprise / Chains', plan3_price: 'Custom', plan3_desc: 'For franchises and restaurant groups with multiple venues.',
+                plan3_f1: 'Multi-location sync', plan3_f2: 'Advanced POS integrations', plan3_f3: 'Stock control alerts', plan3_f4: 'Dedicated account manager', plan3_cta: 'Contact Sales',
+                // Contact form
+                contact_title: 'Get Started with ',
+                contact_sub: 'Fill in the form and send it directly to our team at <strong class="text-white">info@barai.es</strong>.',
+                contact_promo: '🎉 The first 2 months of the Basic Plan are FREE! 🎉',
+                form_name: 'Full Name', form_name_ph: 'E.g. Ana Martínez',
+                form_email: 'Email Address',
+                form_business: 'Bar / Restaurant Name', form_business_ph: 'E.g. Bar AI',
+                form_phone: 'Phone / WhatsApp',
+                form_address: 'Address, Postcode, City', form_address_ph: 'E.g. Gran Vía 1, 28013, Madrid',
+                form_optional: '(optional)', form_submit: 'Send Request to info@barai.es',
+                // Footer
+                footer_help: 'Customer Help', footer_staff_guide: 'Staff Guide',
+                footer_ticket: 'Open Support Ticket', footer_rights: '© 2026 BarAI Technologies. All rights reserved.',
+                footer_ticket_terms: 'Digital Receipt Terms', footer_legal: 'Legal Notice',
+                footer_privacy: 'Privacy Policy', footer_cookies: 'Cookie Policy',
+                // Chatbot
+                chat_title: 'BarAI Assistant', chat_online: 'Online',
+                chat_greeting: 'Hi! I\'m the BarAI virtual assistant. How can I help you with our system?',
+                chat_q1: 'Try free DEMO', chat_q2: 'Checkout a table', chat_q3: 'Cancel / PIN',
+                chat_q4: 'Kitchen / KDS', chat_q5: 'PDF receipt', chat_q6: '10-min alert', chat_q7: 'Devices',
+                chat_toggle_tip: 'BarAI Assistant', chat_input_ph: 'Type your question...',
+                // Quick reply triggers (EN)
+                qr_demo: 'How can I try the free DEMO?', qr_table: 'How do I check out a table?',
+                qr_cancel: 'How do I cancel an order with PIN?', qr_kds: 'How does the kitchen KDS work?',
+                qr_ticket: 'How do digital receipts work?', qr_alert: 'What happens if a table has not ordered in 10 minutes?',
+                qr_hw: 'What hardware do I need?'
+            }
+        };
+
+        let currentLang = localStorage.getItem('barai_lang') || 'es';
+
+        function applyLang(lang) {
+            const t = translations[lang];
+            // Text nodes
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) el.innerHTML = t[key];
+            });
+            // Placeholder attributes
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (t[key] !== undefined) el.placeholder = t[key];
+            });
+            // Dynamic SEO meta updates
+            const title = document.getElementById('seo-title');
+            const desc = document.getElementById('seo-desc');
+            const kw = document.getElementById('seo-keywords');
+            const langMeta = document.getElementById('seo-lang');
+            const ogTitle = document.getElementById('og-title');
+            const ogDesc = document.getElementById('og-desc');
+            const ogLocale = document.getElementById('og-locale');
+            const twTitle = document.getElementById('tw-title');
+            const twDesc = document.getElementById('tw-desc');
+            if (title) title.textContent = t.seo_title;
+            if (desc) desc.setAttribute('content', t.seo_desc);
+            if (kw) kw.setAttribute('content', t.seo_keywords);
+            if (langMeta) langMeta.setAttribute('content', t.seo_lang);
+            if (ogTitle) ogTitle.setAttribute('content', t.og_title);
+            if (ogDesc) ogDesc.setAttribute('content', t.og_desc);
+            if (ogLocale) ogLocale.setAttribute('content', t.og_locale);
+            if (twTitle) twTitle.setAttribute('content', t.tw_title);
+            if (twDesc) twDesc.setAttribute('content', t.tw_desc);
+            // Update html lang attribute
+            document.documentElement.lang = lang === 'en' ? 'en-US' : 'es';
+            // Update lang button labels
+            const nextLang = lang === 'es' ? 'EN' : 'ES';
+            const ll = document.getElementById('lang-label');
+            const llm = document.getElementById('lang-label-mobile');
+            if (ll) ll.textContent = nextLang;
+            if (llm) llm.textContent = nextLang;
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            localStorage.setItem('barai_lang', currentLang);
+            applyLang(currentLang);
+        }
+
+        // Apply on load
+        document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
+    </script>
 
     <!-- JavaScript Unificado -->
     <script>
