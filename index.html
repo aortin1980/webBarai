@@ -381,7 +381,7 @@
                     <a href="#contact"
                         class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold text-lg hover:scale-105 transition-transform glow-green flex items-center justify-center space-x-3">
                         <i class="fa-solid fa-rocket"></i>
-                        <span>Solicitar Demo en info@barai.es</span>
+                        <span>Solicitar Demo</span>
                     </a>
                     <a href="#dashboard-preview"
                         class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cardBg border border-gray-700 text-white font-semibold text-lg hover:border-neonCyan transition-all flex items-center justify-center space-x-3 glow-cyan">
@@ -685,13 +685,16 @@
                 </div>
 
                 <!-- VeriFactu Banner -->
-                <div class="mt-16 bg-gradient-to-r from-gray-900 to-cardBg p-8 rounded-3xl border border-neonGreen/40 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between group">
-                    <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
+                <div
+                    class="mt-16 bg-gradient-to-r from-gray-900 to-cardBg p-8 rounded-3xl border border-neonGreen/40 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between group">
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
                         <i class="fa-solid fa-file-invoice-dollar text-9xl text-neonGreen"></i>
                     </div>
-                    
+
                     <div class="max-w-2xl relative z-10">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold glow-green">
+                        <div
+                            class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-darkGreen border border-neonGreen/30 mb-4 text-neonGreen text-xs font-semibold glow-green">
                             <i class="fa-solid fa-shield-check mr-1"></i>
                             <span>Cumplimiento Normativo</span>
                         </div>
@@ -699,19 +702,27 @@
                             Sistema Certificado <span class="text-neonGreen">VeriFactu</span>
                         </h3>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                            BarAI cumple estrictamente con la normativa <strong>VeriFactu</strong> y la Ley Antifraude de la Agencia Tributaria. Todas las facturas y tickets emitidos son inalterables, trazables y se envían de forma automática, garantizando la total tranquilidad legal para tu negocio frente a inspecciones.
+                            BarAI cumple estrictamente con la normativa <strong>VeriFactu</strong> y la Ley Antifraude
+                            de la Agencia Tributaria. Todas las facturas y tickets emitidos son inalterables, trazables
+                            y se envían de forma automática, garantizando la total tranquilidad legal para tu negocio
+                            frente a inspecciones.
                         </p>
-                        <a href="declaracion-responsable.html" class="inline-flex items-center text-neonCyan hover:text-white transition-colors text-sm font-semibold group">
-                            <i class="fa-solid fa-file-signature mr-2 group-hover:scale-110 transition-transform"></i> Ver Declaración Responsable Oficial
+                        <a href="declaracion-responsable.html"
+                            class="inline-flex items-center text-neonCyan hover:text-white transition-colors text-sm font-semibold group">
+                            <i class="fa-solid fa-file-signature mr-2 group-hover:scale-110 transition-transform"></i>
+                            Ver Declaración Responsable Oficial
                         </a>
                     </div>
-                    
+
                     <div class="mt-8 md:mt-0 relative z-10 flex-shrink-0 flex flex-col sm:flex-row items-center gap-4">
-                        <div class="bg-white rounded-2xl p-3 shadow-[0_0_25px_rgba(16,185,129,0.3)] border-2 border-neonGreen/80 flex items-center justify-center h-20 w-36 hover:scale-105 transition-transform">
+                        <div
+                            class="bg-white rounded-2xl p-3 shadow-[0_0_25px_rgba(16,185,129,0.3)] border-2 border-neonGreen/80 flex items-center justify-center h-20 w-36 hover:scale-105 transition-transform">
                             <img src="assets/verifactu-logo.png" alt="VeriFactu" class="h-full object-contain">
                         </div>
-                        <div class="bg-white rounded-2xl p-3 shadow-[0_0_25px_rgba(6,182,212,0.3)] border-2 border-neonCyan/80 flex items-center justify-center h-20 w-36 hover:scale-105 transition-transform">
-                            <img src="assets/agencia-tributaria.png" alt="Agencia Tributaria" class="h-full object-contain">
+                        <div
+                            class="bg-white rounded-2xl p-3 shadow-[0_0_25px_rgba(6,182,212,0.3)] border-2 border-neonCyan/80 flex items-center justify-center h-20 w-36 hover:scale-105 transition-transform">
+                            <img src="assets/agencia-tributaria.png" alt="Agencia Tributaria"
+                                class="h-full object-contain">
                         </div>
                     </div>
                 </div>
@@ -1128,8 +1139,8 @@
                             <div>
                                 <label
                                     class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Dirección,
-                                    CP, Ciudad</label>
-                                <input type="text" id="address" required
+                                    CP, Ciudad <span class="normal-case font-normal text-gray-500">(opcional)</span></label>
+                                <input type="text" id="address"
                                     class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neonGreen transition-colors"
                                     placeholder="Ej. Gran Vía 1, 28013, Madrid">
                             </div>
@@ -1190,7 +1201,8 @@
             <div
                 class="border-t border-gray-800/80 pt-6 flex flex-col lg:flex-row items-center justify-between text-xs text-gray-500 space-y-4 lg:space-y-0">
                 <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                    <p>© 2026 BarAI Technologies. Todos los derechos reservados. <span class="text-gray-600">v1.0.3</span></p>
+                    <p>© 2026 BarAI Technologies. Todos los derechos reservados. <span
+                            class="text-gray-600">v1.0.3</span></p>
                     <div class="flex items-center space-x-3 bg-white rounded-lg px-2.5 py-1.5 shadow-sm">
                         <img src="assets/verifactu-logo.png" alt="VeriFactu" class="h-5 object-contain">
                         <img src="assets/agencia-tributaria.png" alt="Agencia Tributaria" class="h-5 object-contain">
