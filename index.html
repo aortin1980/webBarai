@@ -1821,88 +1821,135 @@
 
         function getBotResponse(input) {
             const text = input.toLowerCase().trim();
+            const isEn = localStorage.getItem('lang') === 'en';
 
-            if (text.match(/^(hola|buenas|buenos d[ií]as|buenas tardes|buenas noches|hey|qu[eé] tal|saludos)/)) {
-                return '¡Hola! 👋 Soy el asistente inteligente de BarAI. Puedo resolver cualquier duda sobre el funcionamiento del sistema, comandas, KDS de cocina, cobros o seguridad. ¿Qué te gustaría consultar?';
+            if (text.match(/^(hola|buenas|buenos d[ií]as|buenas tardes|buenas noches|hey|qu[eé] tal|saludos|hello|hi|good morning|good evening)/)) {
+                return isEn 
+                    ? 'Hello! 👋 I am the BarAI smart assistant. I can answer any questions about the system, orders, kitchen KDS, payments, or security. What would you like to know?' 
+                    : '¡Hola! 👋 Soy el asistente inteligente de BarAI. Puedo resolver cualquier duda sobre el funcionamiento del sistema, comandas, KDS de cocina, cobros o seguridad. ¿Qué te gustaría consultar?';
             }
-            if (text.match(/^(gracias|muchas gracias|genial|perfecto|ok|vale|estupendo|de acuerdo)/)) {
-                return '¡De nada! 😊 Si necesitas saber algo más sobre BarAI, aquí estoy para ayudarte. ¡Mucho éxito en el servicio!';
+            if (text.match(/^(gracias|muchas gracias|genial|perfecto|ok|vale|estupendo|de acuerdo|thanks|thank you|great|perfect|awesome)/)) {
+                return isEn
+                    ? 'You are welcome! 😊 If you need anything else about BarAI, I am here to help. Wishing you great success!'
+                    : '¡De nada! 😊 Si necesitas saber algo más sobre BarAI, aquí estoy para ayudarte. ¡Mucho éxito en el servicio!';
             }
-            if (text.match(/^(adi[oó]s|chao|hasta luego|nos vemos|bye)/)) {
-                return '¡Hasta pronto! Recuerda que puedes abrir el chat en cualquier momento o consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso</a>.';
-            }
-
-            if (text.includes('qr') || text.includes('sesion') || text.includes('sesión') || text.includes('escanear') || text.includes('mesa ocupada') || text.includes('sentarse')) {
-                return '📲 <strong>Acceso por QR:</strong> Cada mesa dispone de un código QR único. Al escanearlo desde el móvil del cliente:<br>• Se genera una sesión segura sin necesidad de descargar ninguna app.<br>• El plano de mesas pasa automáticamente a estado <em>Ocupada</em>.<br>• Si pasan 10 minutos sin pedir nada, el sistema avisará a los camareros con una alerta de inactividad.';
-            }
-
-            if (text.includes('cobrar') || text.includes('pagar') || text.includes('checkout') || text.includes('cuenta') || text.includes('factura') || text.includes('liquidar') || text.includes('dividir')) {
-                return '💳 <strong>Cobro de Mesas:</strong><br>• Al pulsar <em>"Cobrar Mesa"</em>, el sistema suma <strong>exclusivamente</strong> los pedidos en estado <code>Completado</code> (servidos).<br>• Lo que no se haya terminado de servir se cancela para proteger al cliente de cargos indebidos.<br>• Tras el cobro, la mesa se libera y se envía automáticamente el ticket digital si el cliente dejó su correo.';
-            }
-
-            if (text.includes('cancelar') || text.includes('pin') || text.includes('anular') || text.includes('borrar') || text.includes('eliminar') || text.includes('mermas')) {
-                return '🛡️ <strong>Reglas de Cancelación y PIN:</strong><br>• <strong>Cliente:</strong> Solo puede anular un plato si está en estado <code>Recibido</code>. En cuanto cocina pulsa "Oído" o "Preparando", el botón desaparece de su móvil.<br>• <strong>Personal:</strong> Para cancelar platos ya en elaboración, el sistema exige el <strong>PIN de 4 dígitos</strong> del Administrador/Gerente para evitar mermas sin control.';
+            if (text.match(/^(adi[oó]s|chao|hasta luego|nos vemos|bye|goodbye|see you)/)) {
+                return isEn
+                    ? 'Goodbye! Remember you can open the chat anytime or check our <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">User Guide</a>.'
+                    : '¡Hasta pronto! Recuerda que puedes abrir el chat en cualquier momento o consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso</a>.';
             }
 
-            if (text.includes('ticket') || text.includes('pdf') || text.includes('correo') || text.includes('mail') || text.includes('recibo') || text.includes('ecol[oó]gico') || text.includes('papel')) {
-                return '📄 <strong>Tickets Digitales Inteligentes:</strong><br>• El cliente puede introducir su email en el móvil tras pedir.<br>• El sistema no envía correos sueltos por cada plato: encola el pedido y, en el momento del cobro, genera un <strong>único PDF oficial</strong> consolidado y lo envía al instante por email.';
+            if (text.includes('qr') || text.includes('sesion') || text.includes('sesión') || text.includes('escanear') || text.includes('mesa ocupada') || text.includes('sentarse') || text.includes('scan') || text.includes('sit') || text.includes('session')) {
+                return isEn
+                    ? '📲 <strong>QR Access:</strong> Each table has a unique QR code. When a customer scans it with their phone:<br>• A secure session is created without downloading any app.<br>• The table plan automatically changes to <em>Occupied</em>.<br>• If 10 minutes pass without an order, the system will alert the waiters.'
+                    : '📲 <strong>Acceso por QR:</strong> Cada mesa dispone de un código QR único. Al escanearlo desde el móvil del cliente:<br>• Se genera una sesión segura sin necesidad de descargar ninguna app.<br>• El plano de mesas pasa automáticamente a estado <em>Ocupada</em>.<br>• Si pasan 10 minutos sin pedir nada, el sistema avisará a los camareros con una alerta de inactividad.';
             }
 
-            if (text.includes('cocina') || text.includes('kds') || text.includes('comanda') || text.includes('pedido') || text.includes('barra') || text.includes('fogones') || text.includes('oido') || text.includes('oído') || text.includes('preparando') || text.includes('completado')) {
-                return '🍳 <strong>Cocina y Pantalla KDS:</strong><br>Los pedidos viajan en tiempo real con aviso sonoro y pasan por 3 fases:<br>1. <strong>Recibido (Cian):</strong> Comanda recién entrada.<br>2. <strong>Oído / Preparando (Naranja):</strong> El cocinero pulsa Oído y avanza a preparación.<br>3. <strong>Completado (Verde):</strong> Servido en mesa (notifica al móvil del cliente).';
+            if (text.includes('cobrar') || text.includes('pagar') || text.includes('checkout') || text.includes('cuenta') || text.includes('factura') || text.includes('liquidar') || text.includes('dividir') || text.includes('pay') || text.includes('bill') || text.includes('invoice')) {
+                return isEn
+                    ? '💳 <strong>Table Payment:</strong><br>• By pressing <em>"Checkout Table"</em>, the system <strong>exclusively</strong> sums up orders in <code>Completed</code> (served) status.<br>• Anything not served yet is cancelled to protect the customer from wrong charges.<br>• After checkout, the table is freed and the digital receipt is sent automatically if the customer provided their email.'
+                    : '💳 <strong>Cobro de Mesas:</strong><br>• Al pulsar <em>"Cobrar Mesa"</em>, el sistema suma <strong>exclusivamente</strong> los pedidos en estado <code>Completado</code> (servidos).<br>• Lo que no se haya terminado de servir se cancela para proteger al cliente de cargos indebidos.<br>• Tras el cobro, la mesa se libera y se envía automáticamente el ticket digital si el cliente dejó su correo.';
             }
 
-            if (text.includes('camarero') || text.includes('llamar') || text.includes('atencion') || text.includes('atención') || text.includes('aviso')) {
-                return '🔔 <strong>Llamada de Camarero:</strong><br>Cuando el cliente pulsa <em>"Llamar Camarero"</em> desde su móvil, la alerta se envía exclusivamente a los camareros y gerentes de sala. <strong>La vista de Cocina filtra e ignora estas alertas</strong> para no distraer la preparación de platos.';
+            if (text.includes('cancelar') || text.includes('pin') || text.includes('anular') || text.includes('borrar') || text.includes('eliminar') || text.includes('mermas') || text.includes('cancel') || text.includes('delete') || text.includes('void')) {
+                return isEn
+                    ? '🛡️ <strong>Cancellation Rules & PIN:</strong><br>• <strong>Customer:</strong> Can only cancel a dish if it is in <code>Received</code> status. As soon as the kitchen presses "Heard" or "Preparing", the button disappears.<br>• <strong>Staff:</strong> To cancel dishes already in preparation, the system requires the <strong>4-digit Admin PIN</strong> to prevent unauthorized waste.'
+                    : '🛡️ <strong>Reglas de Cancelación y PIN:</strong><br>• <strong>Cliente:</strong> Solo puede anular un plato si está en estado <code>Recibido</code>. En cuanto cocina pulsa "Oído" o "Preparando", el botón desaparece de su móvil.<br>• <strong>Personal:</strong> Para cancelar platos ya en elaboración, el sistema exige el <strong>PIN de 4 dígitos</strong> del Administrador/Gerente para evitar mermas sin control.';
             }
 
-            if (text.includes('inactividad') || text.includes('10 min') || text.includes('10m') || text.includes('sin pedir') || text.includes('tiempo') || text.includes('monitor') || text.includes('ia') || text.includes('inteligencia')) {
-                return '⏱️ <strong>Monitor de Inactividad (IA):</strong><br>Un demonio en segundo plano revisa las mesas cada 30 segundos. Si unos clientes se sientan (escanean QR) pero pasan <strong>10 minutos sin pedir nada</strong>, BarAI envía una alerta acústica y visual al camarero para que se acerque a atenderlos.';
+            if (text.includes('ticket') || text.includes('pdf') || text.includes('correo') || text.includes('mail') || text.includes('recibo') || text.includes('ecol[oó]gico') || text.includes('papel') || text.includes('receipt')) {
+                return isEn
+                    ? '📄 <strong>Smart Digital Receipts:</strong><br>• The customer can enter their email on their phone after ordering.<br>• The system does not spam emails for every dish: it queues the order and, at checkout, generates a <strong>single official consolidated PDF</strong> sent instantly via email.'
+                    : '📄 <strong>Tickets Digitales Inteligentes:</strong><br>• El cliente puede introducir su email en el móvil tras pedir.<br>• El sistema no envía correos sueltos por cada plato: encola el pedido y, en el momento del cobro, genera un <strong>único PDF oficial</strong> consolidado y lo envía al instante por email.';
             }
 
-            if (text.includes('instalar') || text.includes('descargar') || text.includes('app') || text.includes('aplicacion') || text.includes('aplicación') || text.includes('play store') || text.includes('app store') || text.includes('requisito')) {
-                return '🚀 <strong>Sin Instalación Requerida:</strong><br>• BarAI funciona 100% en la nube a través de la web.<br>• Ni tus clientes ni tus empleados tienen que descargar nada de la App Store ni Google Play.<br>• Funciona en cualquier navegador de móvil, tablet, TPV o pantalla de cocina.';
+            if (text.includes('cocina') || text.includes('kds') || text.includes('comanda') || text.includes('pedido') || text.includes('barra') || text.includes('fogones') || text.includes('oido') || text.includes('oído') || text.includes('preparando') || text.includes('completado') || text.includes('kitchen') || text.includes('order') || text.includes('preparing') || text.includes('completed')) {
+                return isEn
+                    ? '🍳 <strong>Kitchen & KDS Display:</strong><br>Orders arrive in real-time with an audible alert and go through 3 phases:<br>1. <strong>Received (Cyan):</strong> Newly arrived order.<br>2. <strong>Preparing (Orange):</strong> The chef presses Heard and it moves to preparation.<br>3. <strong>Completed (Green):</strong> Served at the table (notifies the customer\'s phone).'
+                    : '🍳 <strong>Cocina y Pantalla KDS:</strong><br>Los pedidos viajan en tiempo real con aviso sonoro y pasan por 3 fases:<br>1. <strong>Recibido (Cian):</strong> Comanda recién entrada.<br>2. <strong>Oído / Preparando (Naranja):</strong> El cocinero pulsa Oído y avanza a preparación.<br>3. <strong>Completado (Verde):</strong> Servido en mesa (notifica al móvil del cliente).';
             }
 
-            if (text.includes('hardware') || text.includes('tablet') || text.includes('ipad') || text.includes('impresora') || text.includes('pantalla') || text.includes('dispositivo') || text.includes('tpv')) {
-                return '📱 <strong>Dispositivos compatibles:</strong><br>• <strong>Cocina/Barra:</strong> Cualquier tablet (Android/iPad), portátil o pantalla táctil con navegador.<br>• <strong>Camareros:</strong> Smartphones o tablets de mano.<br>• <strong>Clientes:</strong> Sus propios móviles Android o iPhone escaneando la cámara.';
+            if (text.includes('camarero') || text.includes('llamar') || text.includes('atencion') || text.includes('atención') || text.includes('aviso') || text.includes('waiter') || text.includes('call') || text.includes('attention')) {
+                return isEn
+                    ? '🔔 <strong>Call Waiter:</strong><br>When a customer presses <em>"Call Waiter"</em> from their phone, the alert is sent exclusively to waiters and managers. <strong>The Kitchen view filters and ignores these alerts</strong> to avoid distracting food preparation.'
+                    : '🔔 <strong>Llamada de Camarero:</strong><br>Cuando el cliente pulsa <em>"Llamar Camarero"</em> desde su móvil, la alerta se envía exclusivamente a los camareros y gerentes de sala. <strong>La vista de Cocina filtra e ignora estas alertas</strong> para no distraer la preparación de platos.';
             }
 
-            if (text.includes('carta') || text.includes('men[uú]') || text.includes('plato') || text.includes('bebida') || text.includes('precio') || text.includes('al[eé]rgeno') || text.includes('foto')) {
-                return '🍽️ <strong>Gestión de Carta:</strong><br>Puedes modificar precios, añadir nuevos platos, alérgenos y fotografías en cualquier momento desde el panel de Administración. Los cambios se reflejan al instante en los teléfonos de los clientes.';
+            if (text.includes('inactividad') || text.includes('10 min') || text.includes('10m') || text.includes('sin pedir') || text.includes('tiempo') || text.includes('monitor') || text.includes('ia') || text.includes('inteligencia') || text.includes('inactivity') || text.includes('no order') || text.includes('time') || text.includes('ai')) {
+                return isEn
+                    ? '⏱️ <strong>Inactivity Monitor (AI):</strong><br>A background daemon checks tables every 30 seconds. If customers sit down (scan QR) but spend <strong>10 minutes without ordering</strong>, BarAI sends a visual and acoustic alert to the waiter to attend them.'
+                    : '⏱️ <strong>Monitor de Inactividad (IA):</strong><br>Un demonio en segundo plano revisa las mesas cada 30 segundos. Si unos clientes se sientan (escanean QR) pero pasan <strong>10 minutos sin pedir nada</strong>, BarAI envía una alerta acústica y visual al camarero para que se acerque a atenderlos.';
             }
 
-            if (text.includes('cuanto cuesta') || text.includes('cuánto cuesta') || text.includes('coste') || text.includes('costo') || text.includes('tarifa') || text.includes('plan') || text.includes('suscripci') || text.includes('precio') || text.includes('gratis') || text.includes('comisi')) {
-                return '💰 <strong>Precios y Modelos de BarAI:</strong><br>Ofrecemos planes escalables adaptados al tamaño de tu local sin comisiones ocultas por pedido. Puedes calcular tu ahorro estimado en nuestra <a href="#roi" class="text-neonCyan hover:underline font-semibold">calculadora de ROI</a> o solicitar una demo personalizada.';
+            if (text.includes('instalar') || text.includes('descargar') || text.includes('app') || text.includes('aplicacion') || text.includes('aplicación') || text.includes('play store') || text.includes('app store') || text.includes('requisito') || text.includes('install') || text.includes('download') || text.includes('application')) {
+                return isEn
+                    ? '🚀 <strong>No Installation Required:</strong><br>• BarAI is 100% cloud-based via web.<br>• Neither your customers nor your employees need to download anything from the App Store or Google Play.<br>• It works on any mobile browser, tablet, POS, or kitchen display.'
+                    : '🚀 <strong>Sin Instalación Requerida:</strong><br>• BarAI funciona 100% en la nube a través de la web.<br>• Ni tus clientes ni tus empleados tienen que descargar nada de la App Store ni Google Play.<br>• Funciona en cualquier navegador de móvil, tablet, TPV o pantalla de cocina.';
             }
 
-            if (text.includes('rol') || text.includes('empleado') || text.includes('cocinero') || text.includes('gerente') || text.includes('administrador') || text.includes('permiso')) {
-                return '👥 <strong>Perfiles y Roles:</strong><br>• <strong>Camarero:</strong> Ve croquis de mesas, cobros y llamadas de sala.<br>• <strong>Cocinero:</strong> Visualiza solo comandas de comida y tiempos de preparación.<br>• <strong>Gerente / Admin:</strong> Control total, estadísticas, cambios de carta y PIN de cancelación.';
+            if (text.includes('hardware') || text.includes('tablet') || text.includes('ipad') || text.includes('impresora') || text.includes('pantalla') || text.includes('dispositivo') || text.includes('tpv') || text.includes('device') || text.includes('printer') || text.includes('screen') || text.includes('pos')) {
+                return isEn
+                    ? '📱 <strong>Compatible Devices:</strong><br>• <strong>Kitchen/Bar:</strong> Any tablet (Android/iPad), laptop, or touch screen with a browser.<br>• <strong>Waiters:</strong> Smartphones or handheld tablets.<br>• <strong>Customers:</strong> Their own Android or iPhone by scanning with the camera.'
+                    : '📱 <strong>Dispositivos compatibles:</strong><br>• <strong>Cocina/Barra:</strong> Cualquier tablet (Android/iPad), portátil o pantalla táctil con navegador.<br>• <strong>Camareros:</strong> Smartphones o tablets de mano.<br>• <strong>Clientes:</strong> Sus propios móviles Android o iPhone escaneando la cámara.';
             }
 
-            if (text.includes('wifi') || text.includes('internet') || text.includes('conexi') || text.includes('offline') || text.includes('cae') || text.includes('red')) {
-                return '📶 <strong>Conectividad:</strong><br>El sistema requiere conexión a internet (WiFi o datos 4G/5G). Gracias a nuestra sincronización por WebSockets de baja latencia, el consumo de datos es mínimo y extremadamente rápido.';
+            if (text.includes('carta') || text.includes('men[uú]') || text.includes('plato') || text.includes('bebida') || text.includes('precio') || text.includes('al[eé]rgeno') || text.includes('foto') || text.includes('menu') || text.includes('dish') || text.includes('drink') || text.includes('price') || text.includes('allergen') || text.includes('photo')) {
+                return isEn
+                    ? '🍽️ <strong>Menu Management:</strong><br>You can change prices, add new dishes, allergens, and photos anytime from the Admin panel. Changes are reflected instantly on the customers\' phones.'
+                    : '🍽️ <strong>Gestión de Carta:</strong><br>Puedes modificar precios, añadir nuevos platos, alérgenos y fotografías en cualquier momento desde el panel de Administración. Los cambios se reflejan al instante en los teléfonos de los clientes.';
             }
 
-            if (text.includes('demo') || text.includes('probar') || text.includes('test') || text.includes('login') || text.includes('acceder') || text.includes('acceso') || text.includes('credencial') || text.includes('usuario') || text.includes('contrase') || text.includes('pass')) {
-                return '✨ <strong>¡Prueba DEMO Gratuita en Vivo!</strong><br>' +
-                    'Puedes acceder ahora mismo y probar el sistema en directo entrando en 👉 <a href="https://app.barai.es/login?ref=bot" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a>.<br><br>' +
-                    '🔑 <strong>Credenciales de acceso:</strong><br>' +
-                    '• <strong>Gerente:</strong> Usuario: <code>admin</code> | Pass: <code>admin</code><br>' +
-                    '• <strong>Cocinero:</strong> Usuario: <code>cocinero</code> | Pass: <code>cocinero</code><br>' +
-                    '• <strong>Camarero:</strong> Usuario: <code>camarero</code> | Pass: <code>camarero</code><br><br>' +
-                    '¡Explora el control de mesas en sala, el KDS de cocina y la administración en tiempo real!';
+            if (text.includes('cuanto cuesta') || text.includes('cuánto cuesta') || text.includes('coste') || text.includes('costo') || text.includes('tarifa') || text.includes('plan') || text.includes('suscripci') || text.includes('precio') || text.includes('gratis') || text.includes('comisi') || text.includes('how much') || text.includes('cost') || text.includes('fee') || text.includes('subscription') || text.includes('free') || text.includes('commission')) {
+                return isEn
+                    ? '💰 <strong>Pricing & Plans:</strong><br>We offer scalable plans adapted to the size of your venue with no hidden fees per order. You can calculate your estimated savings in our <a href="#roi" class="text-neonCyan hover:underline font-semibold">ROI calculator</a> or request a personalized demo.'
+                    : '💰 <strong>Precios y Modelos de BarAI:</strong><br>Ofrecemos planes escalables adaptados al tamaño de tu local sin comisiones ocultas por pedido. Puedes calcular tu ahorro estimado en nuestra <a href="#roi" class="text-neonCyan hover:underline font-semibold">calculadora de ROI</a> o solicitar una demo personalizada.';
             }
 
-            if (text.includes('registro') || text.includes('empezar') || text.includes('contratar') || text.includes('solicitar')) {
-                return '✨ <strong>¡Empieza con BarAI!</strong><br>Puedes probar nuestra demo gratuita en <a href="https://app.barai.es/login?ref=bot" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a> o rellenar el formulario de contacto para que preparemos tu local.';
+            if (text.includes('rol') || text.includes('empleado') || text.includes('cocinero') || text.includes('gerente') || text.includes('administrador') || text.includes('permiso') || text.includes('role') || text.includes('employee') || text.includes('chef') || text.includes('manager') || text.includes('admin') || text.includes('permission')) {
+                return isEn
+                    ? '👥 <strong>Profiles & Roles:</strong><br>• <strong>Waiter:</strong> Sees table plan, checkouts, and room calls.<br>• <strong>Chef:</strong> Views only food orders and preparation times.<br>• <strong>Manager / Admin:</strong> Full control, stats, menu changes, and cancellation PIN.'
+                    : '👥 <strong>Perfiles y Roles:</strong><br>• <strong>Camarero:</strong> Ve croquis de mesas, cobros y llamadas de sala.<br>• <strong>Cocinero:</strong> Visualiza solo comandas de comida y tiempos de preparación.<br>• <strong>Gerente / Admin:</strong> Control total, estadísticas, cambios de carta y PIN de cancelación.';
             }
 
-            if (text.includes('soporte') || text.includes('ayuda') || text.includes('problema') || text.includes('error') || text.includes('fallo') || text.includes('incidencia') || text.includes('contacto')) {
-                return '🛠️ <strong>Soporte Técnico BarAI:</strong><br>Si estás experimentando una incidencia técnica o necesitas ayuda inmediata, puedes <a href="ticket.html" class="text-neonGreen hover:underline font-bold">abrir un Ticket de Soporte aquí</a>. Recibirás respuesta urgente de nuestro equipo.';
+            if (text.includes('wifi') || text.includes('internet') || text.includes('conexi') || text.includes('offline') || text.includes('cae') || text.includes('red') || text.includes('connection') || text.includes('network') || text.includes('down')) {
+                return isEn
+                    ? '📶 <strong>Connectivity:</strong><br>The system requires internet connection (WiFi or 4G/5G data). Thanks to our low-latency WebSockets sync, data consumption is minimal and extremely fast.'
+                    : '📶 <strong>Conectividad:</strong><br>El sistema requiere conexión a internet (WiFi o datos 4G/5G). Gracias a nuestra sincronización por WebSockets de baja latencia, el consumo de datos es mínimo y extremadamente rápido.';
             }
 
-            return 'Entiendo tu consulta. Para más detalles, puedes preguntarme sobre: <strong>probar demo gratis</strong>, <strong>escanear QR</strong>, <strong>KDS de cocina</strong>, <strong>cobrar mesa</strong>, <strong>cancelar con PIN</strong>, <strong>tickets PDF</strong> o <strong>dispositivos</strong>.<br><br>También puedes consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso completa</a> o <a href="ticket.html" class="text-neonGreen hover:underline font-semibold">abrir un ticket de soporte</a>.';
+            if (text.includes('demo') || text.includes('probar') || text.includes('test') || text.includes('login') || text.includes('acceder') || text.includes('acceso') || text.includes('credencial') || text.includes('usuario') || text.includes('contrase') || text.includes('pass') || text.includes('try') || text.includes('access') || text.includes('credential') || text.includes('user') || text.includes('password')) {
+                return isEn
+                    ? '✨ <strong>Try the Free Live DEMO!</strong><br>' +
+                      'You can log in right now and test the system live at 👉 <a href="https://app.barai.es/login?ref=bot" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a>.<br><br>' +
+                      '🔑 <strong>Login Credentials:</strong><br>' +
+                      '• <strong>Manager:</strong> User: <code>admin</code> | Pass: <code>admin</code><br>' +
+                      '• <strong>Chef:</strong> User: <code>cocinero</code> | Pass: <code>cocinero</code><br>' +
+                      '• <strong>Waiter:</strong> User: <code>camarero</code> | Pass: <code>camarero</code><br><br>' +
+                      'Explore table control, kitchen KDS, and real-time administration!'
+                    : '✨ <strong>¡Prueba DEMO Gratuita en Vivo!</strong><br>' +
+                      'Puedes acceder ahora mismo y probar el sistema en directo entrando en 👉 <a href="https://app.barai.es/login?ref=bot" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a>.<br><br>' +
+                      '🔑 <strong>Credenciales de acceso:</strong><br>' +
+                      '• <strong>Gerente:</strong> Usuario: <code>admin</code> | Pass: <code>admin</code><br>' +
+                      '• <strong>Cocinero:</strong> Usuario: <code>cocinero</code> | Pass: <code>cocinero</code><br>' +
+                      '• <strong>Camarero:</strong> Usuario: <code>camarero</code> | Pass: <code>camarero</code><br><br>' +
+                      '¡Explora el control de mesas en sala, el KDS de cocina y la administración en tiempo real!';
+            }
+
+            if (text.includes('registro') || text.includes('empezar') || text.includes('contratar') || text.includes('solicitar') || text.includes('register') || text.includes('start') || text.includes('hire') || text.includes('request')) {
+                return isEn
+                    ? '✨ <strong>Start with BarAI!</strong><br>You can try our free demo at <a href="https://app.barai.es/login?ref=bot" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a> or fill out the contact form so we can set up your venue.'
+                    : '✨ <strong>¡Empieza con BarAI!</strong><br>Puedes probar nuestra demo gratuita en <a href="https://app.barai.es/login?ref=bot" target="_blank" class="text-neonCyan hover:underline font-bold">app.barai.es</a> o rellenar el formulario de contacto para que preparemos tu local.';
+            }
+
+            if (text.includes('soporte') || text.includes('ayuda') || text.includes('problema') || text.includes('error') || text.includes('fallo') || text.includes('incidencia') || text.includes('contacto') || text.includes('support') || text.includes('help') || text.includes('problem') || text.includes('issue') || text.includes('contact')) {
+                return isEn
+                    ? '🛠️ <strong>BarAI Tech Support:</strong><br>If you are experiencing a technical issue or need immediate help, you can <a href="ticket.html" class="text-neonGreen hover:underline font-bold">open a Support Ticket here</a>. You will receive an urgent reply from our team.'
+                    : '🛠️ <strong>Soporte Técnico BarAI:</strong><br>Si estás experimentando una incidencia técnica o necesitas ayuda inmediata, puedes <a href="ticket.html" class="text-neonGreen hover:underline font-bold">abrir un Ticket de Soporte aquí</a>. Recibirás respuesta urgente de nuestro equipo.';
+            }
+
+            return isEn
+                ? 'I understand your query. For more details, you can ask me about: <strong>try free demo</strong>, <strong>scan QR</strong>, <strong>kitchen KDS</strong>, <strong>table checkout</strong>, <strong>cancel with PIN</strong>, <strong>PDF receipts</strong> or <strong>devices</strong>.<br><br>You can also check our <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">full User Guide</a> or <a href="ticket.html" class="text-neonGreen hover:underline font-semibold">open a support ticket</a>.'
+                : 'Entiendo tu consulta. Para más detalles, puedes preguntarme sobre: <strong>probar demo gratis</strong>, <strong>escanear QR</strong>, <strong>KDS de cocina</strong>, <strong>cobrar mesa</strong>, <strong>cancelar con PIN</strong>, <strong>tickets PDF</strong> o <strong>dispositivos</strong>.<br><br>También puedes consultar nuestra <a href="helpdesk.html" class="text-neonCyan hover:underline font-semibold">Guía de Uso completa</a> o <a href="ticket.html" class="text-neonGreen hover:underline font-semibold">abrir un ticket de soporte</a>.';
         }
 
         function sendQuickReply(text) {
