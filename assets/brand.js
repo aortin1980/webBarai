@@ -9,6 +9,22 @@
     const brandApp = "app.tucamarero.com";
     const brandWeb = "www.tucamarero.com";
     
+    // Inject Google Font (Roboto)
+    const fontLink = document.createElement('link');
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap';
+    fontLink.rel = 'stylesheet';
+    document.head.appendChild(fontLink);
+
+    // Override Tailwind Config
+    if (window.tailwind && window.tailwind.config) {
+        window.tailwind.config.theme.extend.colors.darkBg = '#0c2445';
+        window.tailwind.config.theme.extend.colors.cardBg = '#143868';
+        window.tailwind.config.theme.extend.colors.neonGreen = '#cd5f38'; // orange/copper
+        window.tailwind.config.theme.extend.colors.neonCyan = '#d9774b';  // lighter orange
+        window.tailwind.config.theme.extend.colors.darkGreen = '#06132b';
+        window.tailwind.config.theme.extend.fontFamily.sans = ['Roboto', 'sans-serif'];
+    }
+
     // Update Title
     if (document.title.includes('BarAI')) {
         document.title = document.title.replace(/BarAI/g, brandName);
