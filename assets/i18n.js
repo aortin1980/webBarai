@@ -68,7 +68,7 @@
             lang = stored;
         } else {
             // Si el navegador empieza por 'es' (España, Latam), carga español. El resto del mundo en inglés.
-            lang = browser.startsWith('es') ? 'es' : 'en';
+            lang = 'es';
         }
         localStorage.setItem('barai_lang', lang);
         return lang;
@@ -176,3 +176,4 @@
         injectLangButton();
     }
 })();
+

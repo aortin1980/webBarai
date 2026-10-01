@@ -1,4 +1,4 @@
-(function() {
+(function () {
     // Detect domain OR allow local testing via URL parameter (?brand=tucamarero)
     const isTuCamarero = window.location.hostname.includes('tucamarero.com') || window.location.search.includes('brand=tucamarero');
 
@@ -9,7 +9,7 @@
     const brandEmail = "info@tucamarero.com";
     const brandApp = "app.tucamarero.com";
     const brandWeb = "www.tucamarero.com";
-    
+
     // Inject Google Font (Roboto for body, Montserrat for logo)
     const fontLink = document.createElement('link');
     fontLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;800&display=swap';
@@ -118,13 +118,48 @@
     if (document.title.includes('BarAI')) {
         document.title = document.title.replace(/BarAI/g, brandName);
     }
+    
+    // Update SEO Meta Tags and Canonical Links for crawlers and social sharing
+    document.querySelectorAll('meta').forEach(meta => {
+        if (meta.hasAttribute('content')) {
+            let content = meta.getAttribute('content');
+            let updated = false;
+            
+            if (content.toLowerCase().includes('barai')) {
+                // Handle the specific "BarAI Technologies" author/rights
+                if (content.includes('BarAI Technologies')) {
+                    content = content.replace(/BarAI Technologies/gi, 'tuCamarero');
+                } else {
+                    content = content.replace(/BarAI/gi, brandName);
+                }
+                updated = true;
+            }
+            if (content.includes('barai.es')) {
+                content = content.replace(/barai\.es/gi, 'tucamarero.com');
+                updated = true;
+            }
+            
+            if (updated) {
+                meta.setAttribute('content', content);
+            }
+        }
+    });
+
+    document.querySelectorAll('link[rel="canonical"], link[rel="alternate"]').forEach(link => {
+        if (link.hasAttribute('href')) {
+            let href = link.getAttribute('href');
+            if (href.includes('barai.es')) {
+                link.setAttribute('href', href.replace(/barai\.es/g, 'tucamarero.com'));
+            }
+        }
+    });
 
     // Function to walk the DOM and replace text
     function replaceTextInNode(node) {
         if (node.nodeType === Node.TEXT_NODE) {
             let text = node.nodeValue;
             let updated = false;
-            
+
             if (text.includes('BarAI')) {
                 text = text.replace(/BarAI/g, brandName);
                 updated = true;
@@ -149,7 +184,7 @@
                 text = text.replace(/barai\.es/g, 'tucamarero.com');
                 updated = true;
             }
-            
+
             if (updated) {
                 node.nodeValue = text;
             }
@@ -179,13 +214,14 @@
             }
             if (node.hasAttribute('src')) {
                 let src = node.getAttribute('src');
-                if (src.includes('logo.png')) {
+                let filename = src.split('/').pop();
+                if (filename === 'logo.png') {
                     node.setAttribute('src', src.replace('logo.png', 'logo-tucamarero.png'));
                     // Force white background on the parent container if it's a div
                     if (node.parentElement && node.parentElement.tagName === 'DIV') {
                         node.parentElement.style.backgroundColor = '#ffffff';
                     }
-                } else if (src.includes('logo_b.png')) {
+                } else if (filename === 'logo_b.png') {
                     node.setAttribute('src', src.replace('logo_b.png', 'logo-tucamarero_b.png'));
                     if (node.parentElement && node.parentElement.tagName === 'DIV') {
                         node.parentElement.style.backgroundColor = '#ffffff';
@@ -216,7 +252,7 @@
         }
 
         replaceTextInNode(document.body);
-        
+
         // Replace the specific logo HTML structures (Bar<span class="gradient-text">AI</span>)
         const allSpans = document.querySelectorAll('span');
         allSpans.forEach(span => {
@@ -225,9 +261,8 @@
                 span.innerHTML = '<span style="font-weight: 400;">tu</span><span style="font-weight: 800;">camarero</span>';
                 span.style.fontFamily = "'Montserrat', sans-serif";
                 span.style.textTransform = "lowercase";
+                span.style.color = "#000000";
                 span.classList.remove('text-white');
-                // We use white so it's visible on the dark navbar, as dark blue would be invisible
-                span.style.color = '#ffffff'; 
             }
         });
     });
