@@ -67,7 +67,8 @@
         } else if (stored && (stored === 'es' || stored === 'en')) {
             lang = stored;
         } else {
-            lang = browser.startsWith('en') ? 'en' : 'es';
+            // Si el navegador empieza por 'es' (España, Latam), carga español. El resto del mundo en inglés.
+            lang = browser.startsWith('es') ? 'es' : 'en';
         }
         localStorage.setItem('barai_lang', lang);
         return lang;
