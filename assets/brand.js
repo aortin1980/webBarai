@@ -181,8 +181,15 @@
                 let src = node.getAttribute('src');
                 if (src.includes('logo.png')) {
                     node.setAttribute('src', src.replace('logo.png', 'logo-tucamarero.png'));
+                    // Force white background on the parent container if it's a div
+                    if (node.parentElement && node.parentElement.tagName === 'DIV') {
+                        node.parentElement.style.backgroundColor = '#ffffff';
+                    }
                 } else if (src.includes('logo_b.png')) {
                     node.setAttribute('src', src.replace('logo_b.png', 'logo-tucamarero_b.png'));
+                    if (node.parentElement && node.parentElement.tagName === 'DIV') {
+                        node.parentElement.style.backgroundColor = '#ffffff';
+                    }
                 }
             }
         }
