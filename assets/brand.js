@@ -154,6 +154,19 @@
         }
     });
 
+    // Update Favicons
+    document.querySelectorAll('link[rel*="icon"]').forEach(link => {
+        if (link.hasAttribute('href')) {
+            let href = link.getAttribute('href');
+            let filename = href.split('/').pop();
+            if (filename === 'logo.ico') {
+                link.setAttribute('href', href.replace('logo.ico', 'logo-tucamarero.ico'));
+            } else if (filename === 'logo.png') {
+                link.setAttribute('href', href.replace('logo.png', 'logo-tucamarero.png'));
+            }
+        }
+    });
+
     // Function to walk the DOM and replace text
     function replaceTextInNode(node) {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -199,7 +212,9 @@
             // Also check attributes like href, src, alt, placeholder
             if (node.hasAttribute('href')) {
                 let href = node.getAttribute('href');
-                if (href.includes('barai.es')) {
+                if (href.includes('instagram.com/barai.es')) {
+                    node.setAttribute('href', href.replace('instagram.com/barai.es', 'instagram.com/tucamarero_com'));
+                } else if (href.includes('barai.es')) {
                     node.setAttribute('href', href.replace(/barai\.es/g, 'tucamarero.com'));
                 }
                 if (href.includes('mailto:info@barai.es')) {
@@ -258,10 +273,14 @@
         allSpans.forEach(span => {
             // Check if this span contains exactly "BarAI" when stripped of HTML
             if (span.textContent.trim() === 'BarAI' && span.innerHTML.includes('<span')) {
-                span.innerHTML = '<span style="font-weight: 400;">tu</span><span style="font-weight: 800;">camarero</span>';
+                const isDarkSection = span.closest('#customer-story') !== null;
+                const tuColor = isDarkSection ? '#ffffff' : '#000000';
+                const camaColor = isDarkSection ? '#d1d5db' : '#10b981'; // Green of solicitar demo
+
+                span.innerHTML = `<span style="font-weight: 400; color: ${tuColor};">tu</span><span style="font-weight: 800; color: ${camaColor};">camarero</span>`;
                 span.style.fontFamily = "'Montserrat', sans-serif";
                 span.style.textTransform = "lowercase";
-                span.style.color = "#000000";
+                span.style.color = ""; // Clear any parent color forcing
                 span.classList.remove('text-white');
             }
         });
