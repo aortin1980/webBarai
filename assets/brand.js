@@ -167,6 +167,17 @@
         }
     });
 
+    // Update JSON-LD structured data
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+        let content = script.innerHTML;
+        if (content.includes('BarAI') || content.includes('barai.es')) {
+            content = content.replace(/instagram\.com\/barai\.es\/?/g, 'instagram.com/tucamarero_com/');
+            content = content.replace(/BarAI/g, brandName);
+            content = content.replace(/barai\.es/g, 'tucamarero.com');
+            script.innerHTML = content;
+        }
+    });
+
     // Function to walk the DOM and replace text
     function replaceTextInNode(node) {
         if (node.nodeType === Node.TEXT_NODE) {
