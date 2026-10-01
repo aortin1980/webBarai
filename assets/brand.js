@@ -5,14 +5,14 @@
     if (!isTuCamarero) return;
 
     // Define replacements
-    const brandName = "TuCamarero";
+    const brandName = "tuCamarero";
     const brandEmail = "info@tucamarero.com";
     const brandApp = "app.tucamarero.com";
     const brandWeb = "www.tucamarero.com";
     
-    // Inject Google Font (Roboto)
+    // Inject Google Font (Roboto for body, Montserrat for logo)
     const fontLink = document.createElement('link');
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;800&display=swap';
     fontLink.rel = 'stylesheet';
     document.head.appendChild(fontLink);
 
@@ -39,6 +39,10 @@
             
             if (text.includes('BarAI')) {
                 text = text.replace(/BarAI/g, brandName);
+                updated = true;
+            }
+            if (text.includes('Bar AI')) {
+                text = text.replace(/Bar AI/g, brandName);
                 updated = true;
             }
             if (text.includes('info@barai.es')) {
@@ -99,6 +103,20 @@
     // Run on DOMContentLoaded
     document.addEventListener("DOMContentLoaded", () => {
         replaceTextInNode(document.body);
+        
+        // Replace the specific logo HTML structures (Bar<span class="gradient-text">AI</span>)
+        const allSpans = document.querySelectorAll('span');
+        allSpans.forEach(span => {
+            // Check if this span contains exactly "BarAI" when stripped of HTML
+            if (span.textContent.trim() === 'BarAI' && span.innerHTML.includes('<span')) {
+                span.innerHTML = '<span style="font-weight: 400;">tu</span><span style="font-weight: 800;">camarero</span>';
+                span.style.fontFamily = "'Montserrat', sans-serif";
+                span.style.textTransform = "lowercase";
+                span.classList.remove('text-white');
+                // We use white so it's visible on the dark navbar, as dark blue would be invisible
+                span.style.color = '#ffffff'; 
+            }
+        });
     });
 
 })();
