@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Principal / Landing Page -->
+  <url>
+    <loc>https://www.tucamarero.com/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/logo-tucamarero.png</image:loc>
+      <image:title>tuCamarero - Gestión y Optimización para Bares y Restaurantes con IA</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/client_view_mockup.jpg</image:loc>
+      <image:title>tuCamarero Carta Digital y Pedidos QR</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/kitchen_panel_mockup.jpg</image:loc>
+      <image:title>tuCamarero KDS Panel de Cocina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/table_map_mockup.jpg</image:loc>
+      <image:title>tuCamarero Croquis y Gestión de Mesas</image:title>
+    </image:image>
+  </url>
+
+  <!-- Helpdesk y Manual Operativo Oficial -->
+  <url>
+    <loc>https://www.tucamarero.com/helpdesk</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/cliente_vista_pedidos.png</image:loc>
+      <image:title>Vista Móvil de Pedidos tuCamarero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/cocina_panel_kds.png</image:loc>
+      <image:title>Panel KDS Cocina y Barra tuCamarero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/sala_croquis_mesas.png</image:loc>
+      <image:title>Plano de Mesas y Sala tuCamarero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/administracion_ajustes.png</image:loc>
+      <image:title>Panel de Administración y Ajustes tuCamarero</image:title>
+    </image:image>
+  </url>
+
+  <!-- Guía de Ayuda para Clientes y Comensales -->
+  <url>
+    <loc>https://www.tucamarero.com/ayuda-clientes</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.tucamarero.com/assets/cliente_vista_pedidos.png</image:loc>
+      <image:title>Guía de Pedidos QR para Clientes tuCamarero</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.tucamarero.com/ayuda</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Soporte Técnico y Apertura de Tickets -->
+  <url>
+    <loc>https://www.tucamarero.com/ticket</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Ticket Digital y Validez Fiscal -->
+  <url>
+    <loc>https://www.tucamarero.com/ticket-digital</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tucamarero.com/condiciones-ticket-digital</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Aviso Legal -->
+  <url>
+    <loc>https://www.tucamarero.com/aviso-legal</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Política de Privacidad -->
+  <url>
+    <loc>https://www.tucamarero.com/politica-de-privacidad</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Política de Cookies -->
+  <url>
+    <loc>https://www.tucamarero.com/politica-de-cookies</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
+
