@@ -189,6 +189,8 @@
             display: block;
         }
     </style>
+
+    <script src="assets/rand.js"></script>
 </head>
 
 <body class="bg-darkBg text-gray-100 overflow-x-hidden selection:bg-neonGreen selection:text-darkBg">
@@ -1821,7 +1823,7 @@
 
         function getBotResponse(input) {
             const text = input.toLowerCase().trim();
-            const isEn = localStorage.getItem('lang') === 'en';
+            const isEn = localStorage.getItem('barai_lang') === 'en';
 
             if (text.match(/^(hola|buenas|buenos d[ií]as|buenas tardes|buenas noches|hey|qu[eé] tal|saludos|hello|hi|good morning|good evening)/)) {
                 return isEn 
@@ -1863,6 +1865,12 @@
                     : '📄 <strong>Tickets Digitales Inteligentes:</strong><br>• El cliente puede introducir su email en el móvil tras pedir.<br>• El sistema no envía correos sueltos por cada plato: encola el pedido y, en el momento del cobro, genera un <strong>único PDF oficial</strong> consolidado y lo envía al instante por email.';
             }
 
+            if (text.includes('inactividad') || text.includes('10 min') || text.includes('10m') || text.includes('sin pedir') || text.includes('tiempo') || text.includes('monitor') || text.includes('ia') || text.includes('inteligencia') || text.includes('inactivity') || text.includes('no order') || text.includes('time') || text.includes('ai')) {
+                return isEn
+                    ? '⏱️ <strong>Inactivity Monitor (AI):</strong><br>A background daemon checks tables every 30 seconds. If customers sit down (scan QR) but spend <strong>10 minutes without ordering</strong>, BarAI sends a visual and acoustic alert to the waiter to attend them.'
+                    : '⏱️ <strong>Monitor de Inactividad (IA):</strong><br>Un demonio en segundo plano revisa las mesas cada 30 segundos. Si unos clientes se sientan (escanean QR) pero pasan <strong>10 minutos sin pedir nada</strong>, BarAI envía una alerta acústica y visual al camarero para que se acerque a atenderlos.';
+            }
+
             if (text.includes('cocina') || text.includes('kds') || text.includes('comanda') || text.includes('pedido') || text.includes('barra') || text.includes('fogones') || text.includes('oido') || text.includes('oído') || text.includes('preparando') || text.includes('completado') || text.includes('kitchen') || text.includes('order') || text.includes('preparing') || text.includes('completed')) {
                 return isEn
                     ? '🍳 <strong>Kitchen & KDS Display:</strong><br>Orders arrive in real-time with an audible alert and go through 3 phases:<br>1. <strong>Received (Cyan):</strong> Newly arrived order.<br>2. <strong>Preparing (Orange):</strong> The chef presses Heard and it moves to preparation.<br>3. <strong>Completed (Green):</strong> Served at the table (notifies the customer\'s phone).'
@@ -1873,12 +1881,6 @@
                 return isEn
                     ? '🔔 <strong>Call Waiter:</strong><br>When a customer presses <em>"Call Waiter"</em> from their phone, the alert is sent exclusively to waiters and managers. <strong>The Kitchen view filters and ignores these alerts</strong> to avoid distracting food preparation.'
                     : '🔔 <strong>Llamada de Camarero:</strong><br>Cuando el cliente pulsa <em>"Llamar Camarero"</em> desde su móvil, la alerta se envía exclusivamente a los camareros y gerentes de sala. <strong>La vista de Cocina filtra e ignora estas alertas</strong> para no distraer la preparación de platos.';
-            }
-
-            if (text.includes('inactividad') || text.includes('10 min') || text.includes('10m') || text.includes('sin pedir') || text.includes('tiempo') || text.includes('monitor') || text.includes('ia') || text.includes('inteligencia') || text.includes('inactivity') || text.includes('no order') || text.includes('time') || text.includes('ai')) {
-                return isEn
-                    ? '⏱️ <strong>Inactivity Monitor (AI):</strong><br>A background daemon checks tables every 30 seconds. If customers sit down (scan QR) but spend <strong>10 minutes without ordering</strong>, BarAI sends a visual and acoustic alert to the waiter to attend them.'
-                    : '⏱️ <strong>Monitor de Inactividad (IA):</strong><br>Un demonio en segundo plano revisa las mesas cada 30 segundos. Si unos clientes se sientan (escanean QR) pero pasan <strong>10 minutos sin pedir nada</strong>, BarAI envía una alerta acústica y visual al camarero para que se acerque a atenderlos.';
             }
 
             if (text.includes('instalar') || text.includes('descargar') || text.includes('app') || text.includes('aplicacion') || text.includes('aplicación') || text.includes('play store') || text.includes('app store') || text.includes('requisito') || text.includes('install') || text.includes('download') || text.includes('application')) {
@@ -2020,3 +2022,5 @@
 </body>
 
 </html>
+
+
