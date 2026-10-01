@@ -1,5 +1,6 @@
 (function() {
-    const isTuCamarero = window.location.hostname.includes('tucamarero.com');
+    // Detect domain OR allow local testing via URL parameter (?brand=tucamarero)
+    const isTuCamarero = window.location.hostname.includes('tucamarero.com') || window.location.search.includes('brand=tucamarero');
 
     if (!isTuCamarero) return;
 
