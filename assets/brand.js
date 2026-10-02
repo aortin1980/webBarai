@@ -115,6 +115,12 @@
             -webkit-text-fill-color: #ffffff !important;
         }
 
+        #contact select option,
+        #waitlist-form select option {
+            background-color: #111827 !important;
+            color: #ffffff !important;
+        }
+
         /* Contact form placeholder text - light soft gray */
         #contact input::placeholder,
         #contact textarea::placeholder,

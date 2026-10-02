@@ -190,7 +190,7 @@
         }
     </style>
 
-    <script src="assets/brand.js?v=1.4"></script>
+    <script src="assets/brand.js?v=1.5"></script>
 </head>
 
 <body class="bg-darkBg text-gray-100 overflow-x-hidden selection:bg-neonGreen selection:text-darkBg">
@@ -1055,7 +1055,7 @@
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <a href="#contact"
+                            <a href="#contact" onclick="selectPlan('Básico Bar')"
                                 class="block text-center py-3 rounded-xl border border-neonGreen text-neonGreen font-bold hover:bg-neonGreen/10 transition-colors"
                                 data-i18n="plan1_cta">Elegir Básico</a>
                         </div>
@@ -1103,7 +1103,7 @@
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <a href="#contact"
+                            <a href="#contact" onclick="selectPlan('Pro Hostelería')"
                                 class="block text-center py-3 rounded-xl bg-gradient-to-r from-neonGreen to-emerald-500 text-darkBg font-bold hover:opacity-95 transition-all"
                                 data-i18n="plan2_cta">Elegir Pro</a>
                         </div>
@@ -1134,7 +1134,7 @@
                             </ul>
                         </div>
                         <div class="mt-8">
-                            <a href="#contact"
+                            <a href="#contact" onclick="selectPlan('Enterprise / Cadenas')"
                                 class="block text-center py-3 rounded-xl border border-neonCyan text-neonCyan font-bold hover:bg-neonCyan/10 transition-colors"
                                 data-i18n="plan3_cta">Contactar Ventas</a>
                         </div>
@@ -1214,6 +1214,18 @@
                                     class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-neonGreen transition-colors"
                                     data-i18n-placeholder="form_address_ph" placeholder="Ej. Gran Vía 1, 28013, Madrid">
                             </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2"
+                                data-i18n="form_plan">Plan de Interés / Seleccionado</label>
+                            <select id="plan"
+                                class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neonGreen transition-colors cursor-pointer">
+                                <option value="Sin especificar" data-i18n="form_plan_default">-- Elige un plan (Opcional) --</option>
+                                <option value="Básico Bar" data-i18n="form_plan_basic">Plan Básico Bar (0,00€ - 2 meses gratis)</option>
+                                <option value="Pro Hostelería" data-i18n="form_plan_pro">Plan Pro Hostelería (0,00€ - 2 meses gratis)</option>
+                                <option value="Enterprise / Cadenas" data-i18n="form_plan_enterprise">Plan Enterprise / Cadenas (Personalizado)</option>
+                            </select>
                         </div>
 
                         <button type="submit"
@@ -1485,6 +1497,11 @@
                 form_phone: 'Teléfono / WhatsApp',
                 form_address: 'Dirección, CP, Ciudad', form_address_ph: 'Ej. Gran Vía 1, 28013, Madrid',
                 form_optional: '(opcional)', form_submit: 'Enviar Solicitud',
+                form_plan: 'Plan de Interés / Seleccionado',
+                form_plan_default: '-- Elige un plan (Opcional) --',
+                form_plan_basic: 'Plan Básico Bar (0,00€ - 2 meses gratis)',
+                form_plan_pro: 'Plan Pro Hostelería (0,00€ - 2 meses gratis)',
+                form_plan_enterprise: 'Plan Enterprise / Cadenas (Personalizado)',
                 // Footer
                 footer_help: 'Ayuda Clientes', footer_staff_guide: 'Guía Personal',
                 footer_ticket: 'Abrir Ticket de Soporte', footer_rights: '© 2026 BarAI Technologies. Todos los derechos reservados.',
@@ -1606,6 +1623,11 @@
                 form_phone: 'Phone / WhatsApp',
                 form_address: 'Address, Postcode, City', form_address_ph: 'E.g. Gran Vía 1, 28013, Madrid',
                 form_optional: '(optional)', form_submit: 'Send Request to info@barai.es',
+                form_plan: 'Plan of Interest / Selected',
+                form_plan_default: '-- Select a plan (Optional) --',
+                form_plan_basic: 'Basic Bar Plan (€0.00 - 2 months free)',
+                form_plan_pro: 'Pro Plan (€0.00 - 2 months free)',
+                form_plan_enterprise: 'Enterprise Plan (Custom)',
                 // Footer
                 footer_help: 'Customer Help', footer_staff_guide: 'Staff Guide',
                 footer_ticket: 'Open Support Ticket', footer_rights: '© 2026 BarAI Technologies. All rights reserved.',
@@ -1789,6 +1811,18 @@
             if (savedTime) savedTime.innerHTML = time + ' hrs <span class="text-xs text-neonCyan font-normal">/ mes</span>';
         }
 
+        function selectPlan(planName) {
+            const planEl = document.getElementById('plan');
+            if (planEl) {
+                planEl.value = planName;
+                planEl.classList.add('border-neonGreen', 'ring-2', 'ring-neonGreen/50');
+                setTimeout(() => {
+                    planEl.classList.remove('ring-2', 'ring-neonGreen/50');
+                }, 2500);
+            }
+        }
+        window.selectPlan = selectPlan;
+
         function handleFormSubmit(event) {
             event.preventDefault();
 
@@ -1798,6 +1832,7 @@
             const phoneEl = document.getElementById('phone');
             const cifEl = document.getElementById('cif');
             const addressEl = document.getElementById('address');
+            const planEl = document.getElementById('plan');
             const successMsg = document.getElementById('success-msg');
             const form = document.getElementById('waitlist-form');
             if (!form) return;
@@ -1809,6 +1844,7 @@
             const phone = phoneEl ? phoneEl.value : '';
             const cif = cifEl ? cifEl.value : '';
             const address = addressEl ? addressEl.value : '';
+            const plan = (planEl && planEl.value) ? planEl.value : 'Sin especificar';
 
             let originalBtnHtml = '';
             if (btn) {
@@ -1827,7 +1863,8 @@
             payload.append('email', email);
             payload.append('cif', cif);
             payload.append('direccion', address);
-            payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior (" + brandName + ")");
+            payload.append('plan', plan);
+            payload.append('mensaje', "Solicitud de Acceso Anticipado (" + brandName + ") | Plan: " + plan);
             payload.append('origen', isTuCamarero ? 'tucamarero' : 'barai');
             payload.append('brand', brandName);
             payload.append('dominio', brandDomain);
