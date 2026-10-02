@@ -286,6 +286,13 @@
                 translations.es.feat_sub = 'Herramientas pensadas para que la hostelería sea fácil, rápida y sin estrés.';
                 translations.es.qr_badge = 'Experiencia Rápida y Cómoda';
                 translations.es.qr_sub = 'Desde que el cliente se sienta en la mesa hasta que escanea el QR, pide y disfruta de su bebida favorita en un tiempo récord.';
+                
+                // SEO overrides targeting hiring/staffing intent
+                translations.es.seo_title = 'tuCamarero - El mejor camarero virtual para tu bar o restaurante';
+                translations.es.seo_desc = '¿Buscas contratar un camarero? Descubre tuCamarero, el sistema inteligente que atiende mesas, cobra y nunca se cansa. La solución perfecta para la falta de personal en hostelería.';
+                translations.es.seo_keywords = 'contratar camarero, busco camarero, busco camarero para bar, camarero virtual, falta de personal hosteleria, pedir con qr, software restaurantes, tuCamarero, tpv inteligente, sistema para bares';
+                translations.es.og_title = 'tuCamarero - El mejor camarero virtual para tu bar';
+                translations.es.og_desc = '¿Buscas contratar un camarero? Descubre tuCamarero, el sistema inteligente que atiende mesas, cobra y nunca se cansa. La solución perfecta para la falta de personal en hostelería.';
             }
             if (translations.en) {
                 translations.en.hero_badge = 'Your new digital front-of-house and kitchen team';
