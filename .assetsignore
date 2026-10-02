@@ -1,0 +1,9 @@
+_worker.js
+wrangler.jsonc
+.git
+.gitignore
+.vscode
+contacto.gs
+mailmarketing
+scratch
+*.md
