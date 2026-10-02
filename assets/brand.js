@@ -271,6 +271,36 @@
                     }
                 }
             }
+            
+            // Override specific marketing texts for TuCamarero
+            if (translations.es) {
+                translations.es.hero_badge = 'Tu nuevo equipo digital de sala y cocina';
+                translations.es.hero_title = 'Agiliza los pedidos y multiplica las ';
+                translations.es.hero_title_highlight = 'ventas de tu local';
+                translations.es.hero_title_end = ' 🍽️';
+                translations.es.hero_sub = 'tuCamarero automatiza el flujo de trabajo: desde que el cliente se sienta y escanea la carta, hasta que el pedido llega directo a la cocina. Sin esperas y sin errores.';
+                translations.es.dash_title = 'Descubre el control total ';
+                translations.es.dash_title_hl = 'en la palma de tu mano';
+                translations.es.dash_sub = 'Sincroniza cocina, sala y caja de forma automática. Tus camareros ahorrarán tiempo y tus clientes pedirán mucho más rápido.';
+                translations.es.feat_title = 'Todo lo que necesitas con ';
+                translations.es.feat_sub = 'Herramientas pensadas para que la hostelería sea fácil, rápida y sin estrés.';
+                translations.es.qr_badge = 'Experiencia Rápida y Cómoda';
+                translations.es.qr_sub = 'Desde que el cliente se sienta en la mesa hasta que escanea el QR, pide y disfruta de su bebida favorita en un tiempo récord.';
+            }
+            if (translations.en) {
+                translations.en.hero_badge = 'Your new digital front-of-house and kitchen team';
+                translations.en.hero_title = 'Speed up orders and multiply your ';
+                translations.en.hero_title_highlight = 'venue sales';
+                translations.en.hero_title_end = ' 🍽️';
+                translations.en.hero_sub = 'tuCamarero automates your workflow: from the moment a customer sits down and scans the menu, until the order goes straight to the kitchen. No waiting, no mistakes.';
+                translations.en.dash_title = 'Discover complete control ';
+                translations.en.dash_title_hl = 'in the palm of your hand';
+                translations.en.dash_sub = 'Automatically sync the kitchen, dining room, and register. Your waiters will save time and your customers will order much faster.';
+                translations.en.feat_title = 'Everything you need with ';
+                translations.en.feat_sub = 'Tools designed to make hospitality easy, fast, and stress-free.';
+                translations.en.qr_badge = 'Fast and Convenient Experience';
+                translations.en.qr_sub = 'From the moment the customer sits at the table until they scan the QR code, order, and enjoy their favorite drink in record time.';
+            }
             // Reapply translations with the new brand if applyLang exists
             if (typeof applyLang === 'function' && typeof currentLang !== 'undefined') {
                 applyLang(currentLang);
