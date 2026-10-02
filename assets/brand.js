@@ -115,6 +115,39 @@
             -webkit-text-fill-color: #ffffff !important;
         }
 
+        /* Contact form placeholder text - light soft gray */
+        #contact input::placeholder,
+        #contact textarea::placeholder,
+        #waitlist-form input::placeholder,
+        #waitlist-form textarea::placeholder {
+            color: #9ca3af !important;
+            -webkit-text-fill-color: #9ca3af !important;
+            opacity: 1 !important;
+        }
+
+        #contact input::-webkit-input-placeholder,
+        #contact textarea::-webkit-input-placeholder,
+        #waitlist-form input::-webkit-input-placeholder,
+        #waitlist-form textarea::-webkit-input-placeholder {
+            color: #9ca3af !important;
+            -webkit-text-fill-color: #9ca3af !important;
+        }
+
+        #contact input::-moz-placeholder,
+        #contact textarea::-moz-placeholder,
+        #waitlist-form input::-moz-placeholder,
+        #waitlist-form textarea::-moz-placeholder {
+            color: #9ca3af !important;
+            opacity: 1 !important;
+        }
+
+        #contact input:-ms-input-placeholder,
+        #contact textarea:-ms-input-placeholder,
+        #waitlist-form input:-ms-input-placeholder,
+        #waitlist-form textarea:-ms-input-placeholder {
+            color: #9ca3af !important;
+        }
+
         #contact input:-webkit-autofill,
         #contact input:-webkit-autofill:hover, 
         #contact input:-webkit-autofill:focus,
