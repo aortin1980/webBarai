@@ -39,7 +39,7 @@
         #dashboard-preview h2, #features h2, #calculator h2, #pricing h2, #testimonials h2, #contact h2,
         #dashboard-preview h3, #features h3, #calculator h3, #pricing h3, #testimonials h3, #contact h3,
         #dashboard-preview h4, #features h4, #calculator h4, #pricing h4, #testimonials h4, #contact h4,
-        #dashboard-preview .text-white, #features .text-white, #calculator .text-white, #pricing .text-white, #testimonials .text-white, #contact .text-white {
+        #dashboard-preview .text-white, #features .text-white, #calculator .text-white, #pricing .text-white, #testimonials .text-white, #contact .text-white:not(input):not(textarea):not(select) {
             color: #0c2445 !important;
         }
 
@@ -99,6 +99,31 @@
         }
         #calculator .bg-gray-900\\/90 div, #calculator .bg-gray-900\\/90 span, #calculator .bg-gray-900\\/90 .text-gray-400 {
             color: #ffffff !important;
+        }
+
+        /* Contact form inputs - ensure typed text and selects are white */
+        #contact input,
+        #contact textarea,
+        #contact select,
+        #contact input.text-white,
+        #contact textarea.text-white,
+        #waitlist-form input,
+        #waitlist-form textarea,
+        #waitlist-form select,
+        #waitlist-form .text-white {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        #contact input:-webkit-autofill,
+        #contact input:-webkit-autofill:hover, 
+        #contact input:-webkit-autofill:focus,
+        #waitlist-form input:-webkit-autofill,
+        #waitlist-form input:-webkit-autofill:hover,
+        #waitlist-form input:-webkit-autofill:focus {
+            -webkit-text-fill-color: #ffffff !important;
+            -webkit-box-shadow: 0 0 0px 1000px #111827 inset !important;
+            transition: background-color 5000s ease-in-out 0s;
         }
 
         /* Footer can stay dark, customer-story stays dark */
