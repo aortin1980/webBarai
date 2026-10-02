@@ -379,9 +379,13 @@
         allSpans.forEach(span => {
             // Check if this span contains exactly "BarAI" when stripped of HTML
             if (span.textContent.trim() === 'BarAI' && span.innerHTML.includes('<span')) {
-                const isDarkSection = span.closest('#customer-story') !== null;
-                const tuColor = isDarkSection ? '#ffffff' : '#000000';
-                const camaColor = isDarkSection ? '#d1d5db' : '#10b981'; // Green of solicitar demo
+                const isHeader = span.closest('header') !== null;
+                const isFooter = span.closest('footer') !== null;
+                const isCustomerStory = span.closest('#customer-story') !== null;
+                const isDarkBackground = isHeader || isFooter || isCustomerStory;
+
+                const tuColor = isDarkBackground ? '#ffffff' : '#000000';
+                const camaColor = isCustomerStory ? '#d1d5db' : '#10b981'; // Green of solicitar demo
 
                 span.innerHTML = `<span style="font-weight: 400; color: ${tuColor};">tu</span><span style="font-weight: 800; color: ${camaColor};">camarero</span>`;
                 span.style.fontFamily = "'Montserrat', sans-serif";
