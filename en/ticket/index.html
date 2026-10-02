@@ -257,6 +257,10 @@
             payload.append('email', email || "info@barai.es");
             payload.append('cif', "Support Ticket");
             payload.append('direccion', "App BarAI");
+            const isTuCamarero = window.location.hostname.includes('tucamarero.com') || window.location.search.includes('brand=tucamarero');
+            payload.append('origen', isTuCamarero ? 'tucamarero' : 'barai');
+            payload.append('brand', isTuCamarero ? 'tuCamarero' : 'BarAI');
+            payload.append('dominio', isTuCamarero ? 'tucamarero.com' : 'barai.es');
             payload.append('mensaje', "SUPPORT TICKET:\n" + problem);
 
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbxP7uzsCIdhCAxsGgQlO5HUfp8g8up32Hb0FSn0AcWH3F4Mq4SG5HLLEnr9JIlYmPLR/exec';

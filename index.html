@@ -1806,10 +1806,16 @@
             const cif = cifEl ? cifEl.value : '';
             const address = addressEl ? addressEl.value : '';
 
+            let originalBtnHtml = '';
             if (btn) {
+                originalBtnHtml = btn.innerHTML;
                 btn.disabled = true;
                 btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>';
             }
+
+            const isTuCamarero = window.location.hostname.includes('tucamarero.com') || window.location.search.includes('brand=tucamarero');
+            const brandName = isTuCamarero ? 'tuCamarero' : 'BarAI';
+            const brandDomain = isTuCamarero ? 'tucamarero.com' : 'barai.es';
 
             const payload = new URLSearchParams();
             payload.append('nombre', business + " (" + name + ")");
@@ -1817,7 +1823,10 @@
             payload.append('email', email);
             payload.append('cif', cif);
             payload.append('direccion', address);
-            payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior");
+            payload.append('mensaje', "Solicitud de Acceso Anticipado desde sección superior (" + brandName + ")");
+            payload.append('origen', isTuCamarero ? 'tucamarero' : 'barai');
+            payload.append('brand', brandName);
+            payload.append('dominio', brandDomain);
 
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbxP7uzsCIdhCAxsGgQlO5HUfp8g8up32Hb0FSn0AcWH3F4Mq4SG5HLLEnr9JIlYmPLR/exec';
 
@@ -1839,7 +1848,7 @@
                 .finally(() => {
                     if (btn) {
                         btn.disabled = false;
-                        btn.innerHTML = '<span>Solicitar Acceso Anticipado</span><i class="fa-solid fa-arrow-right"></i>';
+                        btn.innerHTML = originalBtnHtml || '<span>Enviar Solicitud</span><i class="fa-solid fa-arrow-right"></i>';
                     }
                     setTimeout(() => {
                         if (successMsg) successMsg.classList.add('hidden');
