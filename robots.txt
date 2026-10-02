@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://www.barai.es/sitemap.xml
+Sitemap: https://www.tucamarero.com/sitemap-tucamarero.xml
 Sitemap: https://app.barai.es/sitemap.xml
